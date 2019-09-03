@@ -9,7 +9,9 @@ const UserProfileImage = ({ username }) => (
       circular
       centered
     />
-    <span role="img" aria-label="researcher tag">👩‍🔬</span>
+    <span role="img" aria-label="researcher tag">
+      👩‍🔬
+    </span>
   </div>
 );
 

@@ -47,16 +47,21 @@ class App extends Component {
         );
       }
     });
-
     API.fetchAllUsers().then(data => {
-      this.setState({
-        allUsers: data.data.map(user => user.id)
+      data.data.map(user => {
+        return this.setState({
+          allUsers: [
+            ...this.state.allUsers,
+            {
+              id: user.attributes.id,
+              username: user.attributes.username
+            }
+          ]
+        });
       });
     });
     API.fetchAllPapers().then(data => {
       data.data.map(paper => {
-        // console.log("all the papers", paper)
-        // debugger
         return this.setState({
           allPapers: [
             ...this.state.allPapers,
@@ -234,7 +239,7 @@ class App extends Component {
     API.updatePaperRating(value, id);
     return this.state.allPapers.forEach(paper => {
       if (paper.id === id) {
-        paper.rating = value
+        paper.rating = value;
       }
     });
   };
@@ -249,8 +254,9 @@ class App extends Component {
     this.state.allPapers.filter(paper => paper.user_id === parseInt(token));
 
   sortPapers = sortType => {
-    console.log(sortType);
     switch (sortType) {
+      default:
+        break;
       case "Ascending":
         this.setState({
           allPapers: this.sortAscendingName(this.state.allPapers)

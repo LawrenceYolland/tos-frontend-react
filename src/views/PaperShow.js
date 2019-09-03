@@ -124,16 +124,17 @@ class PaperShow extends Component {
       <div className="paper-show-container">
         <div>
           <h1>{title}</h1>
-          <h2>{author}</h2>
-          <h5>{category}</h5>
-          <Link to={path}>{author}</Link>
+          <div className={`paper-category-${category.toLowerCase()}`}>
+          <h5><span>{category}</span></h5>
+          </div>
+         <span>submitted by: <Link to={path}>{author}</Link></span> 
           <h5>{doi}</h5>
           <p>{abstract}</p>
         </div>
 
         <div>
           <h5>Open Access Links</h5>
-          <ul>
+          <ul className="doi-oa-links">
             <li>
           <a href={this.state.paperData.url}>URL</a>
           </li>
@@ -153,7 +154,7 @@ class PaperShow extends Component {
           ></input>
           <button type="submit"> submit review</button>
         </form>
-        <ReviewContainer paperReviews={this.state.paperReviews} />
+        <ReviewContainer paperReviews={this.state.paperReviews} allUsers={this.props.allUsers} />
       </div>
     );
     return view;

@@ -11,7 +11,6 @@ class PaperIndex extends Component {
     ));
     return (
       <div className="all-papers">
-        <h1>Papers ...</h1>
         <select onChange={e => sortPapers(e.target.value)}>
           <option value="Ascending">ascending</option>
           <option value="Descending">descending</option>

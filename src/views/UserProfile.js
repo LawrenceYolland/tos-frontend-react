@@ -177,8 +177,6 @@ class UserProfile extends Component {
           </Fragment>
         )}
         {papersView}
-        <h5>Reviews</h5>
-        <h5>Journal Clubs</h5>
       </div>
     );
   }

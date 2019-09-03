@@ -83,6 +83,7 @@ const CreateRoutes = ({
             allPapers={allPapers}
             allPaperIDs={allPaperIDs}
             usersPostsReview={usersPostsReview}
+            allUsers={allUsers}
           />
         )}
       />

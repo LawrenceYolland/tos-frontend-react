@@ -73,7 +73,7 @@ class Paper extends Component {
         ) : null}
         <div className={`${indexType}-title-container `}>
           <Link to={path}>{this.upCaseTitles(title)}</Link>
-          <div className={`paper-category-${category.toLowerCase()} `}>
+          <div className={`paper-category-${category.toLowerCase()}`}>
             <span>{category}</span>
           </div>
         </div>
