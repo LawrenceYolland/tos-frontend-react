@@ -37,7 +37,7 @@ class Paper extends Component {
     if (rating > 0) return "positive";
     if (rating < 0) return "negative";
 
-    return "even"
+    return "even";
   };
 
   render() {
@@ -57,17 +57,17 @@ class Paper extends Component {
             </span>
             <br />
             <span
+              className={`${indexType}-rate-value ${this.setRatingColor()}`}
+            >
+              {this.state.rating}
+            </span>
+            <br />
+            <span
               className={`${indexType}-rate-down`}
               value="down"
               onClick={this.handleDownRating}
             >
               -
-            </span>
-            <br />
-            <span
-              className={`${indexType}-rate-value ${this.setRatingColor()}`}
-            >
-              {this.state.rating}
             </span>
           </div>
         ) : null}
