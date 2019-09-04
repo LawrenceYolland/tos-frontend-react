@@ -184,11 +184,15 @@ header a {
 .user-papers-container,
 .reviews-container {
   list-style: none;
-  text-align: center;
   width: 80%;
   padding: 0;
   margin: 0 auto 0 auto;
+  text-align: center;
 }
+
+/* .main-title-container {
+  text-align: justify;
+} */
 
 .papers-list li,
 .user-papers-container li,
@@ -200,7 +204,7 @@ header a {
 
 .papers-list li a {
   margin: auto;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding-bottom: 10px;
 }
 

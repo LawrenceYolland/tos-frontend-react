@@ -4,8 +4,7 @@ import { withRouter } from "react-router-dom";
 import API from "./adapters/API";
 import MenuBar from "./components/MenuBar";
 import Menu from "./views/Menu";
-
-const moment = require("moment")
+import moment from "moment";
 
 import CreateRoutes from "./containers/Routing";
 
@@ -23,7 +22,6 @@ class App extends Component {
     menu: false,
     formError: false,
     allUsers: [],
-    // allPaperIDs: [],
     updatingRating: false
   };
 
@@ -64,7 +62,7 @@ class App extends Component {
     });
     API.fetchAllPapers().then(data => {
       data.data.map(paper => {
-        debugger
+        // debugger
         return this.setState({
           allPapers: [
             ...this.state.allPapers,
@@ -77,7 +75,7 @@ class App extends Component {
               category: paper.attributes.category,
               rating: paper.attributes.rating,
               reviewCount: paper.attributes.reviews.length,
-              created_at: paper.data.attributes.created_at
+              created_at: paper.attributes.created_at
             }
           ]
           // allPaperIDs: [...this.state.allPaperIDs, paper.id] // will grab ids from paper object in refactor
@@ -259,6 +257,7 @@ class App extends Component {
     this.state.allPapers.filter(paper => paper.user_id === parseInt(token));
 
   sortPapers = sortType => {
+    console.log(sortType);
     switch (sortType) {
       default:
         break;
@@ -282,6 +281,11 @@ class App extends Component {
           allPapers: this.sortDebated(this.state.allPapers)
         });
         break;
+      case "Latest":
+        this.setState({
+          allPapers: this.sortCreatedAt(this.state.allPapers)
+        });
+        break;
     }
   };
 
@@ -295,11 +299,9 @@ class App extends Component {
 
   sortDebated = papers => papers.sort((a, b) => b.reviewCount - a.reviewCount);
 
-  sortCreatedAt = papers => {
-    debugger
-    papers.sort((a, b) => b.reviewCount - a.reviewCount)
-  }
-
+  sortCreatedAt = papers => 
+    papers.sort((a, b) => moment(b.created_at) - moment(a.created_at));
+  
 
   render() {
     return (
