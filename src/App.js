@@ -302,7 +302,6 @@ class App extends Component {
   sortCreatedAt = papers => 
     papers.sort((a, b) => moment(b.created_at) - moment(a.created_at));
   
-
   render() {
     return (
       <div className="App">
