@@ -42,39 +42,40 @@ class Paper extends Component {
 
   render() {
     const path = `/papers/${this.props.id}`;
-    const { title, category, indexType } = this.props;
-
+    const { title, category, indexType, abstract, created_at } = this.props;
     return (
       <li className={`${indexType}-list-item`}>
-        {indexType === "main" ? (
-          <div className={`${indexType}-rate-block`}>
-            <span
-              className={`${indexType}-rate-up`}
-              value="up"
-              onClick={this.handleUpRating}
-            >
-              +
-            </span>
-            <br />
-            <span
-              className={`${indexType}-rate-value ${this.setRatingColor()}`}
-            >
-              {this.state.rating}
-            </span>
-            <br />
-            <span
-              className={`${indexType}-rate-down`}
-              value="down"
-              onClick={this.handleDownRating}
-            >
-              -
-            </span>
-          </div>
-        ) : null}
+        <div className={`${indexType}-rate-block`}>
+          <span
+            className={`${indexType}-rate-up`}
+            value="up"
+            onClick={this.handleUpRating}
+          >
+            +
+          </span>
+          <br />
+          <span className={`${indexType}-rate-value ${this.setRatingColor()}`}>
+            {this.state.rating}
+          </span>
+          <br />
+          <span
+            className={`${indexType}-rate-down`}
+            value="down"
+            onClick={this.handleDownRating}
+          >
+            -
+          </span>
+        </div>
         <div className={`${indexType}-title-container `}>
-          <Link to={path}>{this.upCaseTitles(title)}</Link>
+          <span className="created-at">{created_at}</span>
+          <Link to={path}>
+            <h3>{this.upCaseTitles(title)}</h3>
+          </Link>
           <div className={`paper-category-${category.toLowerCase()}`}>
             <span>{category}</span>
+          </div>
+          <div>
+            <p>{`${abstract.slice(0, 100)}...`}</p>
           </div>
         </div>
       </li>

@@ -18,9 +18,9 @@ class PaperIndex extends Component {
     return (
       <div className="all-papers">
         <SortPapers sortPapers={sortPapers} />
-        <div>
+        <papers>
           <ul className="papers-list">{papers}</ul>
-        </div>
+        </papers>
       </div>
     );
   }

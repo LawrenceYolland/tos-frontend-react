@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "./App.css";
 import { withRouter } from "react-router-dom";
 import API from "./adapters/API";
@@ -299,9 +300,9 @@ class App extends Component {
 
   sortDebated = papers => papers.sort((a, b) => b.reviewCount - a.reviewCount);
 
-  sortCreatedAt = papers => 
+  sortCreatedAt = papers =>
     papers.sort((a, b) => moment(b.created_at) - moment(a.created_at));
-  
+
   render() {
     return (
       <div className="App">
