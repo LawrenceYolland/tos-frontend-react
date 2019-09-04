@@ -182,18 +182,18 @@ header a {
 .user-papers-container,
 .reviews-container {
   list-style: none;
-  width: 80%;
+  width: 90vw; /*was 80% !!! */
   padding: 0;
   margin: 0 auto 0 auto;
   text-align: center;
 }
+
 
 .papers-list li,
 .user-papers-container li,
 .reviews-container li {
   padding-bottom: 15px;
   padding-top: 15px;
-  /* width: % */
 }
 
 .papers-list li a {
