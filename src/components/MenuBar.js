@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
-
 class MenuBar extends Component {
   handleShowMenu = () => {
     if (!this.props.menuState) return;
@@ -11,7 +10,6 @@ class MenuBar extends Component {
     const { user, showMenu } = this.props;
     // console.log("this is the current user => 👋", user.user_id);
     const profilePath = `/users/${user.user_id}`;
-
     const menu =
       user.username === null ? (
         <Fragment>

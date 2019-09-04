@@ -7,6 +7,7 @@ import UserProfile from "../views/UserProfile";
 import NotFound from "../views/NotFound";
 import PaperShow from "../views/PaperShow";
 import PaperIndex from "../views/PaperIndex";
+import SearchPaperIndex from "../views/SearchPaperIndex";
 
 const CreateRoutes = ({
   user,
@@ -90,11 +91,27 @@ const CreateRoutes = ({
       <Route
         exact
         path="/papers"
-        render={() => <PaperIndex allPapers={allPapers} updateRating={updateRating} sortPapers={sortPapers} />}
+        render={() => (
+          <PaperIndex
+            allPapers={allPapers}
+            updateRating={updateRating}
+            sortPapers={sortPapers}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/papers/search/:query"
+        render={() => (
+          <SearchPaperIndex
+            allPapers={allPapers}
+            updateRating={updateRating}
+            sortPapers={sortPapers}
+          />
+        )}
       />
       <Route render={() => <NotFound />} />
     </Switch>
-
   );
 };
 export default CreateRoutes;

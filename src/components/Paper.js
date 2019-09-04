@@ -14,7 +14,7 @@ class Paper extends Component {
     this.setState({
       rating: this.state.rating + 1
     });
-    this.props.updateRating(this.state.rating + 1, this.props.id);
+    this.props.updateRating(this.state.rating + 1, this.props.id); //
   };
 
   handleDownRating = () => {

@@ -109,6 +109,8 @@ header a {
   height: 100vh;
   background-color: #282c34;
   align-content: center;
+
+  transition: 0.5s;
 }
 
 #menu {
@@ -152,7 +154,6 @@ header a {
 .all-papers,
 .paper-show-container,
 .not-found {
-  /* position: absolute; */
   margin-top: 15vh;
 }
 

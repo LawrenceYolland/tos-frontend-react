@@ -1,7 +1,27 @@
 import React, { Component, Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
+
 class Menu extends Component {
-  loggedIn = () => {};
+  state = {
+    input: ""
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { input } = this.state;
+    const { history } = this.props;
+    console.log("🔍 searching for things ...", input);
+    // push state with ?query
+    this.props.showMenu()
+    history.push(`/papers/search/${input.split(" ").join("-")}`);
+  };
+
+  handleChange = e => {
+    const {value} = e.target
+    this.setState({
+      input: value
+    });
+  };
 
   render() {
     const { user } = this.props;
@@ -10,7 +30,15 @@ class Menu extends Component {
       user.user_id !== null ? ( // the menu to be rendered when signed in
         <div className="drop-menu">
           <ul id="menu">
-            <input type="text" placeholder="search papers ..."></input>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                value={this.state.input}
+                type="text"
+                placeholder="search papers ..."
+                name="search"
+                onChange={this.handleChange}
+              />
+            </form>
             <NavLink
               exact
               to="/"
@@ -64,9 +92,9 @@ class Menu extends Component {
                 fontWeight: "bold",
                 color: "#f9009a"
               }}
-              onClick={ () => {
-                this.props.showMenu()
-                this.props.signOut()
+              onClick={() => {
+                this.props.showMenu();
+                this.props.signOut();
               }}
             >
               <li>
@@ -82,7 +110,7 @@ class Menu extends Component {
         // the menu to be rendered when not signed in
         <div className="drop-menu">
           <ul id="menu">
-            <input type="text" placeholder="search papers ..."></input>
+            {/* <input type="text" placeholder="search papers ..."></input> */}
             <NavLink
               exact
               to="/"
@@ -122,4 +150,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default withRouter(Menu);
