@@ -103,16 +103,17 @@ class MenuBar extends Component {
 
           <NavLink
             exact
-            to={!!profilePath ? profilePath : "#"}
+            // to={!!profilePath ? profilePath : "#"}
+            to={"/papers"}
             activeStyle={{
               fontWeight: "bold",
               color: "#f9009a"
             }}
             onClick={this.handleShowMenu}
           >
-            Profile
+            Papers
             <span role="img" aria-label="user profile">
-              👩‍🔬
+              📖
             </span>
           </NavLink>
           <NavLink

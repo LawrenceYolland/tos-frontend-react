@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import Paper from "../components/Paper";
+import SortPapers from "../components/SortPapers";
 
 class PaperIndex extends Component {
-  
   render() {
     const { allPapers, sortPapers } = this.props;
-    const indexType = "main"
+    const indexType = "main";
     const papers = allPapers.map(p => (
-      <Paper key={p.id} id={p.id} {...p} indexType={indexType} updateRating={this.props.updateRating} />
+      <Paper
+        key={p.id}
+        id={p.id}
+        {...p}
+        indexType={indexType}
+        updateRating={this.props.updateRating}
+      />
     ));
     return (
       <div className="all-papers">
-        <select onChange={e => sortPapers(e.target.value)}>
-          <option value="Ascending">ascending</option>
-          <option value="Descending">descending</option>
-          <option value="Rating">rating</option>
-        </select> 
-        
+        <SortPapers sortPapers={sortPapers} />
         <div>
           <ul className="papers-list">{papers}</ul>
         </div>

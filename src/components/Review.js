@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class Review extends Component {
   render() {
     const { content, user } = this.props;
-    // debugger
     const path = `/users/${user.id}`;
     return (
       <div className={"paper-review-username"}>

@@ -5,6 +5,8 @@ import API from "./adapters/API";
 import MenuBar from "./components/MenuBar";
 import Menu from "./views/Menu";
 
+const moment = require("moment")
+
 import CreateRoutes from "./containers/Routing";
 
 class App extends Component {
@@ -21,7 +23,7 @@ class App extends Component {
     menu: false,
     formError: false,
     allUsers: [],
-    allPaperIDs: [],
+    // allPaperIDs: [],
     updatingRating: false
   };
 
@@ -62,6 +64,7 @@ class App extends Component {
     });
     API.fetchAllPapers().then(data => {
       data.data.map(paper => {
+        debugger
         return this.setState({
           allPapers: [
             ...this.state.allPapers,
@@ -72,10 +75,12 @@ class App extends Component {
               abstract: paper.attributes.abstract,
               doi: paper.attributes.doi,
               category: paper.attributes.category,
-              rating: paper.attributes.rating
+              rating: paper.attributes.rating,
+              reviewCount: paper.attributes.reviews.length,
+              created_at: paper.data.attributes.created_at
             }
-          ],
-          allPaperIDs: [...this.state.allPaperIDs, paper.id] // will grab ids from paper object in refactor
+          ]
+          // allPaperIDs: [...this.state.allPaperIDs, paper.id] // will grab ids from paper object in refactor
         });
       });
     });
@@ -128,7 +133,6 @@ class App extends Component {
     }
     // API.nodeSignUp(user)
     // .then(response => {
-    //   // debugger
     //   if (response.ok) {
     //     return response.json();
     //   }
@@ -150,7 +154,6 @@ class App extends Component {
         loggingUser: true
       });
       API.signInUser(user).then(u => {
-        // debugger
         console.log("who is this user??? 🐛", u);
         setTimeout(() => {
           this.setState({
@@ -218,7 +221,9 @@ class App extends Component {
               abstract: paper.data.attributes.abstract,
               doi: paper.data.attributes.doi,
               category: paper.data.attributes.category,
-              rating: 0
+              rating: 0,
+              reviewCount: 0,
+              created_at: paper.data.attributes.created_at
             }
           ]
         });
@@ -272,19 +277,29 @@ class App extends Component {
           allPapers: this.sortRating(this.state.allPapers)
         });
         break;
+      case "Debated":
+        this.setState({
+          allPapers: this.sortDebated(this.state.allPapers)
+        });
+        break;
     }
   };
 
-  sortAscendingName = paper => {
-    return paper.sort((a, b) => a.title.localeCompare(b.title));
-  };
-  sortDescendingName = paper => {
-    return paper.sort((a, b) => b.title.localeCompare(a.title));
-  };
+  sortAscendingName = papers =>
+    papers.sort((a, b) => a.title.localeCompare(b.title));
 
-  sortRating = paper => {
-    return paper.sort((a, b) => b.rating - a.rating);
-  };
+  sortDescendingName = papers =>
+    papers.sort((a, b) => b.title.localeCompare(a.title));
+
+  sortRating = papers => papers.sort((a, b) => b.rating - a.rating);
+
+  sortDebated = papers => papers.sort((a, b) => b.reviewCount - a.reviewCount);
+
+  sortCreatedAt = papers => {
+    debugger
+    papers.sort((a, b) => b.reviewCount - a.reviewCount)
+  }
+
 
   render() {
     return (
