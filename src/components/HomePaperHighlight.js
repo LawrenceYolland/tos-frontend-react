@@ -4,6 +4,7 @@ import PaperIndex from "../views/PaperIndex";
 import moment from "moment";
 import Paper from "./Paper";
 import HomePaper from "./HomePaper";
+import PromotedPaper from "./PromotedPaper";
 
 class HomePaperHighlight extends Component {
   hottestPapersBiology = papers => {
@@ -21,19 +22,36 @@ class HomePaperHighlight extends Component {
 
   render() {
     const { allPapers } = this.props;
-    // debugger
-    const papersLatest = this.latestPapersAll(allPapers).map(p => (
-      <HomePaper key={p.id} id={p.id} {...p} />
-    ));
-    const papersHottest = this.hottestPapersBiology(allPapers).map(p => (
-      <HomePaper key={p.id} id={p.id} {...p} />
-    ));
+
+    const papersLatest = this.latestPapersAll(allPapers)
+      .map(p => <HomePaper key={p.id} id={p.id} {...p} />)
+      .slice(1, 3);
+
+    const promotedLatestPaper = this.latestPapersAll(allPapers).map(p => (
+      <PromotedPaper key={p.id} id={p.id} {...p} promotedType="latest" />
+    ))[0];
+
+    const papersHottestBiology = this.hottestPapersBiology(allPapers)
+      .map(p => <HomePaper key={p.id} id={p.id} {...p} />)
+      .slice(1, 3);
+
+    const promotedHottestPaperBiology = this.hottestPapersBiology(
+      allPapers
+    ).map(p => (
+      <PromotedPaper key={p.id} id={p.id} {...p} promotedType="hottest" />
+    ))[0];
+
     return (
       <div className="home-paper-highlight-container">
         <HeadingBorder title={"latest posts"} />
-        {papersLatest}
+        <div className="featured-latest-paper">{promotedLatestPaper}</div>
+        <div className="list-latest-papers">{papersLatest}</div>
+
         <HeadingBorder title={"hot in biology"} />
-        {papersHottest}
+        <div className="featured-latest-paper">
+          {promotedHottestPaperBiology}
+        </div>
+        <div className="list-latest-papers"> {papersHottestBiology}</div>
       </div>
     );
   }

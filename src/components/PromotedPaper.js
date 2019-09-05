@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class HomePaper extends Component {
-
-
+class PromotedPaper extends Component {
   upCaseTitles = title => {
     return title
       .split(" ")
@@ -20,12 +18,16 @@ class HomePaper extends Component {
   };
 
   render() {
-    // console.log("access token", )
     const path = `/papers/${this.props.id}`;
-    const { title, category, abstract, created_at } = this.props;
+    const { title, category, abstract, created_at, promotedType } = this.props;
     return (
-      <li className="home-list-item">
-        <div className="home-title-container">
+      <li className="home-list-item promoted">
+        <div
+          className={`image-container-promoted ${
+            promotedType === "hottest" ? "hottest" : "latest"
+          }`}
+        ></div>
+        <div className="home-title-container promoted">
           <small>
             <em>
               <span className="created-at">
@@ -48,4 +50,4 @@ class HomePaper extends Component {
   }
 }
 
-export default HomePaper;
+export default PromotedPaper;

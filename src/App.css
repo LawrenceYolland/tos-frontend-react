@@ -1,4 +1,10 @@
-a,p,h1,h2,h3,h4,h5 {
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma,
     Sans-Serif;
 }
@@ -62,25 +68,27 @@ header a {
   background-color: white;
   z-index: 20;
   top: 50vh;
-  min-width: 100vw;
+  min-width: 90vw;
   height: 100%;
 }
 
 .home-wrapper {
   background-color: #fff;
   margin: 0 auto;
-  max-width: 100vw;
+  max-width: 1080px;
 }
 
 .home-header-title {
   overflow: hidden;
   position: relative;
   text-align: center;
+  width: 90%;
+  margin: auto;
 }
 
 .home-header-title:before {
-  /* border-left: 4px solid #f9009a; */
-  /* border-right: 4px solid #f9009a; */
+  border-left: 4px solid #f9009a;
+  border-right: 4px solid #f9009a;
   border-top: 4px solid #f9009a;
   content: " ";
   height: 50px;
@@ -111,21 +119,38 @@ header a {
   font-style: italic;
 }
 
-
-
 .home-list-item {
-  display: flex;
+  /* display: flex; */
+  position: relative;
   height: 100%;
   border-bottom: 1px dashed #e5e5e5;
+  list-style: none;
 }
 
 .home-title-container {
-  /* border: 0.5px solid grey; */
   padding: 5px;
   width: 90%;
-  /* border-radius: 5px; */
   text-align: start;
   z-index: -10;
+}
+
+.image-container-promoted {
+  width: 90%;
+  height: 300px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-container-promoted.hottest {
+  /* when using breakpoints for larger screensize change requested res */
+
+  background-image: url("https://source.unsplash.com/pwcKF7L4-no/400x650");
+}
+
+.image-container-promoted.latest {
+  /* when using breakpoints for larger screensize change requested res */
+  background-image: url("https://source.unsplash.com/woWf_VJ7dNs/400x650");
 }
 
 .home-title-container > a {
