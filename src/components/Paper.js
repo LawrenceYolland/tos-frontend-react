@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import moment from "moment";
+
 class Paper extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +41,6 @@ class Paper extends Component {
   };
 
   editTimeFormat = time => {
-    //  const newTime = moment.parseZone(time, 'YYYY MM DD HH ZZ');
     let tmpTime = time.slice(0, 10).split("-");
     tmpTime.unshift(tmpTime[2]);
     tmpTime.pop();
@@ -50,8 +49,16 @@ class Paper extends Component {
   };
 
   render() {
+
     const path = `/papers/${this.props.id}`;
-    const { title, category, indexType, abstract, created_at } = this.props;
+    const {
+      title,
+      category,
+      indexType,
+      abstract,
+      created_at,
+      reviewCount
+    } = this.props;
     return (
       <li className={`${indexType}-list-item`}>
         <div className={`${indexType}-rate-block`}>
@@ -76,19 +83,25 @@ class Paper extends Component {
           </span>
         </div>
         <div className={`${indexType}-title-container`}>
-          <em>
-            <span className="created-at">
-              {this.editTimeFormat(created_at)}
-            </span>
-          </em>
+          <small>
+            <em>
+              <span className="created-at">
+                {this.editTimeFormat(created_at)}
+              </span>
+            </em>
+          </small>
+
           <Link to={path}>
-            <h3>{this.upCaseTitles(title)}</h3>
+            <h4>{this.upCaseTitles(title)}</h4>
           </Link>
           <div className={`paper-category-${category.toLowerCase()}`}>
             <span>{category}</span>
           </div>
           <div>
             <p>{`${abstract.slice(0, 100)}...`}</p>
+          </div>
+          <div>
+            <span role="img" aria-label="review count">💬{reviewCount}</span>
           </div>
         </div>
       </li>

@@ -1,5 +1,4 @@
 import React from "react";
-import Paper from "../components/Paper";
 import UserPaper from "../components/UserPaper";
 
 const UserPapersContainer = ({ userPapers }) => {

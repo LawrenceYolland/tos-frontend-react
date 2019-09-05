@@ -262,14 +262,14 @@ div[class^="paper-category-"] h5 span,
 .main-list-item {
   display: flex;
   height: 100%;
+  border-bottom: 1px dashed #e5e5e5;
 }
 
 .main-title-container {
-  border: 0.5px solid grey;
+  /* border: 0.5px solid grey; */
   padding: 5px;
   width: 90%;
-  border-radius: 5px;
-  /* background-color: #282c34; */
+  /* border-radius: 5px; */
   text-align: start;
   z-index: -10;
 }
@@ -296,7 +296,6 @@ span[class^="main-rate-"] {
   color: #000 !important;
 
   vertical-align: baseline;
-  /* border-radius: 50px; */
   border-radius: 0.5rem;
   position: relative;
 }
@@ -322,7 +321,6 @@ span.negative {
   display: flex;
   width: 90vw;
   margin: auto;
-  /* position: relative; */
 }
 
 .paper-sort-btn {

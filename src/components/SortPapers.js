@@ -8,21 +8,21 @@ const SortPapers = ({ sortPapers }) => {
         value="Rating"
         onClick={e => sortPapers(e.target.value)}
       >
-        <span>🔥</span>Rating
+        <span role="img" aria-label="Rating">🔥</span>Rating
       </button>
       <button
         className="paper-sort-btn"
         value="Debated"
         onClick={e => sortPapers(e.target.value)}
       >
-        <span>🧨</span>Debated
+        <span role="img" aria-label="Debated">🧨</span>Debated
       </button>
       <button
         className="paper-sort-btn"
         value="Latest"
         onClick={e => sortPapers(e.target.value)}
       >
-        <span>⏱</span>Latest
+        <span role="img" aria-label="Latest">⏱</span>Latest
       </button>
     </div>
   );
