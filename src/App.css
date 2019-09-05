@@ -188,7 +188,6 @@ header a {
   text-align: center;
 }
 
-
 .papers-list li,
 .user-papers-container li,
 .reviews-container li {
@@ -317,4 +316,15 @@ span.negative {
 .doi-oa-links {
   list-style: none;
   padding-left: 0px;
+}
+
+.paper-sort-btn-collection {
+  display: flex;
+  width: 90vw;
+  margin: auto;
+  /* position: relative; */
+}
+
+.paper-sort-btn {
+  margin-left: 1.1em;
 }
