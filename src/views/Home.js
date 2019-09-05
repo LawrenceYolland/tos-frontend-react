@@ -5,8 +5,8 @@ class Home extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div>
-        <div className="home-body">
+      <div className="home-container">
+        <div className="home-splash">
           <h1>Welcome to T.O.S</h1>
         </div>
         <HomeContentContainer />
