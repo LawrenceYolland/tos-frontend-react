@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import moment from "moment";
 class Paper extends Component {
   constructor(props) {
     super(props);
@@ -40,6 +40,15 @@ class Paper extends Component {
     return "even";
   };
 
+  editTimeFormat = time => {
+    //  const newTime = moment.parseZone(time, 'YYYY MM DD HH ZZ');
+    let tmpTime = time.slice(0, 10).split("-");
+    tmpTime.unshift(tmpTime[2]);
+    tmpTime.pop();
+    [tmpTime[2], tmpTime[1]] = [tmpTime[1], tmpTime[2]];
+    return tmpTime.join("-");
+  };
+
   render() {
     const path = `/papers/${this.props.id}`;
     const { title, category, indexType, abstract, created_at } = this.props;
@@ -66,8 +75,12 @@ class Paper extends Component {
             -
           </span>
         </div>
-        <div className={`${indexType}-title-container `}>
-          <span className="created-at">{created_at}</span>
+        <div className={`${indexType}-title-container`}>
+          <em>
+            <span className="created-at">
+              {this.editTimeFormat(created_at)}
+            </span>
+          </em>
           <Link to={path}>
             <h3>{this.upCaseTitles(title)}</h3>
           </Link>

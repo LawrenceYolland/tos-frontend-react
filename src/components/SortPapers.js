@@ -1,14 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 
 const SortPapers = ({ sortPapers }) => {
   return (
-    <select onChange={e => sortPapers(e.target.value)}>
-      <option value="Ascending">title ascending</option>
-      <option value="Descending">title descending</option>
-      <option value="Rating">rating</option>
-      <option value="Debated">debated</option>
-      <option value="Latest">latest</option>
-    </select>
+    <div className="paper-sort-btn-collection">
+      <button
+        className="paper-sort-btn"
+        value="Rating"
+        onClick={e => sortPapers(e.target.value)}
+      >
+        <span>🔥</span>Rating
+      </button>
+      <button
+        className="paper-sort-btn"
+        value="Debated"
+        onClick={e => sortPapers(e.target.value)}
+      >
+        <span>🧨</span>Debated
+      </button>
+      <button
+        className="paper-sort-btn"
+        value="Latest"
+        onClick={e => sortPapers(e.target.value)}
+      >
+        <span>⏱</span>Latest
+      </button>
+    </div>
   );
 };
 

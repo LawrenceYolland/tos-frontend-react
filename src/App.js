@@ -262,16 +262,6 @@ class App extends Component {
     switch (sortType) {
       default:
         break;
-      case "Ascending":
-        this.setState({
-          allPapers: this.sortAscendingName(this.state.allPapers)
-        });
-        break;
-      case "Descending":
-        this.setState({
-          allPapers: this.sortDescendingName(this.state.allPapers)
-        });
-        break;
       case "Rating":
         this.setState({
           allPapers: this.sortRating(this.state.allPapers)
@@ -290,11 +280,11 @@ class App extends Component {
     }
   };
 
-  sortAscendingName = papers =>
-    papers.sort((a, b) => a.title.localeCompare(b.title));
+  // sortAscendingName = papers =>
+  //   papers.sort((a, b) => a.title.localeCompare(b.title));
 
-  sortDescendingName = papers =>
-    papers.sort((a, b) => b.title.localeCompare(a.title));
+  // sortDescendingName = papers =>
+  //   papers.sort((a, b) => b.title.localeCompare(a.title));
 
   sortRating = papers => papers.sort((a, b) => b.rating - a.rating);
 
