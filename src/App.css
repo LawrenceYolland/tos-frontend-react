@@ -111,6 +111,27 @@ header a {
   font-style: italic;
 }
 
+
+
+.home-list-item {
+  display: flex;
+  height: 100%;
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+.home-title-container {
+  /* border: 0.5px solid grey; */
+  padding: 5px;
+  width: 90%;
+  /* border-radius: 5px; */
+  text-align: start;
+  z-index: -10;
+}
+
+.home-title-container > a {
+  color: grey;
+}
+
 /* Sign In / Sign Up */
 .button-block {
   display: flex;

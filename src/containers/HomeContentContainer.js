@@ -7,7 +7,7 @@ class HomeContentContainer extends Component {
       <div className="home-content-container">
         <h1>Home Page Info ...</h1>
         <br />
-        <HomePaperHighlight />
+        <HomePaperHighlight allPapers={this.props.allPapers}/>
       </div>
     );
   }
