@@ -81,10 +81,16 @@ footer h1 {
   margin: auto;
 }
 
-.home-splash > span {
+.scroll {
+
   position: absolute;
   z-index: 999;
-  margin-top: 80%;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  /* background:url("https://www.pngfind.com/pngs/m/627-6273703_down-svg-icon-free-transparent-background-scroll-down.png");
+  background-size: contain; */
+  background-color: #f9009a;
 }
 
 .home-splash-image {
