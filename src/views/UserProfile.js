@@ -28,6 +28,7 @@ class UserProfile extends Component {
     };
   }
   componentDidMount() {
+    window.scrollTo(0, 0);
     const { access_token } = this.props.match.params;
     this.setUserData(access_token);
   }

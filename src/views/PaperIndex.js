@@ -10,6 +10,10 @@ class PaperIndex extends Component {
     filterType: 0
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   timeFilteredPapers = papers => {
     if (this.state.filterType === 0) return papers;
     if (this.state.filterType === 1) return this.filterByDay(papers);

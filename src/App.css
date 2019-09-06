@@ -40,7 +40,6 @@ header a {
   color: white;
 }
 
-
 footer {
   position: relative;
   min-width: 100vw;
@@ -101,7 +100,7 @@ footer h1 {
   margin: auto;
 }
 
-.home-header-title:before {
+.home-header-title::before {
   border-top: 2px solid #f9009a;
   border-left: 2px solid #f9009a;
   border-right: 2px solid #f9009a;
@@ -141,7 +140,7 @@ footer h1 {
   height: 100%;
   border-bottom: 1px dashed #e5e5e5;
   list-style: none;
-  
+
   width: fit-content;
   margin: auto;
 }
@@ -187,14 +186,16 @@ footer h1 {
   margin: auto;
 }
 
-.more-header-title:before {
-  border-top: 2px solid #f9009a;
+.more-header-title::before {
+  border-bottom: 2px solid #f9009a;
+  border-left: 2px solid #f9009a;
+
   content: " ";
-  height: 0;
-  left: -0px;
+  height: 50px;
+  left: -16px;
   position: absolute;
-  right: -0px;
-  top: 50%;
+  right: 0px;
+  bottom: 45%;
   pointer-events: none;
 }
 
@@ -492,4 +493,13 @@ span.negative {
 
 .paper-sort-btn {
   margin-left: 1.1em;
+}
+.no-content {
+  /* height: 100%; */
+  overflow: hidden;
+  position: relative;
+}
+
+.no-content-img {
+  width: 80%;
 }
