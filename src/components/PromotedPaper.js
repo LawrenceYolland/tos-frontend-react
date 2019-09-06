@@ -19,7 +19,7 @@ class PromotedPaper extends Component {
 
   render() {
     const path = `/papers/${this.props.id}`;
-    const { title, category, abstract, created_at, promotedType } = this.props;
+    const { title, abstract, created_at, promotedType } = this.props;
     return (
       <li className="home-list-item promoted">
         <div

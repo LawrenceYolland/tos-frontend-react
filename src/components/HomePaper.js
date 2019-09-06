@@ -18,9 +18,8 @@ class HomePaper extends Component {
   };
 
   render() {
-    // console.log("access token", )
     const path = `/papers/${this.props.id}`;
-    const { title, category, abstract, created_at } = this.props;
+    const { title, created_at } = this.props;
     return (
       <li className="home-list-item">
         <div className="home-title-container">

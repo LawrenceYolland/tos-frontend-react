@@ -243,7 +243,7 @@ class App extends Component {
 
   updateRating = (value, id) => {
     API.updatePaperRating(value, id);
-    return this.state.allPapers.forEach(paper => {
+    return this.state.allPapers.map(paper => {
       if (paper.id === id) {
         paper.rating = value;
       }

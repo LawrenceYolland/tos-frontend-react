@@ -4,9 +4,7 @@ class FooterBar extends Component {
   render() {
     return (
       <footer>
-        <a>
-          <h1>footer content</h1>
-        </a>
+        <h1>footer content</h1>
       </footer>
     );
   }
