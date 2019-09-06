@@ -5,8 +5,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma,
-    Sans-Serif;
+  font-family: AtlasGroteskWeb, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 ::selection {
@@ -113,14 +112,14 @@ header a {
 
 .home-header-inner h2 {
   font-size: 1.3em;
-  font-weight: 1000;
+  font-weight: 900;
   display: inline-block;
   margin: 0;
   vertical-align: middle;
   text-transform: uppercase;
   line-height: 1.2;
   letter-spacing: 0.2em;
-  font-style: normal;
+  font-style: italic;
 }
 
 .home-list-item {
@@ -173,7 +172,6 @@ header a {
 
 .more-header-title:before {
   border-top: 2px solid #f9009a;
-
   content: " ";
   height: 0;
   left: -0px;
@@ -194,14 +192,17 @@ header a {
 
 .more-header-inner > a {
   font-size: 1.1em;
-  font-weight: 1000;
+  font-weight: 900;
   display: inline-block;
   margin: 0;
   vertical-align: middle;
   line-height: 1.2;
-  letter-spacing: 0.2em;
-  font-style: normal;
   color: #222;
+  font-style: italic;
+}
+
+span.created-at {
+  color: #999;
   font-style: italic;
 }
 
