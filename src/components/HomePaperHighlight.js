@@ -41,13 +41,13 @@ class HomePaperHighlight extends Component {
     ))[0];
 
     return (
-      <div className="home-paper-highlight-container">
+      <div  className="home-paper-highlight-container">
         <HeadingBorder title={"latest posts"} />
         <div className="featured-latest-paper">{promotedLatestPaper}</div>
         <div className="list-latest-papers">{papersLatest}</div>
         <MoreLink path={"/papers"}/>
         <HeadingBorder title={"hot in biology"} />
-        <div className="featured-latest-paper">
+        <div className="featured-hottest-paper">
           {promotedHottestPaperBiology}
         </div>
         <div className="list-latest-papers"> {papersHottestBiology}</div>
