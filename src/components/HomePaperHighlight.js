@@ -17,7 +17,7 @@ class HomePaperHighlight extends Component {
     const sortedPapers = papers.sort(
       (a, b) => moment(b.created_at) - moment(a.created_at)
     );
-    return sortedPapers.slice(0, 4);
+    return sortedPapers.slice(0, 5);
   };
 
   render() {
@@ -25,7 +25,7 @@ class HomePaperHighlight extends Component {
 
     const papersLatest = this.latestPapersAll(allPapers)
       .map(p => <HomePaper key={p.id} id={p.id} {...p} />)
-      .slice(1, 3);
+      .slice(1, 4);
 
     const promotedLatestPaper = this.latestPapersAll(allPapers).map(p => (
       <PromotedPaper key={p.id} id={p.id} {...p} promotedType="latest" />
@@ -33,14 +33,13 @@ class HomePaperHighlight extends Component {
 
     const papersHottestBiology = this.hottestPapersBiology(allPapers)
       .map(p => <HomePaper key={p.id} id={p.id} {...p} />)
-      .slice(1, 3);
+      .slice(1, 4);
 
     const promotedHottestPaperBiology = this.hottestPapersBiology(
       allPapers
     ).map(p => (
       <PromotedPaper key={p.id} id={p.id} {...p} promotedType="hottest" />
     ))[0];
-
     return (
       <div className="home-paper-highlight-container">
         <HeadingBorder title={"latest posts"} />

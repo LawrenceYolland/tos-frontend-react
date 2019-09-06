@@ -36,7 +36,7 @@ class PromotedPaper extends Component {
             </em>
           </small>
           <Link to={path}>
-            <h4>{this.upCaseTitles(title)}</h4>
+            <h4>{this.upCaseTitles(title)}<span>⭐️</span></h4>
           </Link>
           <div className={`paper-category-${category.toLowerCase()}`}>
             <span>{category}</span>

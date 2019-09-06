@@ -27,6 +27,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    // debugger
     console.log("App has mounted ... 🌈");
     API.validateUser().then(user => {
       console.log("who dis? 🤷‍", user);

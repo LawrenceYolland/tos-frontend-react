@@ -1,4 +1,4 @@
-a,
+/* a,
 p,
 h1,
 h2,
@@ -7,7 +7,7 @@ h4,
 h5 {
   font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma,
     Sans-Serif;
-}
+} */
 
 ::selection {
   background: #5f00f9;
@@ -45,6 +45,7 @@ header a {
   height: 100vh;
   background-color: black;
 }
+
 .home-splash {
   background-color: #c7c6c6;
   height: 50%;
@@ -68,7 +69,8 @@ header a {
   background-color: white;
   z-index: 20;
   top: 50vh;
-  min-width: 90vw;
+  /* this makes it worse */
+  width: 100%;
   height: 100%;
 }
 
@@ -82,13 +84,9 @@ header a {
   overflow: hidden;
   position: relative;
   text-align: center;
-  width: 90%;
-  margin: auto;
 }
 
 .home-header-title:before {
-  border-left: 4px solid #f9009a;
-  border-right: 4px solid #f9009a;
   border-top: 4px solid #f9009a;
   content: " ";
   height: 50px;
@@ -96,11 +94,13 @@ header a {
   position: absolute;
   right: -16px;
   top: 50%;
+  pointer-events: none;
 }
 
 .home-header-inner {
   padding: 16px;
   width: auto;
+  /* width: 100vw; */
   background-color: #fff;
   color: currentColor;
   position: relative;
@@ -129,13 +129,13 @@ header a {
 
 .home-title-container {
   padding: 5px;
-  width: 90%;
+  width: 100%;
   text-align: start;
   z-index: -10;
 }
 
 .image-container-promoted {
-  width: 90%;
+  width: 100vw;
   height: 300px;
   margin: auto;
   background-repeat: no-repeat;
