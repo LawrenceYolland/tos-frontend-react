@@ -90,7 +90,6 @@ class Paper extends Component {
               </span>
             </em>
           </small>
-
           <Link to={path}>
             <h4>{this.upCaseTitles(title)}</h4>
           </Link>

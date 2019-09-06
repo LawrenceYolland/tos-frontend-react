@@ -6,7 +6,7 @@ const MoreLink = ({ path }) => {
     <div className="more-header-wrapper">
       <div className="more-header-title">
         <span className="more-header-inner">
-          <Link to="/papers">MORE...</Link>
+          <Link to={path}>MORE...</Link>
         </span>
       </div>
     </div>
