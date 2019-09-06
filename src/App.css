@@ -64,7 +64,7 @@ footer h1 {
 
 .home-splash {
   background-color: #c7c6c6;
-  min-height: 90vh;
+  min-height: 80vh;
   min-width: 100vw;
   display: flex;
   flex-direction: column;
@@ -73,6 +73,34 @@ footer h1 {
   justify-content: center;
   color: whitesmoke;
   z-index: 1;
+}
+
+.home-splash > h1 {
+  position: absolute;
+  z-index: 999;
+  margin: auto;
+}
+
+.home-splash > span {
+  position: absolute;
+  z-index: 999;
+  margin-top: 80%;
+}
+
+.home-splash-image {
+  background-image: url("https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.home-splash-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  background: rgba(50, 0, 120, 0.3);
 }
 
 .home-body h1 {
