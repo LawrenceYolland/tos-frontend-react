@@ -15,7 +15,7 @@ h5 {
 
 .App {
   text-align: center;
-  position: relative;;
+  position: relative;
 }
 
 /*  header and footer */
@@ -38,7 +38,6 @@ header {
 header a {
   margin: auto;
   color: white;
-  /* padding: 2px; */
 }
 
 
@@ -46,8 +45,9 @@ footer {
   position: relative;
   min-width: 100vw;
   background-color: #282c34;
-  height: 40vh;
+  height: 200px;
   display: flex;
+  bottom: 0;
 }
 
 footer h1 {
@@ -141,6 +141,9 @@ footer h1 {
   height: 100%;
   border-bottom: 1px dashed #e5e5e5;
   list-style: none;
+  
+  width: fit-content;
+  margin: auto;
 }
 
 .home-title-container {
@@ -315,7 +318,8 @@ span.created-at {
 .all-papers,
 .paper-show-container,
 .not-found {
-  margin-top: 15vh;
+  margin-top: 12vh;
+  min-height: 800px;
 }
 
 .paper-show-container {

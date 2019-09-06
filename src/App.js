@@ -298,40 +298,39 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-      <div className="App">
-        <MenuBar
-          user={this.state.user}
-          signOut={this.signOut}
-          showMenu={this.showMenu}
-          menuState={this.state.menu}
-        />
-        {!this.state.menu ? null : (
-          <Menu
-            menu={this.state.menu}
+        <div className="App">
+          <MenuBar
             user={this.state.user}
             signOut={this.signOut}
             showMenu={this.showMenu}
+            menuState={this.state.menu}
           />
-        )}
-        <CreateRoutes
-          user={this.state.user}
-          signOut={this.signOut}
-          submitSignUp={this.submitSignUp}
-          loggingUser={this.state.loggingUser}
-          submitSignIn={this.submitSignIn}
-          updateBio={this.updateBio}
-          userPapers={this.filterPapers}
-          allPapers={this.state.allPapers}
-          userPostsPaper={this.userPostsPaper}
-          allUsers={this.state.allUsers}
-          allPaperIDs={this.state.allPaperIDs}
-          usersPostsReview={this.usersPostsReview}
-          updateRating={this.updateRating}
-          sortPapers={this.sortPapers}
-        />
-      </div>
-      <FooterBar/>
-
+          {!this.state.menu ? null : (
+            <Menu
+              menu={this.state.menu}
+              user={this.state.user}
+              signOut={this.signOut}
+              showMenu={this.showMenu}
+            />
+          )}
+          <CreateRoutes
+            user={this.state.user}
+            signOut={this.signOut}
+            submitSignUp={this.submitSignUp}
+            loggingUser={this.state.loggingUser}
+            submitSignIn={this.submitSignIn}
+            updateBio={this.updateBio}
+            userPapers={this.filterPapers}
+            allPapers={this.state.allPapers}
+            userPostsPaper={this.userPostsPaper}
+            allUsers={this.state.allUsers}
+            allPaperIDs={this.state.allPaperIDs}
+            usersPostsReview={this.usersPostsReview}
+            updateRating={this.updateRating}
+            sortPapers={this.sortPapers}
+          />
+        </div>
+        <FooterBar />
       </Fragment>
     );
   }

@@ -3,6 +3,7 @@ import Paper from "../components/Paper";
 import SortPapers from "../components/SortPapers";
 import FilterPapers from "../components/FilterPapers";
 import moment from "moment";
+import NoContentAvailable from "../containers/NoContentAvailble";
 
 class PaperIndex extends Component {
   state = {
@@ -43,7 +44,7 @@ class PaperIndex extends Component {
     const filteredList = papers.filter(paper => {
       let paperDate = moment(paper.created_at);
       return moment(paperDate._d).isSame(testDate._d, "day");
-    })
+    });
     return filteredList;
   };
 
@@ -65,9 +66,13 @@ class PaperIndex extends Component {
       <div className="all-papers">
         <SortPapers sortPapers={sortPapers} />
         <FilterPapers setFilterType={this.setFilterType} />
-        <papers>
-          <ul className="papers-list">{papers}</ul>
-        </papers>
+        {papers.length > 0 ? (
+          <papers>
+            <ul className="papers-list">{papers}</ul>
+          </papers>
+        ) : (
+          <NoContentAvailable />
+        )}
       </div>
     );
   }
