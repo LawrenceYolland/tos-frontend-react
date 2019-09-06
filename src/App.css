@@ -1,4 +1,4 @@
-/* a,
+a,
 p,
 h1,
 h2,
@@ -7,7 +7,7 @@ h4,
 h5 {
   font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma,
     Sans-Serif;
-} */
+}
 
 ::selection {
   background: #5f00f9;
@@ -69,7 +69,6 @@ header a {
   background-color: white;
   z-index: 20;
   top: 50vh;
-  /* this makes it worse */
   width: 100%;
   height: 100%;
 }
@@ -77,17 +76,22 @@ header a {
 .home-wrapper {
   background-color: #fff;
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 80%;
 }
 
 .home-header-title {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 .home-header-title:before {
-  border-top: 4px solid #f9009a;
+  border-top: 2px solid #f9009a;
+  border-left: 2px solid #f9009a;
+  border-right: 2px solid #f9009a;
+
   content: " ";
   height: 50px;
   left: -16px;
@@ -116,11 +120,10 @@ header a {
   text-transform: uppercase;
   line-height: 1.2;
   letter-spacing: 0.2em;
-  font-style: italic;
+  font-style: normal;
 }
 
 .home-list-item {
-  /* display: flex; */
   position: relative;
   height: 100%;
   border-bottom: 1px dashed #e5e5e5;
@@ -129,14 +132,15 @@ header a {
 
 .home-title-container {
   padding: 5px;
-  width: 100%;
+  width: 80vw;
   text-align: start;
   z-index: -10;
+  margin: auto;
 }
 
 .image-container-promoted {
-  width: 100vw;
-  height: 300px;
+  width: 80vw;
+  height: 250px;
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
@@ -153,7 +157,52 @@ header a {
 }
 
 .home-title-container > a {
-  color: grey;
+  color: #222;
+}
+
+.more-header-wrapper {
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+.more-header-title {
+  position: relative;
+  text-align: end;
+  width: 80%;
+  margin: auto;
+}
+
+.more-header-title:before {
+  border-top: 2px solid #f9009a;
+
+  content: " ";
+  height: 0;
+  left: -0px;
+  position: absolute;
+  right: -0px;
+  top: 50%;
+  pointer-events: none;
+}
+
+.more-header-inner {
+  padding: 16px;
+  width: auto;
+  background-color: #fff;
+  color: currentColor;
+  position: relative;
+  display: inline-block;
+}
+
+.more-header-inner > a {
+  font-size: 1.1em;
+  font-weight: 1000;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  font-style: normal;
+  color: #222;
+  font-style: italic;
 }
 
 /* Sign In / Sign Up */

@@ -36,13 +36,13 @@ class PromotedPaper extends Component {
             </em>
           </small>
           <Link to={path}>
-            <h4>{this.upCaseTitles(title)}<span>⭐️</span></h4>
+            <h4>{this.upCaseTitles(title)}<span role="img" aria-label="promoted post">⭐️</span></h4>
           </Link>
           <div className={`paper-category-${category.toLowerCase()}`}>
             <span>{category}</span>
           </div>
           <div>
-            <p>{`${abstract.slice(0, 200)}...`}</p>
+            <p>{`${abstract.slice(0, 300)}...`}</p>
           </div>
         </div>
       </li>

@@ -40,7 +40,7 @@ class HomePaper extends Component {
             <span>{category}</span>
           </div>
           <div>
-            <p>{`${abstract.slice(0, 200)}...`}</p>
+            <p>{`${abstract.slice(0, 100)}...`}</p>
           </div>
         </div>
       </li>

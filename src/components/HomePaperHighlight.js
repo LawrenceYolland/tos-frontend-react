@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import HeadingBorder from "./HeadingBorder";
-import PaperIndex from "../views/PaperIndex";
 import moment from "moment";
-import Paper from "./Paper";
 import HomePaper from "./HomePaper";
 import PromotedPaper from "./PromotedPaper";
-
+import { Link } from "react-router-dom";
+import MoreLink from "./MoreLink";
 class HomePaperHighlight extends Component {
   hottestPapersBiology = papers => {
     const sortedPapers = papers.sort((a, b) => b.reviewCount - a.reviewCount);
@@ -40,17 +39,19 @@ class HomePaperHighlight extends Component {
     ).map(p => (
       <PromotedPaper key={p.id} id={p.id} {...p} promotedType="hottest" />
     ))[0];
+
     return (
       <div className="home-paper-highlight-container">
         <HeadingBorder title={"latest posts"} />
         <div className="featured-latest-paper">{promotedLatestPaper}</div>
         <div className="list-latest-papers">{papersLatest}</div>
-
+        <MoreLink path={"/papers"}/>
         <HeadingBorder title={"hot in biology"} />
         <div className="featured-latest-paper">
           {promotedHottestPaperBiology}
         </div>
         <div className="list-latest-papers"> {papersHottestBiology}</div>
+        <MoreLink path={"/papers"}/>
       </div>
     );
   }
