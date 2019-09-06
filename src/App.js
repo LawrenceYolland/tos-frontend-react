@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { withRouter } from "react-router-dom";
 import API from "./adapters/API";
-import MenuBar from "./components/MenuBar";
+import MenuBar from "./containers/MenuBar";
 import Menu from "./views/Menu";
 import moment from "moment";
 

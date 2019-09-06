@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class HomePaper extends Component {
-
-
   upCaseTitles = title => {
     return title
       .split(" ")
@@ -27,21 +25,13 @@ class HomePaper extends Component {
       <li className="home-list-item">
         <div className="home-title-container">
           <small>
-            <em>
-              <span className="created-at">
-                {this.editTimeFormat(created_at)}
-              </span>
-            </em>
+            <span className="created-at">
+              {this.editTimeFormat(created_at)}
+            </span>
           </small>
           <Link to={path}>
             <h4>{this.upCaseTitles(title)}</h4>
           </Link>
-          <div className={`paper-category-${category.toLowerCase()}`}>
-            <span>{category}</span>
-          </div>
-          <div>
-            <p>{`${abstract.slice(0, 200)}...`}</p>
-          </div>
         </div>
       </li>
     );
