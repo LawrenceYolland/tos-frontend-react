@@ -24,7 +24,7 @@ class UserPaper extends Component {
       <li className={`${indexType}-list-item`}>
         <div className={`${indexType}-title-container `}>
           <Link to={path}>
-            <h3>{this.upCaseTitles(title)}</h3>
+            <h4>{this.upCaseTitles(title)}</h4>
           </Link>
           <div className={`paper-category-${category.toLowerCase()}`}>
             <span>{category}</span>

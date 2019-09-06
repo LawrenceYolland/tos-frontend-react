@@ -47,7 +47,7 @@ class HomePaperHighlight extends Component {
         <div className="list-latest-papers">{papersLatest}</div>
         <MoreLink path={"/papers"}/>
         <HeadingBorder title={"hot in biology"} />
-        <div className="featured-latest-paper">
+        <div className="featured-hottest-paper">
           {promotedHottestPaperBiology}
         </div>
         <div className="list-latest-papers"> {papersHottestBiology}</div>

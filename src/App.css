@@ -16,6 +16,7 @@ h5 {
 .App {
   text-align: center;
   position: relative;
+  margin-bottom: 5em;
 }
 
 /*  header and footer */
@@ -29,10 +30,10 @@ header {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
 }
 
 header a {
@@ -44,7 +45,7 @@ footer {
   position: relative;
   min-width: 100vw;
   background-color: #282c34;
-  height: 200px;
+  height: 20em;
   display: flex;
   bottom: 0;
 }
@@ -155,7 +156,7 @@ footer h1 {
 
 .image-container-promoted {
   width: 80vw;
-  height: 250px;
+  height: 20em;
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
@@ -227,10 +228,10 @@ span.created-at {
 /* Sign In / Sign Up */
 .button-block {
   display: flex;
-  top: 0px;
+  position: absolute;
+  top: 0;
   margin-top: 35vh;
   z-index: 1;
-  position: absolute;
 }
 
 .sign-up-button,
@@ -297,7 +298,7 @@ span.created-at {
 }
 
 #menu input {
-  margin: auto auto 30px auto;
+  margin: auto auto 1em auto;
   background-color: #282c34;
   font-size: 2em;
   width: 80vw;
@@ -346,11 +347,17 @@ span.created-at {
   margin: auto;
 }
 
+form.ui.form {
+  position: absolute;
+  width: 80%;
+  border: 1px solid black;
+}
+
 .papers-list,
 .user-papers-container,
 .reviews-container {
   list-style: none;
-  width: 90vw; /*was 80% !!! */
+  width: 90vw;
   padding: 0;
   margin: 0 auto 0 auto;
   text-align: center;
@@ -469,7 +476,7 @@ span[class^="main-rate-"] {
 }
 
 span[class^="main-rate-value"] {
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 span.positive {
@@ -494,6 +501,7 @@ span.negative {
 .paper-sort-btn {
   margin-left: 1.1em;
 }
+
 .no-content {
   /* height: 100%; */
   overflow: hidden;
