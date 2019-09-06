@@ -15,8 +15,10 @@ h5 {
 
 .App {
   text-align: center;
+  position: relative;;
 }
 
+/*  header and footer */
 header {
   z-index: 999;
   background-color: #282c34;
@@ -28,7 +30,7 @@ header {
   font-size: calc(10px + 2vmin);
   color: white;
 
-  position: fixed; /* previously fixed */
+  position: fixed;
   top: 0;
   width: 100vw;
 }
@@ -36,25 +38,39 @@ header {
 header a {
   margin: auto;
   color: white;
+  /* padding: 2px; */
+}
+
+
+footer {
+  position: relative;
+  min-width: 100vw;
+  background-color: #282c34;
+  height: 40vh;
+  display: flex;
+}
+
+footer a {
+  margin: auto;
+  color: white;
 }
 
 /* Home */
 .home-container {
   position: relative;
-  height: 100vh;
+  height: 100%;
   background-color: black;
 }
 
 .home-splash {
   background-color: #c7c6c6;
-  height: 50%;
+  min-height: 90vh;
   min-width: 100vw;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   align-items: center;
   justify-content: center;
-  top: 0px;
   color: whitesmoke;
   z-index: 1;
 }
@@ -64,10 +80,9 @@ header a {
 }
 
 .home-content-container {
-  position: absolute;
+  position: relative;
   background-color: white;
   z-index: 20;
-  top: 50vh;
   width: 100%;
   height: 100%;
 }

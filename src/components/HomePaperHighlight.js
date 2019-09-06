@@ -3,8 +3,8 @@ import HeadingBorder from "./HeadingBorder";
 import moment from "moment";
 import HomePaper from "./HomePaper";
 import PromotedPaper from "./PromotedPaper";
-import { Link } from "react-router-dom";
 import MoreLink from "./MoreLink";
+
 class HomePaperHighlight extends Component {
   hottestPapersBiology = papers => {
     const sortedPapers = papers.sort((a, b) => b.reviewCount - a.reviewCount);

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import "./App.css";
 import { withRouter } from "react-router-dom";
@@ -8,6 +8,7 @@ import Menu from "./views/Menu";
 import moment from "moment";
 
 import CreateRoutes from "./containers/Routing";
+import FooterBar from "./containers/FooterBar";
 
 class App extends Component {
   state = {
@@ -296,6 +297,7 @@ class App extends Component {
 
   render() {
     return (
+      <Fragment>
       <div className="App">
         <MenuBar
           user={this.state.user}
@@ -328,6 +330,9 @@ class App extends Component {
           sortPapers={this.sortPapers}
         />
       </div>
+      <FooterBar/>
+
+      </Fragment>
     );
   }
 }

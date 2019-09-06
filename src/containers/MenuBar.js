@@ -12,7 +12,7 @@ class MenuBar extends Component {
     // const profilePath = `/users/${user.user_id}`;
     const menu =
       user.username === null ? (
-        <Fragment>
+        <div>
           <NavLink
             exact
             to="/signin"
@@ -41,7 +41,6 @@ class MenuBar extends Component {
               🏠
             </span>
           </NavLink>
-
           <NavLink
             exact
             to="/signup"
@@ -68,9 +67,9 @@ class MenuBar extends Component {
               🍔
             </span>
           </NavLink>
-        </Fragment>
+        </div>
       ) : (
-        <Fragment>
+        <div>
           <NavLink
             onClick={() => {
               this.handleShowMenu();
@@ -128,7 +127,7 @@ class MenuBar extends Component {
               🍔
             </span>
           </NavLink>
-        </Fragment>
+        </div>
       );
     return <header>{menu}</header>;
   }
