@@ -41,7 +41,7 @@ class HomePaperHighlight extends Component {
     ))[0];
 
     return (
-      <div className="home-paper-highlight-container">
+      <div  className="home-paper-highlight-container">
         <HeadingBorder title={"latest posts"} />
         <div className="featured-latest-paper">{promotedLatestPaper}</div>
         <div className="list-latest-papers">{papersLatest}</div>
