@@ -18,26 +18,46 @@ html {
 }
 
 /*  header and footer */
-header {
+/* header {
   z-index: 999;
-  background-color: whitesmoke;
-  /* #282c34; */
+  background-color: #282c34;
   height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgba(0, 0, 0, 0);
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
 }
 
 header a {
   margin: auto;
-  color: white;
+  color: #282c34;
+  font-weight: 900;
+} */
+
+.header-icon-container {
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+  margin-top: 2.5em;
+}
+
+.burger-menu {
+  position: absolute;
+  right: 5%;
+}
+
+.burger-menu-icon {
+  color: #222;
+}
+
+.home-menu {
+  position: absolute;
+  left: 5%;
 }
 
 footer {
@@ -259,6 +279,10 @@ span.scroll {
   line-height: 1.2;
   color: #222;
   font-style: italic;
+
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
 }
 
 span.created-at {
@@ -310,8 +334,7 @@ span.created-at {
 .drop-menu {
   position: fixed;
   z-index: 100;
-  top: 10vh;
-  /* left: 0px; */
+  /* top: 10vh; */
   min-width: 100vw;
   height: 100vh;
   background-color: #282c34;
@@ -320,7 +343,11 @@ span.created-at {
   transition: 0.5s;
 }
 
+
+
 #menu {
+  position: absolute;
+  top: 10vh;
   list-style: none;
   text-align: center;
   width: 100%;
@@ -332,6 +359,8 @@ span.created-at {
   padding-bottom: 30px;
   padding-top: 30px;
   font-size: 2em;
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 #menu a:hover > li {
@@ -361,7 +390,7 @@ span.created-at {
 .all-papers,
 .paper-show-container,
 .not-found {
-  margin-top: 12vh;
+  /* margin-top: 12vh; */
   min-height: 800px;
 }
 

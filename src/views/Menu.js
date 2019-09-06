@@ -54,21 +54,7 @@ class Menu extends Component {
               </span>
             </li>
           </NavLink>
-          <NavLink
-            to={profilePath}
-            activeStyle={{
-              fontWeight: "bold",
-              color: "#f9009a"
-            }}
-            onClick={this.props.showMenu}
-          >
-            <li>
-              Profile
-              <span role="img" aria-label="Profile">
-                👩‍🔬
-              </span>
-            </li>
-          </NavLink>
+
           <NavLink
             to="/papers"
             activeStyle={{
@@ -85,23 +71,40 @@ class Menu extends Component {
             </li>
           </NavLink>
           {user.user_id !== null ? (
-            <NavLink
-              activeStyle={{
-                fontWeight: "bold",
-                color: "#f9009a"
-              }}
-              onClick={() => {
-                this.props.showMenu();
-                this.props.signOut();
-              }}
-            >
-              <li>
-                Sign Out
-                <span role="img" aria-label="Sign Out">
-                  👋
-                </span>
-              </li>
-            </NavLink>
+            <Fragment>
+              <NavLink
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "#f9009a"
+                }}
+                onClick={() => {
+                  this.props.showMenu();
+                  this.props.signOut();
+                }}
+              >
+                <li>
+                  Sign Out
+                  <span role="img" aria-label="Sign Out">
+                    👋
+                  </span>
+                </li>
+              </NavLink>
+              <NavLink
+                to={profilePath}
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "#f9009a"
+                }}
+                onClick={this.props.showMenu}
+              >
+                <li>
+                  Profile
+                  <span role="img" aria-label="Profile">
+                    👩‍🔬
+                  </span>
+                </li>
+              </NavLink>
+            </Fragment>
           ) : (
             <Fragment>
               <NavLink
