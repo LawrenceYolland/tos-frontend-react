@@ -23,7 +23,7 @@ html {
   position: fixed;
   width: 100vw;
   z-index: 999;
-  margin-top: 2.5em;
+  margin-top: 2em;
 }
 
 .burger-menu {
@@ -299,21 +299,6 @@ span.created-at {
   margin: 0 5px 0 5px;
 }
 
-.bio-edit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80vw;
-  margin: 0 auto 0 auto;
-}
-
-.bio-input {
-  border-radius: 5px;
-  border: 1px solid grey;
-  height: 100px;
-  width: 100%;
-}
-
 .icon-form-container {
   width: 40vw;
   text-align: center;
@@ -430,11 +415,134 @@ span.created-at {
   outline: none;
 }
 
-.user-profile-container,
+.user-body,
 .all-papers,
 .paper-show-container,
 .not-found {
   min-height: 800px;
+  position: relative;
+}
+
+.s {
+  height: 10vh;
+  width: 100vw;
+  position: relative;
+}
+
+.user-info-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 80vw;
+  height: max-content;
+  margin: auto;
+}
+
+.profile-info-block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1.2em;
+}
+
+.user-header {
+  width: 50%;
+  text-transform: capitalize;
+  font-size: 2.2em;
+}
+
+.profile-image {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+}
+
+.edit-container {
+  position: relative;
+  width: 50%;
+}
+
+.edit-container button {
+  position: absolute;
+  left: 1.5em;
+  bottom: 25%;
+  font-size: 1.1em;
+  font-weight: 900;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+  color: #222;
+  font-style: italic;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+
+.bio-edit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 80vw;
+  margin: 0 auto 0 auto;
+}
+
+.bio-input {
+  height: 10em;
+  width: 100%;
+  line-height: 1.2em;
+  font-size: 1.2em;
+  border-bottom: 1px solid black;
+}
+
+.user-bio-container p {
+  line-height: 1.2em;
+  font-size: 1.2em;
+}
+
+.form-buttons {
+  margin-top: 0.2em;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.form-buttons button {
+  font-size: 1.1em;
+  font-weight: 900;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+  color: #222;
+  font-style: italic;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+
+.user-stats {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5em;
+}
+
+.user-stats span {
+  color: #999;
+}
+
+span.paper-count {
+  margin-right: 1.1em;
+}
+
+.papers-header {
+  width: 80%;
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 .paper-show-container {

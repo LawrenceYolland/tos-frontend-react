@@ -34,6 +34,7 @@ class PostPaper extends Component {
   handleSubmit = () => {
     if (!this.validate()) return
     this.props.userPostsPaper(this.state.paper);
+    this.props.updatePaperCount()
     this.props.addPaperToggle();
   };
 
