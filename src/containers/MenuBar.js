@@ -18,32 +18,16 @@ class MenuBar extends Component {
       </span>
     );
     const menu = (
-      <div>
-        <NavLink
-          exact
-          to="/"
-          activeStyle={{
-            fontWeight: "bold",
-            color: "#f9009a"
-          }}
-          onClick={this.handleShowMenu}
-          className="home-menu"
-        >
-          <span role="img" aria-label="Home">
-            <h1> 🏠</h1>
-          </span>
-        </NavLink>
-        <NavLink
-          className="burger-menu"
-          onClick={showMenu}
-          activeStyle={{
-            fontWeight: "bold",
-            color: "#f9009a"
-          }}
-        >
-          {menuLogo}
-        </NavLink>
-      </div>
+      <NavLink
+        className="burger-menu"
+        onClick={showMenu}
+        activeStyle={{
+          fontWeight: "bold",
+          color: "#f9009a"
+        }}
+      >
+        {menuLogo}
+      </NavLink>
     );
 
     return <div className="header-icon-container">{menu}</div>;
