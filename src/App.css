@@ -460,11 +460,11 @@ span.created-at {
   margin: auto;
 }
 
-form.ui.form {
+/* form.ui.form {
   position: absolute;
   width: 80%;
   border: 1px solid black;
-}
+} */
 
 .papers-list,
 .user-papers-container,
