@@ -18,27 +18,6 @@ html {
   margin-bottom: 5em;
 }
 
-/*  header and footer */
-/* header {
-  z-index: 999;
-  background-color: #282c34;
-  height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  position: relative;
-  top: 0;
-  width: 100%;
-}
-
-header a {
-  margin: auto;
-  color: #282c34;
-  font-weight: 900;
-} */
-
 .header-icon-container {
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
@@ -387,20 +366,50 @@ span.created-at {
   padding: 0.5em;
   letter-spacing: 0.1em;
   animation: fadeIn 1s linear forwards;
+}
 
+@keyframes slide-left-moji {
+  from {
+    transform: translateX(-2em) translateY(-1em) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-1em) translateY(-0.5em) scale(0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right-moji {
+  from {
+    transform: translateX(2em) translateY(1em) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(1em) translateY(0.5em) scale(0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 #menu a > span.left-moji {
   position: absolute;
   left: 2%;
   font-size: 1.2em;
-
+  animation: slide-left-moji 0.5s linear;
 }
 
 #menu a > span.right-moji {
   position: absolute;
   right: 2%;
   font-size: 1.2em;
+  animation: slide-right-moji 0.5s linear;
 }
 
 #menu input {

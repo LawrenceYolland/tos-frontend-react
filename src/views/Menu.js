@@ -44,8 +44,8 @@ class Menu extends Component {
               exact
               to="/"
               activeStyle={{
-                color: "#f9009a",
-                backgroundColor: "white"
+                color: "#f9009a"
+                // backgroundColor: "white"
               }}
               onClick={this.props.showMenu}
             >
@@ -55,8 +55,8 @@ class Menu extends Component {
             <NavLink
               to="/papers"
               activeStyle={{
-                color: "#f9009a",
-                backgroundColor: "white"
+                color: "#f9009a"
+                // backgroundColor: "white"
               }}
               onClick={this.props.showMenu}
             >
@@ -68,8 +68,8 @@ class Menu extends Component {
                 <NavLink
                   to={profilePath}
                   activeStyle={{
-                    color: "#f9009a",
-                    backgroundColor: "white"
+                    color: "#f9009a"
+                    // backgroundColor: "white"
                   }}
                   onClick={this.props.showMenu}
                 >
@@ -78,8 +78,8 @@ class Menu extends Component {
                 </NavLink>
                 <NavLink
                   activeStyle={{
-                    color: "#f9009a",
-                    backgroundColor: "white"
+                    color: "#f9009a"
+                    // backgroundColor: "white"
                   }}
                   onClick={() => {
                     this.props.showMenu();
@@ -95,26 +95,28 @@ class Menu extends Component {
                 <NavLink
                   to="/signin"
                   activeStyle={{
-                    color: "#f9009a",
-                    backgroundColor: "white"
+                    color: "#f9009a"
+                    // backgroundColor: "white"
                   }}
                   onClick={() => {
                     this.props.showMenu();
                   }}
                 >
                   Sign In
+                  <span className="left-moji">🔭</span>
                 </NavLink>
                 <NavLink
                   to="/signup"
                   activeStyle={{
-                    color: "#f9009a",
-                    backgroundColor: "white"
+                    color: "#f9009a"
+                    // backgroundColor: "white"
                   }}
                   onClick={() => {
                     this.props.showMenu();
                   }}
                 >
                   Sign Up
+                  <span className="right-moji">🧬</span>
                 </NavLink>
               </Fragment>
             )}
