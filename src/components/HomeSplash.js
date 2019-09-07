@@ -7,7 +7,7 @@ const HomeSplash = ({ setPosition }) => {
       <div className="home-splash-image"></div>
       <div className="home-splash-overlay"></div>
       {/* <div onClick={setPosition} className="scroll"> */}
-      <a href="#content-top">
+      <a href="#content-top" id="scroll-link">
         <span className="scroll">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172">
             <g style={{ fill: "#f9009a" }}>

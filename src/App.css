@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 * {
@@ -18,26 +19,55 @@ html {
 }
 
 /*  header and footer */
-header {
+/* header {
   z-index: 999;
-  background-color: whitesmoke;
-  /* #282c34; */
+  background-color: #282c34;
   height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
 }
 
 header a {
   margin: auto;
-  color: white;
+  color: #282c34;
+  font-weight: 900;
+} */
+
+.header-icon-container {
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+  margin-top: 2.5em;
+}
+
+.burger-menu {
+  position: absolute;
+  right: 5%;
+}
+
+.icon-open,
+.icon-closed {
+  color: #f9009a;
+}
+
+.icon-open {
+  font-size: 2em;
+}
+
+.icon-closed {
+  font-size: 2.5em;
+}
+
+.home-menu {
+  position: absolute;
+  left: 5%;
 }
 
 footer {
@@ -80,17 +110,15 @@ footer h1 {
   margin: auto;
 }
 
-span.scroll {
+#scroll-link {
   position: absolute;
   z-index: 999;
   bottom: 5%;
-  width: 3em;
-  height: 3em;
 }
 
 .scroll svg {
-  width: 80%;
-  height: 80%;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 /* used as an anchor for the scroll prompt */
@@ -231,7 +259,6 @@ span.scroll {
 .more-header-title::before {
   border-bottom: 2px solid #f9009a;
   border-left: 2px solid #f9009a;
-
   content: " ";
   height: 50px;
   left: -16px;
@@ -259,6 +286,10 @@ span.scroll {
   line-height: 1.2;
   color: #222;
   font-style: italic;
+
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
 }
 
 span.created-at {
@@ -310,8 +341,6 @@ span.created-at {
 .drop-menu {
   position: fixed;
   z-index: 100;
-  top: 10vh;
-  /* left: 0px; */
   min-width: 100vw;
   height: 100vh;
   background-color: #282c34;
@@ -321,6 +350,8 @@ span.created-at {
 }
 
 #menu {
+  position: absolute;
+  top: 10vh;
   list-style: none;
   text-align: center;
   width: 100%;
@@ -332,6 +363,8 @@ span.created-at {
   padding-bottom: 30px;
   padding-top: 30px;
   font-size: 2em;
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 #menu a:hover > li {
@@ -343,7 +376,6 @@ span.created-at {
   background-color: #282c34;
   font-size: 2em;
   width: 80vw;
-  /* border-radius: 10px; */
   text-align: center;
   color: #c7c6c6;
   min-height: 50px;
@@ -361,7 +393,6 @@ span.created-at {
 .all-papers,
 .paper-show-container,
 .not-found {
-  margin-top: 12vh;
   min-height: 800px;
 }
 
