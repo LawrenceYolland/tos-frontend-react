@@ -1,14 +1,12 @@
-import React, { Component, Fragment } from "react";
-
+import React, { Component } from "react";
 import "./App.css";
 import { withRouter } from "react-router-dom";
 import API from "./adapters/API";
-import MenuBar from "./containers/MenuBar";
+import MenuBar from "./components/MenuBar";
 import Menu from "./views/Menu";
 import moment from "moment";
 
 import CreateRoutes from "./containers/Routing";
-import FooterBar from "./containers/FooterBar";
 
 class App extends Component {
   state = {
@@ -28,7 +26,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    // debugger
     console.log("App has mounted ... 🌈");
     API.validateUser().then(user => {
       console.log("who dis? 🤷‍", user);
@@ -243,7 +240,7 @@ class App extends Component {
 
   updateRating = (value, id) => {
     API.updatePaperRating(value, id);
-    return this.state.allPapers.map(paper => {
+    return this.state.allPapers.forEach(paper => {
       if (paper.id === id) {
         paper.rating = value;
       }
@@ -264,6 +261,16 @@ class App extends Component {
     switch (sortType) {
       default:
         break;
+      case "Ascending":
+        this.setState({
+          allPapers: this.sortAscendingName(this.state.allPapers)
+        });
+        break;
+      case "Descending":
+        this.setState({
+          allPapers: this.sortDescendingName(this.state.allPapers)
+        });
+        break;
       case "Rating":
         this.setState({
           allPapers: this.sortRating(this.state.allPapers)
@@ -282,56 +289,54 @@ class App extends Component {
     }
   };
 
-  // sortAscendingName = papers =>
-  //   papers.sort((a, b) => a.title.localeCompare(b.title));
+  sortAscendingName = papers =>
+    papers.sort((a, b) => a.title.localeCompare(b.title));
 
-  // sortDescendingName = papers =>
-  //   papers.sort((a, b) => b.title.localeCompare(a.title));
+  sortDescendingName = papers =>
+    papers.sort((a, b) => b.title.localeCompare(a.title));
 
   sortRating = papers => papers.sort((a, b) => b.rating - a.rating);
 
   sortDebated = papers => papers.sort((a, b) => b.reviewCount - a.reviewCount);
 
-  sortCreatedAt = papers =>
+  sortCreatedAt = papers => 
     papers.sort((a, b) => moment(b.created_at) - moment(a.created_at));
+  
 
   render() {
     return (
-      <Fragment>
-        <div className="App">
-          <MenuBar
+      <div className="App">
+        <MenuBar
+          user={this.state.user}
+          signOut={this.signOut}
+          showMenu={this.showMenu}
+          menuState={this.state.menu}
+        />
+        {!this.state.menu ? null : (
+          <Menu
+            menu={this.state.menu}
             user={this.state.user}
             signOut={this.signOut}
             showMenu={this.showMenu}
-            menuState={this.state.menu}
           />
-          {!this.state.menu ? null : (
-            <Menu
-              menu={this.state.menu}
-              user={this.state.user}
-              signOut={this.signOut}
-              showMenu={this.showMenu}
-            />
-          )}
-          <CreateRoutes
-            user={this.state.user}
-            signOut={this.signOut}
-            submitSignUp={this.submitSignUp}
-            loggingUser={this.state.loggingUser}
-            submitSignIn={this.submitSignIn}
-            updateBio={this.updateBio}
-            userPapers={this.filterPapers}
-            allPapers={this.state.allPapers}
-            userPostsPaper={this.userPostsPaper}
-            allUsers={this.state.allUsers}
-            allPaperIDs={this.state.allPaperIDs}
-            usersPostsReview={this.usersPostsReview}
-            updateRating={this.updateRating}
-            sortPapers={this.sortPapers}
-          />
-        </div>
-        <FooterBar />
-      </Fragment>
+        )}
+        <CreateRoutes
+          user={this.state.user}
+          signOut={this.signOut}
+          submitSignUp={this.submitSignUp}
+          loggingUser={this.state.loggingUser}
+          submitSignIn={this.submitSignIn}
+          updateBio={this.updateBio}
+          userPapers={this.filterPapers}
+          allPapers={this.state.allPapers}
+          userPostsPaper={this.userPostsPaper}
+          allUsers={this.state.allUsers}
+          allPaperIDs={this.state.allPaperIDs}
+          usersPostsReview={this.usersPostsReview}
+          updateRating={this.updateRating}
+          sortPapers={this.sortPapers}
+        />
+      </div>
     );
   }
 }
