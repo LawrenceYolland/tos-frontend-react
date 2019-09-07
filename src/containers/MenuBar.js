@@ -7,9 +7,16 @@ class MenuBar extends Component {
     this.props.showMenu();
   };
   render() {
-    const { user, showMenu } = this.props;
-    // console.log("this is the current user => 👋", user.user_id);
-    // const profilePath = `/users/${user.user_id}`;
+    const { showMenu, menuState } = this.props;
+    const menuLogo = !menuState ? (
+      <span className="icon-open" aria-label="Menu open">
+        &#9776;
+      </span>
+    ) : (
+      <span className="icon-closed" aria-label="Menu close">
+        &times;
+      </span>
+    );
     const menu = (
       <div>
         <NavLink
@@ -34,9 +41,7 @@ class MenuBar extends Component {
             color: "#f9009a"
           }}
         >
-          <span role="img" aria-label="Menu">
-            <h1 className="burger-menu-icon">&#9776; </h1>
-          </span>
+          {menuLogo}
         </NavLink>
       </div>
     );

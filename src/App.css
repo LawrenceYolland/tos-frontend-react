@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 * {
@@ -51,9 +52,19 @@ header a {
   right: 5%;
 }
 
-.burger-menu-icon {
-  color: #222;
+.icon-open, .icon-closed {
+  color: #f9009a;
 }
+
+.icon-open {
+  font-size: 2em;
+}
+
+.icon-closed {
+  font-size: 2.5em;
+}
+
+
 
 .home-menu {
   position: absolute;
@@ -100,17 +111,15 @@ footer h1 {
   margin: auto;
 }
 
-span.scroll {
+#scroll-link {
   position: absolute;
   z-index: 999;
   bottom: 5%;
-  width: 3em;
-  height: 3em;
 }
 
 .scroll svg {
-  width: 80%;
-  height: 80%;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 /* used as an anchor for the scroll prompt */
@@ -251,7 +260,6 @@ span.scroll {
 .more-header-title::before {
   border-bottom: 2px solid #f9009a;
   border-left: 2px solid #f9009a;
-
   content: " ";
   height: 50px;
   left: -16px;
@@ -334,7 +342,6 @@ span.created-at {
 .drop-menu {
   position: fixed;
   z-index: 100;
-  /* top: 10vh; */
   min-width: 100vw;
   height: 100vh;
   background-color: #282c34;
@@ -342,8 +349,6 @@ span.created-at {
 
   transition: 0.5s;
 }
-
-
 
 #menu {
   position: absolute;
@@ -372,7 +377,6 @@ span.created-at {
   background-color: #282c34;
   font-size: 2em;
   width: 80vw;
-  /* border-radius: 10px; */
   text-align: center;
   color: #c7c6c6;
   min-height: 50px;
@@ -390,7 +394,6 @@ span.created-at {
 .all-papers,
 .paper-show-container,
 .not-found {
-  /* margin-top: 12vh; */
   min-height: 800px;
 }
 

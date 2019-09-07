@@ -54,7 +54,6 @@ class Menu extends Component {
               </span>
             </li>
           </NavLink>
-
           <NavLink
             to="/papers"
             activeStyle={{
@@ -146,9 +145,6 @@ class Menu extends Component {
         </ul>
       </div>
     );
-
-    // the menu to be rendered when not signed in
-
     return <Fragment>{view}</Fragment>;
   }
 }
