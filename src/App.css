@@ -52,7 +52,8 @@ header a {
   right: 5%;
 }
 
-.icon-open, .icon-closed {
+.icon-open,
+.icon-closed {
   color: #f9009a;
 }
 
@@ -63,8 +64,6 @@ header a {
 .icon-closed {
   font-size: 2.5em;
 }
-
-
 
 .home-menu {
   position: absolute;
