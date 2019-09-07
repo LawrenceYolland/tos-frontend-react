@@ -1,17 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 
-class SortPapers extends Component {
-  render() {
-    return (
-      <select onChange={e => this.props.sortPapers(e.target.value)}>
-        <option value="Ascending">title ascending</option>
-        <option value="Descending">title descending</option>
-        <option value="Rating">rating</option>
-        <option value="Debated">debated</option>
-        <option value="Latest">latest</option>
-      </select>
-    );
-  }
-}
+const SortPapers = ({ sortPapers }) => {
+  return (
+    <div className="paper-sort-btn-collection">
+      <button
+        className="paper-sort-btn"
+        value="Rating"
+        onClick={e => sortPapers(e.target.value)}
+      >
+        <span role="img" aria-label="Rating">🔥</span>Rating
+      </button>
+      <button
+        className="paper-sort-btn"
+        value="Debated"
+        onClick={e => sortPapers(e.target.value)}
+      >
+        <span role="img" aria-label="Debated">🧨</span>Debated
+      </button>
+      <button
+        className="paper-sort-btn"
+        value="Latest"
+        onClick={e => sortPapers(e.target.value)}
+      >
+        <span role="img" aria-label="Latest">⏱</span>Latest
+      </button>
+    </div>
+  );
+};
 
 export default SortPapers;
