@@ -24,8 +24,7 @@ const CreateRoutes = ({
   allPaperIDs,
   usersPostsReview,
   updateRating,
-  sortPapers,
-  sortCreatedAt
+  sortPapers
 }) => {
   // console.log("the user in routes ====>", props);
   return user.username === null ? (
@@ -33,9 +32,7 @@ const CreateRoutes = ({
       <Route
         exact
         path="/"
-        render={() => (
-          <Home user={user} signOut={signOut} allPapers={allPapers} />
-        )}
+        render={() => <Home user={user} signOut={signOut} />}
       />
       <Route
         exact
@@ -58,9 +55,7 @@ const CreateRoutes = ({
       <Route
         exact
         path="/"
-        render={() => (
-          <Home user={user} signOut={signOut} allPapers={allPapers} />
-        )}
+        render={() => <Home user={user} signOut={signOut} />}
       />
       <Route
         exact

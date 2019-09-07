@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import HomePaperHighlight from "../components/HomePaperHighlight";
 
 class HomeContentContainer extends Component {
   render() {
     return (
       <div className="home-content-container">
-        <HomePaperHighlight allPapers={this.props.allPapers}/>
+        <h1>Home Page Info ...</h1>
+        Some content for the home page
+
       </div>
     );
   }

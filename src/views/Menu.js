@@ -12,12 +12,12 @@ class Menu extends Component {
     const { history } = this.props;
     console.log("🔍 searching for things ...", input);
     // push state with ?query
-    this.props.showMenu();
+    this.props.showMenu()
     history.push(`/papers/search/${input.split(" ").join("-")}`);
   };
 
   handleChange = e => {
-    const { value } = e.target;
+    const {value} = e.target
     this.setState({
       input: value
     });
@@ -26,11 +26,10 @@ class Menu extends Component {
   render() {
     const { user } = this.props;
     const profilePath = `/users/${user.user_id}`;
-    const view = (
-      <Fragment>
-        <div className="drop-menu-overlay"></div>
+    const view =
+      user.user_id !== null ? ( // the menu to be rendered when signed in
         <div className="drop-menu">
-          <div id="menu">
+          <ul id="menu">
             <form onSubmit={this.handleSubmit}>
               <input
                 value={this.state.input}
@@ -44,86 +43,109 @@ class Menu extends Component {
               exact
               to="/"
               activeStyle={{
+                fontWeight: "bold",
                 color: "#f9009a"
-                // backgroundColor: "white"
               }}
               onClick={this.props.showMenu}
             >
-              Home
-              <span className="left-moji">🏠</span>
+              <li>
+                Home
+                <span role="img" aria-label="Home">
+                  🏠
+                </span>
+              </li>
             </NavLink>
+            <NavLink
+              to={profilePath}
+              activeStyle={{
+                fontWeight: "bold",
+                color: "#f9009a"
+              }}
+              onClick={this.props.showMenu}
+            >
+              <li>
+                Profile
+                <span role="img" aria-label="Profile">
+                  👩‍🔬
+                </span>
+              </li>
+            </NavLink>
+
             <NavLink
               to="/papers"
               activeStyle={{
+                fontWeight: "bold",
                 color: "#f9009a"
-                // backgroundColor: "white"
               }}
               onClick={this.props.showMenu}
             >
-              Papers
-              <span className="right-moji">📖</span>
+              <li>
+                Papers
+                <span role="img" aria-label="Papers">
+                  📖
+                </span>
+              </li>
             </NavLink>
-            {user.user_id !== null ? (
-              <Fragment>
-                <NavLink
-                  to={profilePath}
-                  activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
-                  onClick={this.props.showMenu}
-                >
-                  Profile
-                  <span className="left-moji">👩‍🔬</span>
-                </NavLink>
-                <NavLink
-                  activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
-                  onClick={() => {
-                    this.props.showMenu();
-                    this.props.signOut();
-                  }}
-                >
-                  Sign Out
-                  <span className="right-moji">👋</span>
-                </NavLink>
-              </Fragment>
-            ) : (
-              <Fragment>
-                <NavLink
-                  to="/signin"
-                  activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
-                  onClick={() => {
-                    this.props.showMenu();
-                  }}
-                >
-                  Sign In
-                  <span className="left-moji">🔭</span>
-                </NavLink>
-                <NavLink
-                  to="/signup"
-                  activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
-                  onClick={() => {
-                    this.props.showMenu();
-                  }}
-                >
-                  Sign Up
-                  <span className="right-moji">🧬</span>
-                </NavLink>
-              </Fragment>
-            )}
-          </div>
+
+            <NavLink
+              activeStyle={{
+                fontWeight: "bold",
+                color: "#f9009a"
+              }}
+              onClick={() => {
+                this.props.showMenu();
+                this.props.signOut();
+              }}
+            >
+              <li>
+                Sign Out
+                <span role="img" aria-label="Sign Out">
+                  👋
+                </span>
+              </li>
+            </NavLink>
+          </ul>
         </div>
-      </Fragment>
-    );
+      ) : (
+        // the menu to be rendered when not signed in
+        <div className="drop-menu">
+          <ul id="menu">
+            {/* <input type="text" placeholder="search papers ..."></input> */}
+            <NavLink
+              exact
+              to="/"
+              activeStyle={{
+                fontWeight: "bold",
+                color: "#f9009a"
+              }}
+              onClick={this.props.showMenu}
+            >
+              <li>
+                Home
+                <span role="img" aria-label="Home">
+                  🏠
+                </span>
+              </li>
+            </NavLink>
+
+            <NavLink
+              to="/papers"
+              activeStyle={{
+                fontWeight: "bold",
+                color: "#f9009a"
+              }}
+              onClick={this.props.showMenu}
+            >
+              <li>
+                Papers
+                <span role="img" aria-label="Papers">
+                  📖
+                </span>
+              </li>
+            </NavLink>
+          </ul>
+        </div>
+      );
     return <Fragment>{view}</Fragment>;
   }
 }
