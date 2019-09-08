@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Paper extends Component {
   constructor(props) {
@@ -49,7 +49,6 @@ class Paper extends Component {
   };
 
   render() {
-
     const path = `/papers/${this.props.id}`;
     const {
       title,
@@ -60,6 +59,7 @@ class Paper extends Component {
       reviewCount
     } = this.props;
     return (
+      <Link to={path}>
       <li className={`${indexType}-list-item`}>
         <div className={`${indexType}-rate-block`}>
           <span
@@ -82,6 +82,7 @@ class Paper extends Component {
             -
           </span>
         </div>
+
         <div className={`${indexType}-title-container`}>
           <small>
             <em>
@@ -90,9 +91,9 @@ class Paper extends Component {
               </span>
             </em>
           </small>
-          <Link to={path}>
+         
             <h4 className="post-title-index">{this.upCaseTitles(title)}</h4>
-          </Link>
+         
           <div className={`paper-category-${category.toLowerCase()} index-cat`}>
             <span>{category}</span>
           </div>
@@ -100,10 +101,13 @@ class Paper extends Component {
             <p>{`${abstract.slice(0, 100)}...`}</p>
           </div>
           <div>
-            <span role="img" aria-label="review count">💬{reviewCount}</span>
+            <span role="img" aria-label="review count">
+              💬{reviewCount}
+            </span>
           </div>
         </div>
       </li>
+      </Link>
     );
   }
 }

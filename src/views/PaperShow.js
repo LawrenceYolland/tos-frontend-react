@@ -122,6 +122,7 @@ class PaperShow extends Component {
       </Segment>
     ) : (
       <div className="paper-show-container">
+        <div className="s"></div>
         <div>
           <h1>{title}</h1>
           <div className={`paper-category-${category.toLowerCase()}`}>

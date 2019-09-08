@@ -787,12 +787,13 @@ div[class^="paper-category-"] h5 span,
   z-index: -10;
 }
 
-.main-title-container > a {
+.main-title-container {
   color: #222;
 }
 
 .post-title-index {
-  margin-bottom: 1em;
+  margin-top: 0;
+  color: #222;
 }
 
 .index-cat {
