@@ -99,7 +99,8 @@ class UserProfile extends Component {
     });
   };
 
-  updatePaperCount = () => this.setState({paperCount: this.state.paperCount+1})
+  updatePaperCount = () =>
+    this.setState({ paperCount: this.state.paperCount + 1 });
 
   render() {
     const { user, postPaperToggle } = this.state;
@@ -107,7 +108,7 @@ class UserProfile extends Component {
       user.usertype === "Researcher" ? (
         <Fragment>
           <div className="papers-header">
-          <h5>Papers</h5>
+            <h5>Papers</h5>
           </div>
           {postPaperToggle ? (
             <PostPaper
@@ -164,8 +165,10 @@ class UserProfile extends Component {
                   />
                 </form>
                 <div className="form-buttons">
+                  <button className="save-bio-button" form="edit-user-bio">
+                    save
+                  </button>
                   <button onClick={this.handleBioChange}>discard</button>
-                  <button className="save-bio-button" form="edit-user-bio">save</button>
                 </div>
               </div>
             ) : (
@@ -174,8 +177,12 @@ class UserProfile extends Component {
                   <p>{user.bio}</p>
                 </div>
                 <div className="user-stats">
-                  <span className="paper-count">{this.state.paperCount} papers</span>
-                  <span className="review-count">{this.state.reviewCount} reviews</span>
+                  <span className="user-stat-count paper-count">
+                    {this.state.paperCount} papers
+                  </span>
+                  <span className="user-stat-count review-count">
+                    {this.state.reviewCount} reviews
+                  </span>
                 </div>
               </Fragment>
             )}
