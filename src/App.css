@@ -23,7 +23,7 @@ html {
   position: fixed;
   width: 100vw;
   z-index: 999;
-  margin-top: 2.5em;
+  margin-top: 2em;
 }
 
 .burger-menu {
@@ -53,7 +53,7 @@ html {
 }
 
 footer {
-  position: relative;
+  /* position: relative; */
   min-width: 100vw;
   background-color: #282c34;
   height: 20em;
@@ -299,21 +299,6 @@ span.created-at {
   margin: 0 5px 0 5px;
 }
 
-.bio-edit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80vw;
-  margin: 0 auto 0 auto;
-}
-
-.bio-input {
-  border-radius: 5px;
-  border: 1px solid grey;
-  height: 100px;
-  width: 100%;
-}
-
 .icon-form-container {
   width: 40vw;
   text-align: center;
@@ -430,11 +415,139 @@ span.created-at {
   outline: none;
 }
 
-.user-profile-container,
+.user-body,
 .all-papers,
 .paper-show-container,
 .not-found {
   min-height: 800px;
+  position: relative;
+}
+
+.s {
+  height: 10vh;
+  width: 100vw;
+  position: relative;
+}
+
+.user-info-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 80vw;
+  height: max-content;
+  margin: auto;
+}
+
+.profile-info-block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1.2em;
+}
+
+.user-header {
+  width: 50%;
+  text-transform: capitalize;
+  font-size: 2.2em;
+}
+
+.profile-image {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+}
+
+.edit-container {
+  position: relative;
+  width: 50%;
+}
+
+.edit-container button {
+  position: absolute;
+  left: 1.5em;
+  bottom: 25%;
+  font-size: 1.1em;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+  color: #222;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+
+.bio-edit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 80vw;
+  margin: 0 auto 0 auto;
+}
+
+.bio-input {
+  height: 10em;
+  width: 100%;
+  line-height: 1.2em;
+  font-size: 1.2em;
+  border-bottom: 1px solid black;
+}
+
+.user-bio-container p {
+  line-height: 1.2em;
+  font-size: 1.2em;
+}
+
+.form-buttons {
+  margin-top: 0.2em;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.form-buttons button {
+  position: absolute;
+  font-size: 1.1em;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+  color: #222;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+
+.save-bio-button {
+  /* margin-left: 0.5em; */
+}
+
+.discard-bio-button {
+  left: 20%;
+}
+
+.user-stats {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5em;
+}
+
+.user-stats span {
+  color: #999;
+}
+
+span.paper-count {
+  margin-right: 1.1em;
+}
+
+.papers-header {
+  width: 80%;
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .paper-show-container {
@@ -443,16 +556,77 @@ span.created-at {
   margin-right: auto;
 }
 
+/* user papers container */
 .user-papers-container {
-  border: 2px solid whitesmoke;
-  border-radius: 5px;
+  width: 90vw;
+  list-style: none;
+  position: relative;
 }
 
-.user-papers-container li a {
-  margin: auto;
-  font-size: 1em;
-  padding-bottom: 5px;
+.user-list-item {
+  text-align: left;
+  border-bottom: 1px dashed #e5e5e5;
 }
+
+.user-list-item h4 {
+  color: black;
+  margin-top: .5em;
+}
+
+.user-list-item p {
+  color: black;
+  margin-bottom: 1em;
+}
+
+.user-stats {
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 2px;
+  color: #000 !important;
+  position: relative;
+}
+
+span.user-stat-count {
+  font-size: 0.8rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+span.review-count,
+span.paper-count {
+  background: radial-gradient(rgba(0, 249, 170, 1), rgba(255, 255, 255, 0.8));
+  text-align: center;
+}
+
+span.review-count {
+  position: absolute;
+  left: 20%;
+}
+
+span.paper-count {
+  position: absolute;
+  left: 0;
+}
+
+.add-paper-button-container {
+  position: relative;
+  width: 90vw;
+  height: 1.5em;
+}
+
+.add-paper-button-container button {
+  position: absolute;
+  left: 10%;
+  bottom: 25%;
+  font-size: 1.1em;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+
+/* user papers container */
 
 .post-input-container {
   z-index: 999;
@@ -467,7 +641,6 @@ span.created-at {
 } */
 
 .papers-list,
-.user-papers-container,
 .reviews-container {
   list-style: none;
   width: 90vw;
@@ -554,10 +727,8 @@ div[class^="paper-category-"] h5 span,
 }
 
 .main-title-container {
-  /* border: 0.5px solid grey; */
   padding: 5px;
   width: 90%;
-  /* border-radius: 5px; */
   text-align: start;
   z-index: -10;
 }
