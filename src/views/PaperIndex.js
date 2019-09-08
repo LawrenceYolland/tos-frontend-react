@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Paper from "../components/Paper";
 import SortPapers from "../components/SortPapers";
 import FilterPapers from "../components/FilterPapers";
@@ -67,17 +67,23 @@ class PaperIndex extends Component {
       />
     ));
     return (
-      <div className="all-papers">
-        <SortPapers sortPapers={sortPapers} />
-        <FilterPapers setFilterType={this.setFilterType} />
-        {papers.length > 0 ? (
-          <papers>
-            <ul className="papers-list">{papers}</ul>
-          </papers>
-        ) : (
-          <NoContentAvailable />
-        )}
-      </div>
+      <Fragment>
+        <div className="s"> </div>
+        <div className="all-papers">
+          <div className="filter-sort-buttons">
+            <SortPapers sortPapers={sortPapers} />
+
+            <FilterPapers setFilterType={this.setFilterType} />
+          </div>
+          {papers.length > 0 ? (
+            <papers>
+              <ul className="papers-list">{papers}</ul>
+            </papers>
+          ) : (
+            <NoContentAvailable />
+          )}
+        </div>
+      </Fragment>
     );
   }
 }

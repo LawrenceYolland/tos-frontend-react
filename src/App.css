@@ -145,7 +145,6 @@ footer h1 {
 }
 
 .home-header-title {
-  /* overflow: hidden; */
   position: relative;
   text-align: center;
   width: 80%;
@@ -168,7 +167,6 @@ footer h1 {
 .home-header-inner {
   padding: 16px;
   width: auto;
-  /* width: 100vw; */
   background-color: #fff;
   color: currentColor;
   position: relative;
@@ -192,7 +190,6 @@ footer h1 {
   height: 100%;
   border-bottom: 1px dashed #e5e5e5;
   list-style: none;
-
   width: fit-content;
   margin: auto;
 }
@@ -385,14 +382,14 @@ span.created-at {
 
 #menu a > span.left-moji {
   position: absolute;
-  left: 2%;
+  left: 5%;
   font-size: 1.2em;
   animation: slide-left-moji 0.5s linear;
 }
 
 #menu a > span.right-moji {
   position: absolute;
-  right: 2%;
+  right: 5%;
   font-size: 1.2em;
   animation: slide-right-moji 0.5s linear;
 }
@@ -675,6 +672,28 @@ span.paper-count {
 
 /* user papers container */
 
+.filter-sort-buttons {
+  width: 80vw;
+  position: relative;
+  margin: auto;
+  height: 5em;
+  display: flex;
+}
+
+div.paper-sort-btn-collection {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+div.paper-sort-btn-collection.sort-papers {
+  left: 0;
+}
+
+div.paper-sort-btn-collection.filter-papers {
+  left: 50%;
+}
+
 .papers-list,
 .reviews-container {
   list-style: none;
@@ -769,7 +788,15 @@ div[class^="paper-category-"] h5 span,
 }
 
 .main-title-container > a {
-  color: grey;
+  color: #222;
+}
+
+.post-title-index {
+  margin-bottom: 1em;
+}
+
+.index-cat {
+  margin-bottom: 1em;
 }
 
 .main-rate-block {
@@ -809,16 +836,6 @@ span.negative {
 .doi-oa-links {
   list-style: none;
   padding-left: 0px;
-}
-
-.paper-sort-btn-collection {
-  display: flex;
-  width: 90vw;
-  margin: auto;
-}
-
-.paper-sort-btn {
-  margin-left: 1.1em;
 }
 
 .no-content {

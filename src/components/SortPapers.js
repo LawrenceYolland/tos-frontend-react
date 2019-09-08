@@ -2,7 +2,7 @@ import React from "react";
 
 const SortPapers = ({ sortPapers }) => {
   return (
-    <div className="paper-sort-btn-collection">
+    <div className="paper-sort-btn-collection sort-papers">
       <button
         className="paper-sort-btn"
         value="Rating"

@@ -2,7 +2,7 @@ import React from "react";
 
 const FilterPapers = ({ setFilterType }) => {
   return (
-    <div className="paper-sort-btn-collection">
+    <div className="paper-sort-btn-collection filter-papers">
       <button
         className="paper-sort-btn"
         onClick={()=>setFilterType(1)}
