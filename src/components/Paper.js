@@ -91,9 +91,9 @@ class Paper extends Component {
             </em>
           </small>
           <Link to={path}>
-            <h4>{this.upCaseTitles(title)}</h4>
+            <h4 className="post-title-index">{this.upCaseTitles(title)}</h4>
           </Link>
-          <div className={`paper-category-${category.toLowerCase()}`}>
+          <div className={`paper-category-${category.toLowerCase()} index-cat`}>
             <span>{category}</span>
           </div>
           <div>
