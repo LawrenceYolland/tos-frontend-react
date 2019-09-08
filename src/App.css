@@ -412,7 +412,6 @@ span.created-at {
   outline: none;
 }
 
-.user-body,
 .all-papers,
 .paper-show-container,
 .not-found {
@@ -559,10 +558,27 @@ span.paper-count {
   width: 90vw;
   list-style: none;
   position: relative;
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.user-papers-container::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.user-papers-container::-webkit-scrollbar-track {
+  background-color: #e5e5e5;
+}
+
+.user-papers-container::-webkit-scrollbar-thumb {
+  background: #f9009a;
+  border-radius: 10px;
 }
 
 .user-list-item {
   text-align: left;
+  height: fit-content;
   border-bottom: 1px dashed #e5e5e5;
 }
 
@@ -592,15 +608,21 @@ span.user-stat-count {
   text-align: center;
 }
 
-span.review-count,
+span.researcher-review-count,
+span.peer-review-count,
 span.paper-count {
   background: radial-gradient(rgba(0, 249, 170, 1), rgba(255, 255, 255, 0.8));
   text-align: center;
 }
 
-span.review-count {
+span.researcher-review-count {
   position: absolute;
   left: 20%;
+}
+
+span.peer-review-count {
+  position: absolute;
+  left: 0;
 }
 
 span.paper-count {
@@ -840,11 +862,42 @@ span.negative {
 }
 
 .no-content {
-  /* height: 100%; */
   overflow: hidden;
   position: relative;
 }
 
 .no-content-img {
   width: 80%;
+}
+
+.user-reviews-container {
+  list-style: none;
+  position: relative;
+  text-align: left;
+  width: 90vw;
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.review-list-item {
+  height: fit-content;
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+.review-content-container p {
+  color: #222;
+}
+
+.user-reviews-container::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.user-reviews-container::-webkit-scrollbar-track {
+  background-color: #e5e5e5;
+}
+
+.user-reviews-container::-webkit-scrollbar-thumb {
+  background: #f9009a;
+  border-radius: 10px;
 }

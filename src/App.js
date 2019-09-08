@@ -176,9 +176,13 @@ class App extends Component {
     });
   };
 
-  updateBio = bio => {
-    console.log("new bio 📨", bio);
-    API.updateUser(bio, this.state.user.user_id).then(user => {
+  updateBio = patchData => {
+    console.log("new bio 📨", patchData);
+    const bioObject = {
+      bio: patchData.bio,
+      username: patchData.username
+    };
+    API.updateUser(bioObject, patchData.id).then(user => {
       this.setState({
         user: { ...this.state.user, bio: user.user.data.attributes.bio }
       });
@@ -267,12 +271,6 @@ class App extends Component {
         break;
     }
   };
-
-  // sortAscendingName = papers =>
-  //   papers.sort((a, b) => a.title.localeCompare(b.title));
-
-  // sortDescendingName = papers =>
-  //   papers.sort((a, b) => b.title.localeCompare(a.title));
 
   sortRating = papers => papers.sort((a, b) => b.rating - a.rating);
 

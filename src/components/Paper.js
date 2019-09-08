@@ -59,7 +59,6 @@ class Paper extends Component {
       reviewCount
     } = this.props;
     return (
-      <Link to={path}>
       <li className={`${indexType}-list-item`}>
         <div className={`${indexType}-rate-block`}>
           <span
@@ -82,32 +81,34 @@ class Paper extends Component {
             -
           </span>
         </div>
+        <Link to={path}>
+          <div className={`${indexType}-title-container`}>
+            <small>
+              <em>
+                <span className="created-at">
+                  {this.editTimeFormat(created_at)}
+                </span>
+              </em>
+            </small>
 
-        <div className={`${indexType}-title-container`}>
-          <small>
-            <em>
-              <span className="created-at">
-                {this.editTimeFormat(created_at)}
-              </span>
-            </em>
-          </small>
-         
             <h4 className="post-title-index">{this.upCaseTitles(title)}</h4>
-         
-          <div className={`paper-category-${category.toLowerCase()} index-cat`}>
-            <span>{category}</span>
+
+            <div
+              className={`paper-category-${category.toLowerCase()} index-cat`}
+            >
+              <span>{category}</span>
+            </div>
+            <div>
+              <p>{`${abstract.slice(0, 100)}...`}</p>
+            </div>
+            <div>
+              <span role="img" aria-label="review count">
+                💬{reviewCount}
+              </span>
+            </div>
           </div>
-          <div>
-            <p>{`${abstract.slice(0, 100)}...`}</p>
-          </div>
-          <div>
-            <span role="img" aria-label="review count">
-              💬{reviewCount}
-            </span>
-          </div>
-        </div>
+        </Link>
       </li>
-      </Link>
     );
   }
 }
