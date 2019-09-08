@@ -53,7 +53,7 @@ html {
 }
 
 footer {
-  position: relative;
+  /* position: relative; */
   min-width: 100vw;
   background-color: #282c34;
   height: 20em;
@@ -468,14 +468,11 @@ span.created-at {
   left: 1.5em;
   bottom: 25%;
   font-size: 1.1em;
-  font-weight: 900;
   display: inline-block;
   vertical-align: middle;
   line-height: 1.2;
   color: #222;
-  font-style: italic;
   background-color: white;
-  padding: 5px;
   border: 1px solid black;
   box-shadow: 2px 2px black;
 }
@@ -510,21 +507,23 @@ span.created-at {
 }
 
 .form-buttons button {
+  position: absolute;
   font-size: 1.1em;
-  font-weight: 900;
   display: inline-block;
   vertical-align: middle;
   line-height: 1.2;
   color: #222;
-  font-style: italic;
   background-color: white;
-  padding: 5px;
   border: 1px solid black;
   box-shadow: 2px 2px black;
 }
 
 .save-bio-button {
-  margin-left: 0.5em;
+  /* margin-left: 0.5em; */
+}
+
+.discard-bio-button {
+  left: 20%;
 }
 
 .user-stats {
@@ -571,7 +570,7 @@ span.paper-count {
 
 .user-list-item h4 {
   color: black;
-  margin-top: 1em;
+  margin-top: .5em;
 }
 
 .user-list-item p {
@@ -581,7 +580,6 @@ span.paper-count {
 
 .user-stats {
   display: flex;
-
   line-height: 20px;
   margin-bottom: 2px;
   color: #000 !important;
@@ -596,14 +594,15 @@ span.user-stat-count {
   text-align: center;
 }
 
-span.review-count, span.paper-count {
+span.review-count,
+span.paper-count {
   background: radial-gradient(rgba(0, 249, 170, 1), rgba(255, 255, 255, 0.8));
   text-align: center;
 }
 
 span.review-count {
   position: absolute;
-  left: 25%;
+  left: 20%;
 }
 
 span.paper-count {
@@ -611,34 +610,21 @@ span.paper-count {
   left: 0;
 }
 
-/* .home-list-item {
+.add-paper-button-container {
   position: relative;
-  height: 100%;
-  border-bottom: 1px dashed #e5e5e5;
-  list-style: none;
-
-  width: fit-content;
-  margin: auto;
-} */
-
-/* .home-title-container {
-  padding: 5px;
-  width: 80vw;
-  text-align: start;
-  z-index: -10;
-  margin: auto;
+  width: 90vw;
+  height: 1.5em;
 }
 
-.image-container-promoted {
-  width: 80vw;
-  height: 20em;
-  margin: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
+.add-paper-button-container button {
+  position: absolute;
+  left: 10%;
+  bottom: 25%;
+  font-size: 1.1em;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
 }
-
-.home-title-container > a {
-  color: #222; */
 
 /* user papers container */
 

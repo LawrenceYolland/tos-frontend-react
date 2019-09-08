@@ -121,7 +121,9 @@ class UserProfile extends Component {
             <Fragment>
               {parseInt(this.props.match.params.access_token) ===
               this.props.user.user_id ? (
-                <Button onClick={this.addPaperToggle}>add a paper</Button>
+                <div className="add-paper-button-container">
+                  <button onClick={this.addPaperToggle}>add a paper</button>
+                </div>
               ) : null}
             </Fragment>
           )}
@@ -168,7 +170,7 @@ class UserProfile extends Component {
                   <button className="save-bio-button" form="edit-user-bio">
                     save
                   </button>
-                  <button onClick={this.handleBioChange}>discard</button>
+                  <button className="discard-bio-button" onClick={this.handleBioChange}>discard</button>
                 </div>
               </div>
             ) : (
