@@ -698,22 +698,39 @@ span.paper-count {
   width: 80vw;
   position: relative;
   margin: auto;
-  height: 5em;
+  height: 3em;
   display: flex;
 }
 
 div.paper-sort-btn-collection {
   display: flex;
-  flex-direction: column;
-  position: absolute;
+  flex-direction: row;
 }
 
 div.paper-sort-btn-collection.sort-papers {
   left: 0;
+  position: absolute;
+  height: 3em;
 }
 
 div.paper-sort-btn-collection.filter-papers {
   left: 50%;
+  position: absolute;
+  height: 3em;
+}
+
+a.paper-sort-btn {
+  background-color: white;
+  color: #222;
+  border: 1px solid #222;
+  height: fit-content;
+}
+
+a.paper-sort-btn:active {
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+  height: fit-content;
 }
 
 .papers-list,
@@ -732,7 +749,7 @@ div.paper-sort-btn-collection.filter-papers {
   padding-top: 15px;
 }
 
-.papers-list li a {
+.papers-list li {
   margin: auto;
   font-size: 1.1em;
   padding-bottom: 10px;
