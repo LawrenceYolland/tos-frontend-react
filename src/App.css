@@ -491,7 +491,8 @@ span.created-at {
   width: 100%;
   line-height: 1.2em;
   font-size: 1.2em;
-  border-bottom: 1px solid black;
+  margin-top: 0.5em;
+  border: 1px dashed #e5e5e5;
 }
 
 .user-bio-container p {
@@ -519,7 +520,7 @@ span.created-at {
 }
 
 .save-bio-button {
-  /* margin-left: 0.5em; */
+  margin-left: 0.5em;
 }
 
 .discard-bio-button {
@@ -570,7 +571,7 @@ span.paper-count {
 
 .user-list-item h4 {
   color: black;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .user-list-item p {
@@ -626,19 +627,53 @@ span.paper-count {
   box-shadow: 2px 2px black;
 }
 
-/* user papers container */
-
+/* add paper form */
 .post-input-container {
-  z-index: 999;
+  position: relative;
+  width: 100vw;
+  height: 15em;
+}
+
+.add-paper-form {
+  display: flex;
+  flex-direction: column;
   width: 80%;
   margin: auto;
 }
 
-/* form.ui.form {
+.post-input-container button {
   position: absolute;
-  width: 80%;
+  font-size: 1.1em;
+  background-color: white;
   border: 1px solid black;
-} */
+  box-shadow: 2px 2px black;
+  bottom: 0;
+}
+.add-paper-form button {
+  position: absolute;
+  font-size: 1.1em;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+  bottom: 0;
+}
+
+.add-paper-form input,
+.add-paper-form textarea {
+  margin-bottom: 1em;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+.paper-description-input {
+  height: 5em;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* user papers container */
 
 .papers-list,
 .reviews-container {
