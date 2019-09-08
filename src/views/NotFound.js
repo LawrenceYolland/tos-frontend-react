@@ -6,7 +6,6 @@ class NotFound extends Component {
     return (
       <div className="not-found">
         <div className="s"> </div>
-
         <NoContentAvailable />
       </div>
     );
