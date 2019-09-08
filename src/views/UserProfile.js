@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import UserProfileImage from "../components/UserProfileImage";
-import UserRating from "../components/UserRating";
 import UserPapersContainer from "../containers/UserPapersContainer";
+import UserReviewsContainer from "../containers/UserReviewsContainer";
 import API from "../adapters/API";
-import { Button } from "semantic-ui-react";
 import PostPaper from "./PostPaper";
 
 class UserProfile extends Component {
@@ -19,12 +18,12 @@ class UserProfile extends Component {
         id: ""
       },
       userPapers: props.allPapers,
+      userReviews: [],
       postPaperToggle: false,
       openVersion: {
         url: "",
         pdfURL: ""
       }
-      // userPaperToggle: false
     };
   }
   componentDidMount() {
@@ -61,6 +60,7 @@ class UserProfile extends Component {
             id: user.data.attributes.id
           },
           userPapers: this.props.allPapers,
+          userReviews: user.data.attributes.reviews.map(review => review),
           editBioToggle:
             parseInt(this.props.match.params.access_token) ===
             this.props.user.user_id
@@ -104,6 +104,7 @@ class UserProfile extends Component {
 
   render() {
     const { user, postPaperToggle } = this.state;
+
     const papersView =
       user.usertype === "Researcher" ? (
         <Fragment>
@@ -134,6 +135,7 @@ class UserProfile extends Component {
           />
         </Fragment>
       ) : null;
+
     return (
       <Fragment>
         <div className="s"> </div>
@@ -170,7 +172,12 @@ class UserProfile extends Component {
                   <button className="save-bio-button" form="edit-user-bio">
                     save
                   </button>
-                  <button className="discard-bio-button" onClick={this.handleBioChange}>discard</button>
+                  <button
+                    className="discard-bio-button"
+                    onClick={this.handleBioChange}
+                  >
+                    discard
+                  </button>
                 </div>
               </div>
             ) : (
@@ -179,10 +186,12 @@ class UserProfile extends Component {
                   <p>{user.bio}</p>
                 </div>
                 <div className="user-stats">
-                  <span className="user-stat-count paper-count">
-                    {this.state.paperCount} papers
-                  </span>
-                  <span className="user-stat-count review-count">
+                  {user.usertype === "Researcher" ? (
+                    <span className="user-stat-count paper-count">
+                      {this.state.paperCount} papers
+                    </span>
+                  ) : null}
+                  <span className={`user-stat-count ${user.usertype.toLocaleLowerCase()}-review-count`}>
                     {this.state.reviewCount} reviews
                   </span>
                 </div>
@@ -190,7 +199,14 @@ class UserProfile extends Component {
             )}
           </div>
           {papersView}
+          {/* <UserReviewsContainer userReviews={this.state.userReviews} /> */}
         </div>
+        <Fragment>
+          <div className="papers-header">
+            <h5>Reviews</h5>
+          </div>
+          <UserReviewsContainer userReviews={this.state.userReviews} />
+        </Fragment>
       </Fragment>
     );
   }

@@ -61,13 +61,13 @@ const signUpUser = user => {
     .catch(handleServerError);
 };
 
-const updateUser = (data, id) => {
+const updateUser = (patchData, id) => {
   const configObj = {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ user: data })
+    body: JSON.stringify({ user: patchData })
   };
   console.log("config object => 📨", configObj);
 
@@ -140,18 +140,18 @@ const postReview = review => {
 
 const updatePaperRating = (value, id) => {
   const configObj = {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ rating: parseInt(value) })
-    };
-    console.log("config object => 📨", configObj);
-  
-    return fetch(updatePaperURL + id, configObj)
-      .then(jsonify)
-      .catch(handleServerError);
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ rating: parseInt(value) })
   };
+  console.log("config object => 📨", configObj);
+
+  return fetch(updatePaperURL + id, configObj)
+    .then(jsonify)
+    .catch(handleServerError);
+};
 
 const nodeSignUp = user => {
   const API_URL = "http://localhost:5000/auth/signup";
