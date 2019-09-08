@@ -165,7 +165,7 @@ class UserProfile extends Component {
                 </form>
                 <div className="form-buttons">
                   <button onClick={this.handleBioChange}>discard</button>
-                  <button form="edit-user-bio">save</button>
+                  <button className="save-bio-button" form="edit-user-bio">save</button>
                 </div>
               </div>
             ) : (

@@ -523,6 +523,10 @@ span.created-at {
   box-shadow: 2px 2px black;
 }
 
+.save-bio-button {
+  margin-left: 0.5em;
+}
+
 .user-stats {
   display: flex;
   flex-direction: row;
@@ -542,7 +546,9 @@ span.paper-count {
   margin-top: 3em;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1em;
   text-align: left;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .paper-show-container {
@@ -551,16 +557,58 @@ span.paper-count {
   margin-right: auto;
 }
 
+/* user papers container */
 .user-papers-container {
-  border: 2px solid whitesmoke;
-  border-radius: 5px;
+  width: 90vw;
+  list-style: none;
+  position: relative;
 }
 
-.user-papers-container li a {
-  margin: auto;
-  font-size: 1em;
-  padding-bottom: 5px;
+.user-list-item {
+  text-align: left;
+  border-bottom: 1px dashed #e5e5e5;
 }
+
+.user-list-item h4 {
+  color: black;
+  margin-top: 1em;
+}
+
+.user-list-item p {
+  color: black;
+  margin-bottom: 1em;
+}
+
+/* .home-list-item {
+  position: relative;
+  height: 100%;
+  border-bottom: 1px dashed #e5e5e5;
+  list-style: none;
+
+  width: fit-content;
+  margin: auto;
+} */
+
+/* .home-title-container {
+  padding: 5px;
+  width: 80vw;
+  text-align: start;
+  z-index: -10;
+  margin: auto;
+}
+
+.image-container-promoted {
+  width: 80vw;
+  height: 20em;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-title-container > a {
+  color: #222; */
+
+/* user papers container */
 
 .post-input-container {
   z-index: 999;
@@ -575,7 +623,6 @@ span.paper-count {
 } */
 
 .papers-list,
-.user-papers-container,
 .reviews-container {
   list-style: none;
   width: 90vw;

@@ -2,15 +2,12 @@ import React from "react";
 import UserPaper from "../components/UserPaper";
 
 const UserPapersContainer = ({ userPapers }) => {
-  const indexType = "user";
 
   const papers = userPapers.map(paper => (
     <UserPaper
       key={paper.id}
       id={paper.id}
-      category={paper.category}
-      title={paper.title}
-      indexType={indexType}
+      {...paper}
     />
   ));
   return <ul className="user-papers-container">{papers}</ul>;
