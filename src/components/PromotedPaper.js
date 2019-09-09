@@ -36,9 +36,6 @@ class PromotedPaper extends Component {
           <Link to={path}>
             <h4>
               {this.upCaseTitles(title)}
-              <span role="img" aria-label="promoted post">
-                ⭐️
-              </span>
             </h4>
           </Link>
           <div>

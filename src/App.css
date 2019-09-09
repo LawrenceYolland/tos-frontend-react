@@ -32,19 +32,13 @@ html {
 }
 
 .icon-open {
+  font-size: 2.5em;
   color: #f9009a;
 }
 
 .icon-closed {
-  color: #222;
-}
-
-.icon-open {
-  font-size: 2em;
-}
-
-.icon-closed {
-  font-size: 2.5em;
+  font-size: 4em;
+  color: #f9009a;
 }
 
 .home-menu {
@@ -307,7 +301,6 @@ span.created-at {
   z-index: 150;
   min-width: 100vw;
   height: 100vh;
-  /* background-color: #282c34; */
   align-content: center;
   transition: 0.5s;
 }
@@ -317,7 +310,7 @@ span.created-at {
   z-index: 100;
   min-width: 100vw;
   height: 100vh;
-  background-color: #f9009a;
+  background-color: #14a9b3;
 }
 
 #menu {
@@ -336,14 +329,13 @@ span.created-at {
   text-decoration: none;
   text-transform: uppercase;
   background-color: #000;
-  color: #f9009a;
+  color: #14a9b3;
   display: block;
   width: 85%;
   margin: 5px auto 5px auto;
 
   font-weight: 500;
   font-size: 40px;
-  color: #f9009a;
   font-weight: 500;
   padding: 0.5em;
   letter-spacing: 0.1em;
@@ -396,16 +388,22 @@ span.created-at {
 
 #menu input {
   margin: auto auto 1em auto;
-  background-color: #f9009a;
+  background-color: #14a9b3;
   font-size: 2.5em;
   width: 80vw;
-  text-align: center;
-  color: rgb(34, 34, 34);
+  text-align: left;
+  color: #e5e5e5;
   min-height: 50px;
-  border-bottom: 0.1em solid rgb(34, 34, 34);
+  /* border-bottom: 0.08em dashed #e5e5e5; */
   border-top: 0px;
   border-right: 0px;
   border-left: 0px;
+}
+
+#menu input::placeholder {
+  color: #e5e5e5;
+  font-size: 1em;
+  text-align: left;
 }
 
 #menu input:focus {
