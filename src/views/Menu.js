@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { NavLink, withRouter } from "react-router-dom";
+import SocialBar from "../components/SocialBar";
+import MenuSocialBar from "../components/MenuSocialBar";
 
 class Menu extends Component {
   state = {
@@ -29,6 +31,7 @@ class Menu extends Component {
     const view = (
       <Fragment>
         <div className="drop-menu-overlay"></div>
+
         <div className="drop-menu">
           <div id="menu">
             <form onSubmit={this.handleSubmit}>
@@ -41,6 +44,7 @@ class Menu extends Component {
               />
             </form>
             <NavLink
+              className="menu-item"
               exact
               to="/"
               activeStyle={{
@@ -53,6 +57,7 @@ class Menu extends Component {
               <span className="left-moji">🏠</span>
             </NavLink>
             <NavLink
+              className="menu-item"
               to="/papers"
               activeStyle={{
                 color: "#f9009a"
@@ -66,6 +71,7 @@ class Menu extends Component {
             {user.user_id !== null ? (
               <Fragment>
                 <NavLink
+                  className="menu-item"
                   to={profilePath}
                   activeStyle={{
                     color: "#f9009a"
@@ -77,6 +83,7 @@ class Menu extends Component {
                   <span className="left-moji">👩‍🔬</span>
                 </NavLink>
                 <NavLink
+                  className="menu-item"
                   activeStyle={{
                     color: "#f9009a"
                     // backgroundColor: "white"
@@ -89,10 +96,14 @@ class Menu extends Component {
                   Sign Out
                   <span className="right-moji">👋</span>
                 </NavLink>
+                <div className="social-block">
+          <MenuSocialBar />
+        </div>
               </Fragment>
             ) : (
               <Fragment>
                 <NavLink
+                  className="menu-item"
                   to="/signin"
                   activeStyle={{
                     color: "#f9009a"
@@ -106,6 +117,7 @@ class Menu extends Component {
                   <span className="left-moji">🔭</span>
                 </NavLink>
                 <NavLink
+                  className="menu-item"
                   to="/signup"
                   activeStyle={{
                     color: "#f9009a"
@@ -122,6 +134,7 @@ class Menu extends Component {
             )}
           </div>
         </div>
+   
       </Fragment>
     );
     return <Fragment>{view}</Fragment>;
