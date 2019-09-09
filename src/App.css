@@ -49,7 +49,7 @@ html {
 footer {
   /* position: relative; */
   min-width: 100vw;
-  background-color: #282c34;
+  background-color: #222;
   height: 20em;
   display: flex;
   bottom: 0;
@@ -915,4 +915,117 @@ span.negative {
 .user-reviews-container::-webkit-scrollbar-thumb {
   background: #f9009a;
   border-radius: 10px;
+}
+
+/* footer */
+.footer-content-container {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  /* temp border */
+  border: 1px dashed #e5e5e5;
+}
+
+.social-bar {
+  position: relative;
+  height: 30%;
+  width: 100%;
+  border: 1px dashed #e5e5e5;
+  height: fit-content;
+}
+
+.social-icon-container {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  display: flex;
+  height: fit-content;
+}
+
+.social-icon {
+  /* border: 1px dashed #e5e5e5; */
+  height: 4em;
+  width: 4em;
+  padding-left: 1em;
+}
+
+.newsletter-bar {
+  position: relative;
+  height: 30%;
+  margin-top: 3em;
+  text-align: left;
+}
+
+.newsletter-form-container {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+.newsletter-form-container span {
+  color: #e5e5e5;
+}
+
+.newsletter-form-container input {
+  background-color: #222;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e5e5e5;
+  margin-top: 0.5em;
+}
+
+.newsletter-form-container input::placeholder {
+  color: #e5e5e5;
+  font-size: 1em;
+  text-align: left;
+}
+
+.column-container {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 1px dashed #e5e5e5;
+}
+
+.c1,
+.c2 {
+  width: 50%;
+  border: 1px dashed #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.fa {
+  position: absolute;
+  color: #e5e5e5;
+  font-size: 2.2em;
+  display: inline-block;
+  padding: 0.2em 0.2em;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
+.fa:hover {
+  color: #fff;
+}
+
+.fa.fa-twitter:hover {
+  background: #5bbcec;
+}
+.fa.fa-linkedin:hover {
+  background: #0077b5;
+}
+.fa.fa-github:hover {
+  background: #6e5494;
+}
+
+.fa.fa-envelope:hover {
+  background: #767676;
 }
