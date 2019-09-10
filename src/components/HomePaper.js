@@ -29,7 +29,7 @@ class HomePaper extends Component {
             </span>
           </small>
           <Link to={path}>
-            <h4>{this.upCaseTitles(title)}</h4>
+            <h3>{this.upCaseTitles(title)}</h3>
           </Link>
         </div>
       </li>
