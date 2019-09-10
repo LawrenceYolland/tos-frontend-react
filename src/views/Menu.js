@@ -49,7 +49,6 @@ class Menu extends Component {
               to="/"
               activeStyle={{
                 color: "#f9009a"
-                // backgroundColor: "white"
               }}
               onClick={this.props.showMenu}
             >
@@ -61,7 +60,6 @@ class Menu extends Component {
               to="/papers"
               activeStyle={{
                 color: "#f9009a"
-                // backgroundColor: "white"
               }}
               onClick={this.props.showMenu}
             >
@@ -75,8 +73,7 @@ class Menu extends Component {
                   to={profilePath}
                   activeStyle={{
                     color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
+                      }}
                   onClick={this.props.showMenu}
                 >
                   Profile
@@ -86,8 +83,7 @@ class Menu extends Component {
                   className="menu-item"
                   activeStyle={{
                     color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
+                      }}
                   onClick={() => {
                     this.props.showMenu();
                     this.props.signOut();
@@ -107,8 +103,7 @@ class Menu extends Component {
                   to="/signin"
                   activeStyle={{
                     color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
+                      }}
                   onClick={() => {
                     this.props.showMenu();
                   }}
@@ -121,8 +116,7 @@ class Menu extends Component {
                   to="/signup"
                   activeStyle={{
                     color: "#f9009a"
-                    // backgroundColor: "white"
-                  }}
+                      }}
                   onClick={() => {
                     this.props.showMenu();
                   }}
