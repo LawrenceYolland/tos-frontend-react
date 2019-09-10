@@ -114,7 +114,6 @@ input {
   margin: auto;
   padding: 10px;
   overflow-x: hidden;
-
 }
 
 .hpc-container {
@@ -144,7 +143,6 @@ input {
   text-transform: uppercase;
   width: 90%;
   text-align: left;
-
 }
 
 .hpc-h1-container button {
@@ -253,11 +251,42 @@ input {
 }
 
 .image-container-promoted {
+  position: relative;
   width: 80vw;
   height: 20em;
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.promoted-abstract {
+  color: #222;
+}
+
+.hpc-link-container {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  width: 100%;
+  /* margin-bottom: 1em; */
+  text-align: left;
+}
+
+.hpc-span-title {
+  background-color: #a333c8;
+  padding: 5px 10px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hpc-h2 {
+  font-weight: 900;
+  font-size: 1.3em;
+  line-height: 2em;
+  color: whitesmoke;
+  text-transform: uppercase;
+  width: 90%;
+  text-align: left;
 }
 
 .image-container-promoted.hottest {
