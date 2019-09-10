@@ -59,27 +59,6 @@ class Paper extends Component {
     } = this.props;
     return (
       <li className={`${indexType}-list-item`}>
-        <div className={`${indexType}-rate-block`}>
-          <span
-            className={`${indexType}-rate-up`}
-            value="up"
-            onClick={this.handleUpRating}
-          >
-            +
-          </span>
-          <br />
-          <span className={`${indexType}-rate-value ${this.setRatingColor()}`}>
-            {this.state.rating}
-          </span>
-          <br />
-          <span
-            className={`${indexType}-rate-down`}
-            value="down"
-            onClick={this.handleDownRating}
-          >
-            -
-          </span>
-        </div>
         <Link to={path}>
           <div className={`${indexType}-title-container`}>
             <small>
@@ -90,7 +69,7 @@ class Paper extends Component {
               </em>
             </small>
 
-            <h4 className="post-title-index">{this.upCaseTitles(title)}</h4>
+            <h3 className="post-title-index">{this.upCaseTitles(title)}</h3>
 
             <div
               className={`paper-category-${category.toLowerCase()} index-cat`}
@@ -101,20 +80,35 @@ class Paper extends Component {
               <p>{`${abstract.slice(0, 100)}...`}</p>
             </div>
             <div>
-              <img
-                className="review-counter"
-                src="https://img.icons8.com/ios/50/000000/speech-bubble-with-dots.png"
-              />
+              <span role="img" aria-label="comment icon">
+                {" "}
+                💬{" "}
+              </span>
               {reviewCount}
-              <a
-                style={{ "display": "none" }}
-                href="https://icons8.com/icon/38977/chat-bubble"
-              >
-                Chat Bubble icon by Icons8
-              </a>
             </div>
           </div>
         </Link>
+        <div className={`${indexType}-rate-block`}>
+          <span
+            className={`${indexType}-rate-up`}
+            value="up"
+            onClick={this.handleUpRating}
+          >
+            +
+          </span>
+          <br />
+          <span className={`${indexType}-rate-value ${this.setRatingColor()}`}>
+            {this.state.rating === null ? 0 : this.state.rating}
+          </span>
+          <br />
+          <span
+            className={`${indexType}-rate-down`}
+            value="down"
+            onClick={this.handleDownRating}
+          >
+            -
+          </span>
+        </div>
       </li>
     );
   }

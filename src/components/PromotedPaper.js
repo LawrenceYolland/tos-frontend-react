@@ -34,9 +34,9 @@ class PromotedPaper extends Component {
             </span>
           </small>
           <Link to={path}>
-            <h4>
+            <h2>
               {this.upCaseTitles(title)}
-            </h4>
+            </h2>
           </Link>
           <div>
             <p>{`${abstract.slice(0, 200)}...`}</p>
