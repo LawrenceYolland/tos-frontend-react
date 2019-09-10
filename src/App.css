@@ -82,7 +82,7 @@ input {
   position: absolute;
   z-index: 999;
   bottom: 1%;
-  right: 10%
+  right: 10%;
 }
 
 .scroll svg {
@@ -97,16 +97,35 @@ input {
 }
 
 /* home content */
+/* .big-container {
+  position: relative;
+  height: 100vw;
+  text-align: left;
+  width: 90%;
+  margin: auto;
+} */
+
+.slick-slider {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  z-index: 10000;
+  width: 90vw;
+  margin: auto;
+  padding: 10px;
+  overflow-x: hidden;
+
+}
 
 .hpc-container {
   position: absolute;
   text-align: left;
   top: 30%;
   left: 5%;
-  width: 90%;
+  width: 100%;
 }
 .hpc-h1-container {
-  width: 80%;
+  width: 100%;
   margin-bottom: 1em;
 }
 
@@ -124,6 +143,8 @@ input {
   color: #222;
   text-transform: uppercase;
   width: 90%;
+  text-align: left;
+
 }
 
 .hpc-h1-container button {
@@ -451,7 +472,6 @@ span.created-at {
 #menu input:focus {
   outline: none;
 }
-
 
 .all-papers,
 .paper-show-container,
