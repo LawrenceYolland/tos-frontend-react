@@ -18,7 +18,6 @@ class PaperIndex extends Component {
     if (this.state.filterType === 0) return papers;
     if (this.state.filterType === 1) return this.filterByDay(papers);
     if (this.state.filterType === 2) return this.filterByWeek(papers);
-    if (this.state.filterType === 3) return this.filterByYesterday(papers);
   };
 
   filterByDay = papers => {
@@ -37,17 +36,6 @@ class PaperIndex extends Component {
     const filteredList = papers.filter(paper => {
       let paperDate = moment(paper.created_at);
       return moment(paperDate._d).isSame(testDate._d, "week");
-    });
-    return filteredList;
-  };
-
-  filterByYesterday = papers => {
-    console.log("in the yesterday filter");
-    const testDate = moment().subtract(1, "day");
-
-    const filteredList = papers.filter(paper => {
-      let paperDate = moment(paper.created_at);
-      return moment(paperDate._d).isSame(testDate._d, "day");
     });
     return filteredList;
   };

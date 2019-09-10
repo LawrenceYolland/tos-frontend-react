@@ -9,9 +9,6 @@ const FilterPapers = ({ setFilterType }) => {
       <a className="paper-sort-btn">
         <button onClick={() => setFilterType(2)}>week</button>
       </a>
-      <a className="paper-sort-btn">
-        <button onClick={() => setFilterType(3)}>yesterday</button>
-      </a>
     </div>
   );
 };
