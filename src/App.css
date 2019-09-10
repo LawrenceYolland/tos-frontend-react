@@ -152,6 +152,15 @@ input {
   box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* block one */
+
+.banner-btn-container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  background-color: red
+}
+
 /* used as an anchor for the scroll prompt */
 #content-top {
   position: absolute;

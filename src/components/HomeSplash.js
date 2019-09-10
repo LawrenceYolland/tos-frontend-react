@@ -7,7 +7,7 @@ const HomeSplash = ({ setPosition }) => {
     <div className="home-splash">
       <div className="home-splash-image"></div>
       <div className="home-splash-overlay">
-        <HomeSplashContent/>
+        <HomeSplashContent />
       </div>
       <ScrollPrompt />
       <span id="content-top"></span>
