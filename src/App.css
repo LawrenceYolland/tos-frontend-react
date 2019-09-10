@@ -847,6 +847,7 @@ div[class^="paper-category-"] h5 span,
 .post-title-index {
   margin-top: 0;
   color: #222;
+  width: 95%;
 }
 
 .index-cat {
