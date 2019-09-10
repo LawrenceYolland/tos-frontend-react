@@ -9,9 +9,11 @@ const TitleBlock = () => {
           democratising science through open peer review
         </span>
       </h1>
+      <div className="title-btn-container">
       <Button color="purple" fluid>
         Find out more
       </Button>
+      </div>
     </div>
   );
 };

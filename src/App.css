@@ -97,13 +97,6 @@ input {
 }
 
 /* home content */
-/* .big-container {
-  position: relative;
-  height: 100vw;
-  text-align: left;
-  width: 90%;
-  margin: auto;
-} */
 
 .slick-slider {
   position: absolute;
@@ -113,7 +106,11 @@ input {
   width: 90vw;
   margin: auto;
   padding: 10px;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+.slick-track {
+  overflow: hidden;
 }
 
 .hpc-container {
@@ -145,21 +142,19 @@ input {
   text-align: left;
 }
 
+.title-btn-container {
+  width: 80%;
+}
+
 .hpc-h1-container button {
   margin-top: 1em;
-  width: 60vw;
+  /* width: 60vw; */
   font-size: 1rem;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* block one */
 
-.banner-btn-container {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  background-color: red
-}
 
 /* used as an anchor for the scroll prompt */
 #content-top {
