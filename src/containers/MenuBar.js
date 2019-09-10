@@ -23,14 +23,19 @@ class MenuBar extends Component {
         onClick={showMenu}
         activeStyle={{
           fontWeight: "bold",
-          color: "#f9009a"
+          color: "#a333c8"
         }}
       >
         {menuLogo}
       </NavLink>
     );
 
-    return <div className="header-icon-container">{menu}</div>;
+    return (
+      <div className="header-icon-container">
+        <h1 className="home-logo">TOS</h1>
+        {menu}
+      </div>
+    );
   }
 }
 
