@@ -3,11 +3,11 @@ import React from "react";
 const FilterPapers = ({ setFilterType }) => {
   return (
     <div className="paper-sort-btn-collection filter-papers">
-      <a className="paper-sort-btn">
-        <button onClick={() => setFilterType(1)}>day</button>
+      <a className="paper-filter-btn">
+        <span onClick={() => setFilterType(1)}>day</span>
       </a>
-      <a className="paper-sort-btn">
-        <button onClick={() => setFilterType(2)}>week</button>
+      <a className="paper-filter-btn">
+        <span onClick={() => setFilterType(2)}>week</span>
       </a>
     </div>
   );

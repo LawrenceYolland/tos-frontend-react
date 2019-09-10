@@ -36,7 +36,6 @@ class Paper extends Component {
     const { rating } = this.state;
     if (rating > 0) return "positive";
     if (rating < 0) return "negative";
-
     return "even";
   };
 
@@ -102,9 +101,17 @@ class Paper extends Component {
               <p>{`${abstract.slice(0, 100)}...`}</p>
             </div>
             <div>
-              <span role="img" aria-label="review count">
-                💬{reviewCount}
-              </span>
+              <img
+                className="review-counter"
+                src="https://img.icons8.com/ios/50/000000/speech-bubble-with-dots.png"
+              />
+              {reviewCount}
+              <a
+                style={{ "display": "none" }}
+                href="https://icons8.com/icon/38977/chat-bubble"
+              >
+                Chat Bubble icon by Icons8
+              </a>
             </div>
           </div>
         </Link>

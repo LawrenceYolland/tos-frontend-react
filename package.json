@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.10.2",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
     "doi-regex": "^0.1.10",
     "dotenv": "^8.1.0",
     "joi": "^14.3.1",

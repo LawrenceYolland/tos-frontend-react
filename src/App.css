@@ -394,7 +394,6 @@ span.created-at {
   text-align: left;
   color: #222;
   min-height: 50px;
-  /* border-bottom: 0.08em dashed #e5e5e5; */
   border-top: 0px;
   border-right: 0px;
   border-left: 0px;
@@ -536,11 +535,11 @@ span.paper-count {
 }
 
 .papers-header {
-  width: 80%;
+  width: 80vw;
   margin-top: 3em;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   text-align: left;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -632,6 +631,7 @@ span.paper-count {
   position: relative;
   width: 90vw;
   height: 1.5em;
+  margin-bottom: 2em;
 }
 
 .add-paper-button-container button {
@@ -692,14 +692,6 @@ span.paper-count {
 
 /* user papers container */
 
-.filter-sort-buttons {
-  width: 80vw;
-  position: relative;
-  margin: auto;
-  height: 3em;
-  display: flex;
-}
-
 div.paper-sort-btn-collection {
   display: flex;
   flex-direction: row;
@@ -708,23 +700,41 @@ div.paper-sort-btn-collection {
 div.paper-sort-btn-collection.sort-papers {
   left: 0;
   position: absolute;
-  height: 3em;
+  /* height: 3em; */
 }
 
 div.paper-sort-btn-collection.filter-papers {
   left: 50%;
   position: absolute;
-  height: 3em;
+  /* height: 3em; */
 }
 
-a.paper-sort-btn {
+.filter-sort-buttons {
+  width: 80vw;
+  position: relative;
+  margin: auto;
+  height: 3em;
+  display: flex;
+}
+
+.filter-sort-buttons select {
+  background-color: white;
+  color: #222;
+  border: 1px solid #222;
+  width: fit-content;
+  border-radius: 0;
+  padding: 1px;
+}
+
+a.paper-filter-btn {
   background-color: white;
   color: #222;
   border: 1px solid #222;
   height: fit-content;
+  width: 4em;
 }
 
-a.paper-sort-btn:active {
+a.paper-filter-btn:active {
   background-color: #222;
   color: white;
   border: 1px solid white;
@@ -822,10 +832,16 @@ div[class^="paper-category-"] h5 span,
   width: 90%;
   text-align: start;
   z-index: -10;
+  color: #222;
 }
 
-div.main-title-container {
-  color: #222;
+.main-title-container p {
+  margin-bottom: 1em;
+}
+
+.review-counter {
+  height: 1.5em;
+  width: 1.5em;
 }
 
 .post-title-index {
@@ -845,7 +861,7 @@ div.main-title-container {
 
 .main-list-item > a {
   width: fit-content;
-  margin-right:0;
+  margin-right: 0;
 }
 
 span[class^="main-rate-"] {

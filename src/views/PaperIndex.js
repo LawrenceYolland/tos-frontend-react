@@ -60,7 +60,6 @@ class PaperIndex extends Component {
         <div className="all-papers">
           <div className="filter-sort-buttons">
             <SortPapers sortPapers={sortPapers} />
-
             <FilterPapers setFilterType={this.setFilterType} />
           </div>
           {papers.length > 0 ? (

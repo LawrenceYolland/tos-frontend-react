@@ -77,7 +77,7 @@ class Menu extends Component {
                   onClick={this.props.showMenu}
                 >
                   Profile
-                  <span className="left-moji">👩‍🔬</span>
+                  <span className="left-moji big-moji">👩‍🔬</span>
                 </NavLink>
                 <NavLink
                   className="menu-item"
