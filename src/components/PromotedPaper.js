@@ -21,28 +21,33 @@ class PromotedPaper extends Component {
     const path = `/papers/${this.props.id}`;
     const { title, abstract, created_at, promotedType } = this.props;
     return (
-      <li className="home-list-item promoted">
-        <div
-          className={`image-container-promoted ${
-            promotedType === "hottest" ? "hottest" : "latest"
-          }`}
-        ></div>
-        <div className="home-title-container promoted">
-          <small>
-            <span className="created-at">
-              {this.editTimeFormat(created_at)}
-            </span>
-          </small>
-          <Link to={path}>
-            <h2>
-              {this.upCaseTitles(title)}
-            </h2>
-          </Link>
-          <div>
-            <p>{`${abstract.slice(0, 200)}...`}</p>
+      <Link to={path} >
+        <li className="home-list-item promoted">
+          <div
+            className={`image-container-promoted ${
+              promotedType === "hottest" ? "hottest" : "latest"
+            }`}
+          >
+            <div className="hpc-link-container">
+              <h2 className="hpc-h2">
+                <span className="hpc-span-title">
+                  {this.upCaseTitles(title)}
+                </span>
+              </h2>
+            </div>
           </div>
-        </div>
-      </li>
+          <div className="home-title-container promoted">
+            <small>
+              <span className="created-at">
+                {this.editTimeFormat(created_at)}
+              </span>
+            </small>
+            <div className="promoted-abstract">
+              <p>{`${abstract.slice(0, 200)}...`}</p>
+            </div>
+          </div>
+        </li>
+      </Link>
     );
   }
 }

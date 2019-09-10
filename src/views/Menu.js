@@ -48,7 +48,7 @@ class Menu extends Component {
               exact
               to="/"
               activeStyle={{
-                color: "#f9009a"
+                color: "#a333c8"
               }}
               onClick={this.props.showMenu}
             >
@@ -59,7 +59,7 @@ class Menu extends Component {
               className="menu-item"
               to="/papers"
               activeStyle={{
-                color: "#f9009a"
+                color: "#a333c8"
               }}
               onClick={this.props.showMenu}
             >
@@ -72,7 +72,7 @@ class Menu extends Component {
                   className="menu-item"
                   to={profilePath}
                   activeStyle={{
-                    color: "#f9009a"
+                    color: "#a333c8"
                       }}
                   onClick={this.props.showMenu}
                 >
@@ -82,7 +82,7 @@ class Menu extends Component {
                 <NavLink
                   className="menu-item"
                   activeStyle={{
-                    color: "#f9009a"
+                    color: "#a333c8"
                       }}
                   onClick={() => {
                     this.props.showMenu();
@@ -102,7 +102,7 @@ class Menu extends Component {
                   className="menu-item"
                   to="/signin"
                   activeStyle={{
-                    color: "#f9009a"
+                    color: "#a333c8"
                       }}
                   onClick={() => {
                     this.props.showMenu();
@@ -115,7 +115,7 @@ class Menu extends Component {
                   className="menu-item"
                   to="/signup"
                   activeStyle={{
-                    color: "#f9009a"
+                    color: "#a333c8"
                       }}
                   onClick={() => {
                     this.props.showMenu();
