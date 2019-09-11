@@ -8,6 +8,7 @@ import NotFound from "../views/NotFound";
 import PaperShow from "../views/PaperShow";
 import PaperIndex from "../views/PaperIndex";
 import SearchPaperIndex from "../views/SearchPaperIndex";
+import About from "../views/About";
 
 const CreateRoutes = ({
   user,
@@ -51,6 +52,8 @@ const CreateRoutes = ({
           <SignIn submitSignIn={submitSignIn} loggingUser={loggingUser} />
         )}
       />
+      <Route exact path="/about" render={() => <About />} />
+
       <Route render={() => <NotFound user={user} signOut={signOut} />} />
     </Switch>
   ) : (
@@ -115,6 +118,7 @@ const CreateRoutes = ({
           />
         )}
       />
+      <Route exact path="/about" render={() => <About />} />
       <Route render={() => <NotFound />} />
     </Switch>
   );

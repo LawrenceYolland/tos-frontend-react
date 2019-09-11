@@ -5,14 +5,12 @@ const FooterInformation = () => {
     <div className="column-bar">
       <div className="column-container">
         <div className="c1">
-          <NavLink
-            to="/"
-          >
+          <NavLink to="/">
             <span>Home</span>
           </NavLink>
-          <a>
+          <NavLink to="/about">
             <span>About</span>
-          </a>
+          </NavLink>
         </div>
         <div className="c2">
           <a>
