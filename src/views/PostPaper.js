@@ -77,7 +77,11 @@ class PostPaper extends Component {
             name="category"
             placeholder="Category"
             onChange={this.handleInputChange}
+            className="papers-category-select"
           >
+            <option value="" disabled selected>
+            &#8597; pick a category
+            </option>
             <option name="Chemistry" value="Chemistry">
               Chemistry
             </option>

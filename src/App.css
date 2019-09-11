@@ -24,7 +24,7 @@ input {
   margin-bottom: 5em;
 }
 
-.header-icon-container {
+#header-icon-container {
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
   width: 100vw;
@@ -518,6 +518,10 @@ span.created-at {
   position: relative;
 }
 
+.user-body {
+  margin-top: 1.5em;
+}
+
 .user-info-container {
   position: relative;
   display: flex;
@@ -747,6 +751,14 @@ span.paper-count {
   height: 15em;
 }
 
+.papers-category-select {
+  background-color: white;
+  color: #222;
+  width: fit-content;
+  border-radius: 0;
+  padding: 1px;
+}
+
 .add-paper-form {
   display: flex;
   flex-direction: column;
@@ -795,14 +807,15 @@ div.paper-sort-btn-collection {
 
 div.paper-sort-btn-collection.sort-papers {
   left: 0;
+  bottom: 0;
   position: absolute;
-  /* height: 3em; */
 }
 
 div.paper-sort-btn-collection.filter-papers {
   left: 50%;
+  bottom: 0;
+
   position: absolute;
-  /* height: 3em; */
 }
 
 .filter-sort-buttons {

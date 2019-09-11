@@ -31,7 +31,7 @@ class MenuBar extends Component {
     );
 
     return (
-      <div className="header-icon-container">
+      <div id="header-icon-container">
         <h1 className="home-logo">TOS</h1>
         {menu}
       </div>

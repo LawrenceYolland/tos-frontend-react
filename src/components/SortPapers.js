@@ -5,7 +5,7 @@ const SortPapers = ({ sortPapers }) => {
     <div className="paper-sort-btn-collection sort-papers">
       <select onChange={e => sortPapers(e.target.value)}>
         <option value="" disabled selected>
-          Sort by 
+          &#8597; Sort by
         </option>
         <option value="Rating">🔥Rating</option>
         <option value="Debated">🧨Debated</option>
