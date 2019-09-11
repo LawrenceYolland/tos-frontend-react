@@ -155,7 +155,6 @@ input {
 
 /* block one */
 
-
 /* used as an anchor for the scroll prompt */
 #content-top {
   position: absolute;
@@ -652,7 +651,7 @@ span.paper-count {
   width: 90vw;
   list-style: none;
   position: relative;
-  height: 400px;
+  max-height: 400px;
   overflow: scroll;
   overflow-x: hidden;
 }
