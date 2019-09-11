@@ -1,5 +1,5 @@
 // const endpoint = `http://localhost:3000/api/v1`;
-const endpoint = "https://the-open-scientist-api.herokuapp.com"
+const endpoint = "https://the-open-scientist-api.herokuapp.com/api/v1"
 
 const usersURL = `${endpoint}/users`;
 const signinURL = `${endpoint}/signin`;
