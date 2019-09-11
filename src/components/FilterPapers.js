@@ -1,24 +1,36 @@
 import React, { Component } from "react";
 
 class FilterPapers extends Component {
-  state = {
-    filters: false,
-    day: false,
-    week: false
-  };
-
+  constructor() {
+    super();
+    this.state = {
+      filters: false,
+      day: false,
+      week: false,
+      all: true
+    };
+  }
   activeButton = e => {
     if (e.target.innerText === "day") {
       this.setState({
         filters: true,
         day: true,
-        week: false
+        week: false,
+        all: false
+      });
+    } else if (e.target.innerText === "week") {
+      this.setState({
+        filters: true,
+        week: true,
+        day: false,
+        all: false
       });
     } else {
       this.setState({
         filters: true,
-        week: true,
-        day: false
+        week: false,
+        day: false,
+        all: true
       });
     }
   };
@@ -52,6 +64,20 @@ class FilterPapers extends Component {
             }}
           >
             week
+          </span>
+        </a>
+        <a
+          className={`paper-filter-btn ${
+            this.state.filters && this.state.all ? "on" : "off"
+          }`}
+        >
+          <span
+            onClick={e => {
+              this.activeButton(e);
+              this.props.setFilterType(0);
+            }}
+          >
+            all
           </span>
         </a>
       </div>

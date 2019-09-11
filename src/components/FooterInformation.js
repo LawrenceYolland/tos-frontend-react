@@ -1,13 +1,15 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 const FooterInformation = () => {
   return (
     <div className="column-bar">
       <div className="column-container">
         <div className="c1">
-          <a>
+          <NavLink
+            to="/"
+          >
             <span>Home</span>
-          </a>
+          </NavLink>
           <a>
             <span>About</span>
           </a>

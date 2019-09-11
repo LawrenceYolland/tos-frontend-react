@@ -6,7 +6,6 @@ const NewsletterBar = () => {
     <div className="newsletter-bar">
       <div className="newsletter-form-container">
         <span>sign up to our newsletter</span>
-
         <form>
           <input placeholder="enter your email..."></input>
           <button color="purple">submit</button>
