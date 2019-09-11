@@ -17,7 +17,6 @@ class UserProfile extends Component {
         bio: "",
         id: ""
       },
-      userPapers: props.allPapers,
       userReviews: [],
       postPaperToggle: false,
       openVersion: {
@@ -59,7 +58,6 @@ class UserProfile extends Component {
             bio: user.data.attributes.bio,
             id: user.data.attributes.id
           },
-          userPapers: this.props.allPapers,
           userReviews: user.data.attributes.reviews.map(review => review),
           editBioToggle:
             parseInt(this.props.match.params.access_token) ===

@@ -31,7 +31,6 @@ class PaperShow extends Component {
   }
   componentDidMount() {
     window.scrollTo(0, 0);
-
     const { history } = this.props;
     const { access_token } = this.props.match.params;
 

@@ -19,6 +19,10 @@ class SignUp extends Component {
     usertype: false
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleInputchange = e =>
     this.setState({
       [e.target.name]: e.target.value
