@@ -18,6 +18,10 @@ class SignIn extends Component {
     password: ""
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleInputchange = e =>
     this.setState({
       [e.target.name]: e.target.value
@@ -30,7 +34,7 @@ class SignIn extends Component {
 
   render() {
     const view = this.props.loggingUser ? (
-      <Segment textAlign="center" style={{ height: "100vh", "zIndex": "-1 "}}>
+      <Segment textAlign="center" style={{ height: "100vh", zIndex: "-1 " }}>
         <Dimmer active inverted>
           <Loader size="large">Loading</Loader>
         </Dimmer>

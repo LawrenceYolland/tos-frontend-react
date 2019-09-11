@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class HomePaper extends Component {
+class UserReview extends Component {
   upCaseTitles = title => {
     return title
       .split(" ")
@@ -19,22 +19,27 @@ class HomePaper extends Component {
 
   render() {
     const path = `/papers/${this.props.id}`;
-    const { title, created_at } = this.props;
+    const { created_at, content } = this.props;
     return (
-      <li className="home-list-item">
-        <div className="home-title-container">
+      <div className="review-list-item">
+        <div>
           <small>
-            <span className="created-at">
-              {this.editTimeFormat(created_at)}
-            </span>
+            <em>
+              <span className="created-at">
+                {this.editTimeFormat(created_at)}
+              </span>
+            </em>
           </small>
+
           <Link to={path}>
-            <h3>{this.upCaseTitles(title)}</h3>
+            <div className="review-content-container">
+              <p>{`${content.slice(0, 100)}...`}</p>
+            </div>
           </Link>
         </div>
-      </li>
+      </div>
     );
   }
 }
 
-export default HomePaper;
+export default UserReview;

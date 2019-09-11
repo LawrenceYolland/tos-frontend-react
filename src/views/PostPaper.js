@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Segment } from "semantic-ui-react";
-var doiRegex = require('doi-regex');
+var doiRegex = require("doi-regex");
 
 const options = [
   { key: "c", text: "Chemistry", value: "Chemistry" },
@@ -22,63 +21,79 @@ class PostPaper extends Component {
     };
   }
 
-  handleInputChange = (e, { name, value }) => {
+  handleInputChange = e => {
     this.setState({
       paper: {
         ...this.state.paper,
-        [name]: value
+        [e.target.name]: e.target.value
       }
     });
   };
 
   handleSubmit = () => {
-    if (!this.validate()) return
+    if (!this.validate()) return;
     this.props.userPostsPaper(this.state.paper);
+    this.props.updatePaperCount();
     this.props.addPaperToggle();
   };
 
   validate = () => {
-    const {doi, title, abstract, category} = this.state.paper
-    return (doiRegex({exact: true}).test(doi) || doiRegex.declared({exact: true}).test(doi)) && title.length > 5 && abstract.length > 20 && category.length !==0
-  }
+    const { doi, title, abstract, category } = this.state.paper;
+    return (
+      (doiRegex({ exact: true }).test(doi) ||
+        doiRegex.declared({ exact: true }).test(doi)) &&
+      title.length > 5 &&
+      abstract.length > 20 &&
+      category.length !== 0
+    );
+  };
 
   render() {
     return (
       <div className="post-input-container">
-        <Button onClick={this.props.addPaperToggle}>close</Button>
-        <Form onSubmit={this.handleSubmit}>
-          <Segment stacked>
-            <Form.Input
-              fluid
-              placeholder="enter paper title ..."
-              name="title"
-              onChange={this.handleInputChange}
-            />
-            <Form.Input
-              fluid
-              placeholder="enter the DOI ..."
-              name="doi"
-              onChange={this.handleInputChange}
-            />
-            <Form.Input
-              fluid
-              placeholder="enter a brief description"
-              type="textArea"
-              name="abstract"
-              onChange={this.handleInputChange}
-            />
-            <Form.Select
-              fluid
-              options={options}
-              name="category"
-              placeholder="Category"
-              onChange={this.handleInputChange}
-            />
-            <Button color="blue" fluid size="large" type="submit">
-              Add Paper
-            </Button>
-          </Segment>
-        </Form>
+        <button onClick={this.props.addPaperToggle}>close</button>
+        <form onSubmit={this.handleSubmit} className="add-paper-form">
+          <input
+            fluid
+            placeholder="enter paper title ..."
+            name="title"
+            onChange={this.handleInputChange}
+          />
+          <input
+            fluid
+            placeholder="enter the DOI ..."
+            name="doi"
+            onChange={this.handleInputChange}
+          />
+          <textarea
+            placeholder="enter a brief description"
+            className="paper-description-input"
+            type="text"
+            name="abstract"
+            onChange={this.handleInputChange}
+          />
+          <select
+            fluid
+            name="category"
+            placeholder="Category"
+            onChange={this.handleInputChange}
+            className="papers-category-select"
+          >
+            <option value="" disabled selected>
+            &#8597; pick a category
+            </option>
+            <option name="Chemistry" value="Chemistry">
+              Chemistry
+            </option>
+            <option name="Biology" value="Biology">
+              Biology
+            </option>
+            <option name="Physics" value="Physics">
+              Physics
+            </option>
+          </select>
+          <button type="submit">add paper</button>
+        </form>
       </div>
     );
   }

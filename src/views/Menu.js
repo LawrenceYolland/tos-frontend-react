@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { NavLink, withRouter } from "react-router-dom";
+import SocialBar from "../components/SocialBar";
+import MenuSocialBar from "../components/MenuSocialBar";
 
 class Menu extends Component {
   state = {
@@ -29,6 +31,7 @@ class Menu extends Component {
     const view = (
       <Fragment>
         <div className="drop-menu-overlay"></div>
+
         <div className="drop-menu">
           <div id="menu">
             <form onSubmit={this.handleSubmit}>
@@ -41,11 +44,11 @@ class Menu extends Component {
               />
             </form>
             <NavLink
+              className="menu-item"
               exact
               to="/"
               activeStyle={{
-                color: "#f9009a"
-                // backgroundColor: "white"
+                color: "#a333c8"
               }}
               onClick={this.props.showMenu}
             >
@@ -53,33 +56,46 @@ class Menu extends Component {
               <span className="left-moji">🏠</span>
             </NavLink>
             <NavLink
+              className="menu-item"
               to="/papers"
               activeStyle={{
-                color: "#f9009a"
-                // backgroundColor: "white"
+                color: "#a333c8"
               }}
               onClick={this.props.showMenu}
             >
               Papers
               <span className="right-moji">📖</span>
             </NavLink>
+            <NavLink
+              className="menu-item"
+              to="/about"
+              activeStyle={{
+                color: "#a333c8"
+              }}
+              onClick={() => {
+                this.props.showMenu();
+              }}
+            >
+              About
+              <span className="left-moji">🧬</span>
+            </NavLink>
             {user.user_id !== null ? (
               <Fragment>
                 <NavLink
+                  className="menu-item"
                   to={profilePath}
                   activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
+                    color: "#a333c8"
                   }}
                   onClick={this.props.showMenu}
                 >
                   Profile
-                  <span className="left-moji">👩‍🔬</span>
+                  <span className="right-moji big-moji">👩‍🔬</span>
                 </NavLink>
                 <NavLink
+                  className="menu-item"
                   activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
+                    color: "#a333c8"
                   }}
                   onClick={() => {
                     this.props.showMenu();
@@ -87,36 +103,40 @@ class Menu extends Component {
                   }}
                 >
                   Sign Out
-                  <span className="right-moji">👋</span>
+                  <span className="left-moji">👋</span>
                 </NavLink>
+
+                <div className="social-block">
+                  <MenuSocialBar />
+                </div>
               </Fragment>
             ) : (
               <Fragment>
                 <NavLink
+                  className="menu-item"
                   to="/signin"
                   activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
+                    color: "#a333c8"
                   }}
                   onClick={() => {
                     this.props.showMenu();
                   }}
                 >
                   Sign In
-                  <span className="left-moji">🔭</span>
+                  <span className="right-moji">🔭</span>
                 </NavLink>
                 <NavLink
+                  className="menu-item"
                   to="/signup"
                   activeStyle={{
-                    color: "#f9009a"
-                    // backgroundColor: "white"
+                    color: "#a333c8"
                   }}
                   onClick={() => {
                     this.props.showMenu();
                   }}
                 >
                   Sign Up
-                  <span className="right-moji">🧬</span>
+                  <span className="left-moji">⚗️</span>
                 </NavLink>
               </Fragment>
             )}

@@ -28,7 +28,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    // debugger
     console.log("App has mounted ... 🌈");
     API.validateUser().then(user => {
       console.log("who dis? 🤷‍", user);
@@ -132,20 +131,6 @@ class App extends Component {
         }
       });
     }
-    // API.nodeSignUp(user)
-    // .then(response => {
-    //   if (response.ok) {
-    //     return response.json();
-    //   }
-    //   return response.json().then(error => {
-    //     throw new Error(error.message);
-    //   });
-    // })
-    // .then(user => console.log(user))
-    // .catch(error => {
-    //   this.state.errorMessage = error.message;
-    //   console.log(error);
-    // });
   };
 
   submitSignIn = user => {
@@ -190,9 +175,13 @@ class App extends Component {
     });
   };
 
-  updateBio = bio => {
-    console.log("new bio 📨", bio);
-    API.updateUser(bio, this.state.user.user_id).then(user => {
+  updateBio = patchData => {
+    console.log("new bio 📨", patchData);
+    const bioObject = {
+      bio: patchData.bio,
+      username: patchData.username
+    };
+    API.updateUser(bioObject, patchData.id).then(user => {
       this.setState({
         user: { ...this.state.user, bio: user.user.data.attributes.bio }
       });
@@ -243,11 +232,11 @@ class App extends Component {
 
   updateRating = (value, id) => {
     API.updatePaperRating(value, id);
-    return this.state.allPapers.map(paper => {
-      if (paper.id === id) {
-        paper.rating = value;
-      }
-    });
+    // return this.state.allPapers.map(paper => {
+    //   if (paper.id === id) {
+    //    return paper.rating = value;
+    //   }
+    // });
   };
 
   showMenu = () => {
@@ -281,12 +270,6 @@ class App extends Component {
         break;
     }
   };
-
-  // sortAscendingName = papers =>
-  //   papers.sort((a, b) => a.title.localeCompare(b.title));
-
-  // sortDescendingName = papers =>
-  //   papers.sort((a, b) => b.title.localeCompare(a.title));
 
   sortRating = papers => papers.sort((a, b) => b.rating - a.rating);
 

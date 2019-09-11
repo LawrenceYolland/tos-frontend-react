@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Paper extends Component {
   constructor(props) {
@@ -36,7 +36,6 @@ class Paper extends Component {
     const { rating } = this.state;
     if (rating > 0) return "positive";
     if (rating < 0) return "negative";
-
     return "even";
   };
 
@@ -49,7 +48,6 @@ class Paper extends Component {
   };
 
   render() {
-
     const path = `/papers/${this.props.id}`;
     const {
       title,
@@ -61,6 +59,35 @@ class Paper extends Component {
     } = this.props;
     return (
       <li className={`${indexType}-list-item`}>
+        <Link to={path}>
+          <div className={`${indexType}-title-container`}>
+            <small>
+              <em>
+                <span className="created-at">
+                  {this.editTimeFormat(created_at)}
+                </span>
+              </em>
+            </small>
+
+            <h3 className="post-title-index">{this.upCaseTitles(title)}</h3>
+
+            <div
+              className={`paper-category-${category.toLowerCase()} index-cat`}
+            >
+              <span>{category}</span>
+            </div>
+            <div>
+              <p>{`${abstract.slice(0, 100)}...`}</p>
+            </div>
+            <div>
+              <span role="img" aria-label="comment icon">
+                {" "}
+                💬{" "}
+              </span>
+              {reviewCount}
+            </div>
+          </div>
+        </Link>
         <div className={`${indexType}-rate-block`}>
           <span
             className={`${indexType}-rate-up`}
@@ -71,7 +98,7 @@ class Paper extends Component {
           </span>
           <br />
           <span className={`${indexType}-rate-value ${this.setRatingColor()}`}>
-            {this.state.rating}
+            {this.state.rating === null ? 0 : this.state.rating}
           </span>
           <br />
           <span
@@ -81,27 +108,6 @@ class Paper extends Component {
           >
             -
           </span>
-        </div>
-        <div className={`${indexType}-title-container`}>
-          <small>
-            <em>
-              <span className="created-at">
-                {this.editTimeFormat(created_at)}
-              </span>
-            </em>
-          </small>
-          <Link to={path}>
-            <h4>{this.upCaseTitles(title)}</h4>
-          </Link>
-          <div className={`paper-category-${category.toLowerCase()}`}>
-            <span>{category}</span>
-          </div>
-          <div>
-            <p>{`${abstract.slice(0, 100)}...`}</p>
-          </div>
-          <div>
-            <span role="img" aria-label="review count">💬{reviewCount}</span>
-          </div>
         </div>
       </li>
     );

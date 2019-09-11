@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Paper from "../components/Paper";
 import SortPapers from "../components/SortPapers";
 import FilterPapers from "../components/FilterPapers";
@@ -18,7 +18,6 @@ class PaperIndex extends Component {
     if (this.state.filterType === 0) return papers;
     if (this.state.filterType === 1) return this.filterByDay(papers);
     if (this.state.filterType === 2) return this.filterByWeek(papers);
-    if (this.state.filterType === 3) return this.filterByYesterday(papers);
   };
 
   filterByDay = papers => {
@@ -41,17 +40,6 @@ class PaperIndex extends Component {
     return filteredList;
   };
 
-  filterByYesterday = papers => {
-    console.log("in the yesterday filter");
-    const testDate = moment().subtract(1, "day");
-
-    const filteredList = papers.filter(paper => {
-      let paperDate = moment(paper.created_at);
-      return moment(paperDate._d).isSame(testDate._d, "day");
-    });
-    return filteredList;
-  };
-
   setFilterType = type => this.setState({ filterType: type });
 
   render() {
@@ -67,17 +55,22 @@ class PaperIndex extends Component {
       />
     ));
     return (
-      <div className="all-papers">
-        <SortPapers sortPapers={sortPapers} />
-        <FilterPapers setFilterType={this.setFilterType} />
-        {papers.length > 0 ? (
-          <papers>
-            <ul className="papers-list">{papers}</ul>
-          </papers>
-        ) : (
-          <NoContentAvailable />
-        )}
-      </div>
+      <Fragment>
+        <div className="s"> </div>
+        <div className="all-papers">
+          <div className="filter-sort-buttons">
+            <SortPapers sortPapers={sortPapers} />
+            <FilterPapers setFilterType={this.setFilterType} />
+          </div>
+          {papers.length > 0 ? (
+            <papers>
+              <ul className="papers-list">{papers}</ul>
+            </papers>
+          ) : (
+            <NoContentAvailable />
+          )}
+        </div>
+      </Fragment>
     );
   }
 }

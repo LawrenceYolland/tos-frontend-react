@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import UserProfileImage from "../components/UserProfileImage";
-import UserRating from "../components/UserRating";
 import UserPapersContainer from "../containers/UserPapersContainer";
+import UserReviewsContainer from "../containers/UserReviewsContainer";
 import API from "../adapters/API";
-import { Button } from "semantic-ui-react";
 import PostPaper from "./PostPaper";
 
 class UserProfile extends Component {
@@ -18,13 +17,12 @@ class UserProfile extends Component {
         bio: "",
         id: ""
       },
-      userPapers: props.allPapers,
+      userReviews: [],
       postPaperToggle: false,
       openVersion: {
         url: "",
         pdfURL: ""
-      },
-      userPaperToggle: false
+      }
     };
   }
   componentDidMount() {
@@ -60,12 +58,14 @@ class UserProfile extends Component {
             bio: user.data.attributes.bio,
             id: user.data.attributes.id
           },
-          userPapers: this.props.allPapers,
+          userReviews: user.data.attributes.reviews.map(review => review),
           editBioToggle:
             parseInt(this.props.match.params.access_token) ===
             this.props.user.user_id
               ? false
-              : null
+              : null,
+          paperCount: user.data.attributes.papers.length,
+          reviewCount: user.data.attributes.reviews.length
         });
       });
   };
@@ -97,88 +97,115 @@ class UserProfile extends Component {
     });
   };
 
-  showUserPaperToggle = () => {
-    this.setState({
-      userPaperToggle: !this.state.userPaperToggle
-    });
-  };
+  updatePaperCount = () =>
+    this.setState({ paperCount: this.state.paperCount + 1 });
 
   render() {
-    const { user, postPaperToggle, userPaperToggle } = this.state;
+    const { user, postPaperToggle } = this.state;
+
     const papersView =
       user.usertype === "Researcher" ? (
         <Fragment>
-          <h5>Papers</h5>
+          <div className="papers-header">
+            <h5>Papers</h5>
+          </div>
           {postPaperToggle ? (
             <PostPaper
               addPaperToggle={this.addPaperToggle}
               user_id={user.id}
               userPostsPaper={this.props.userPostsPaper}
+              updatePaperCount={this.updatePaperCount}
             />
           ) : (
             <Fragment>
               {parseInt(this.props.match.params.access_token) ===
               this.props.user.user_id ? (
-                <Button onClick={this.addPaperToggle}>add a paper</Button>
+                <div className="add-paper-button-container">
+                  <button onClick={this.addPaperToggle}>add a paper</button>
+                </div>
               ) : null}
-              <Button onClick={this.showUserPaperToggle}>{!userPaperToggle ? "show papers" : "hide papers"}</Button>
             </Fragment>
           )}
-          {userPaperToggle ? (
-            <UserPapersContainer
-              userPapers={this.props.userPapers(
-                this.props.match.params.access_token
-              )}
-            />
-          ) : null}
+          <UserPapersContainer
+            userPapers={this.props.userPapers(
+              this.props.match.params.access_token
+            )}
+          />
         </Fragment>
       ) : null;
+
     return (
-      <div className="user-profile-container">
-        <h1>{user.username}</h1>
-        <UserProfileImage username={user.username} />
-        <UserRating />
-        <h4>Bio:</h4>
-        {this.state.editBioToggle ? (
-          <Fragment>
-            <form onSubmit={this.handleSubmit} className="bio-edit">
-              <div className="form-buttons">
-                <button onClick={this.handleBioChange}>
-                  <span role="img" aria-label="discard changes">
-                    🚮
-                  </span>
-                </button>
-                <button type="submit">
-                  <span role="img" aria-label="save changes">
-                    💾
-                  </span>
-                </button>
+      <Fragment>
+        <div className="s"> </div>
+        <div className="user-body">
+          <div className="user-info-container">
+            <UserProfileImage username={user.username} />
+            <div className="profile-info-block">
+              <h1 className="user-header">{user.username}</h1>
+              {parseInt(this.props.match.params.access_token) ===
+              this.props.user.user_id ? (
+                <div className="edit-container">
+                  {!this.state.editBioToggle ? (
+                    <button
+                      aria-label="edit bio"
+                      onClick={this.handleBioChange}
+                    >
+                      edit profile
+                    </button>
+                  ) : null}
+                </div>
+              ) : null}
+            </div>
+            {this.state.editBioToggle ? (
+              <div className="bio-edit">
+                <form id="edit-user-bio" onSubmit={this.handleSubmit}>
+                  <textarea
+                    name="bio"
+                    onChange={this.editBio}
+                    value={user.bio}
+                    className="bio-input"
+                  />
+                </form>
+                <div className="form-buttons">
+                  <button className="save-bio-button" form="edit-user-bio">
+                    save
+                  </button>
+                  <button
+                    className="discard-bio-button"
+                    onClick={this.handleBioChange}
+                  >
+                    discard
+                  </button>
+                </div>
               </div>
-              <textarea
-                name="bio"
-                onChange={this.editBio}
-                value={user.bio}
-                className="bio-input"
-              />
-            </form>
-          </Fragment>
-        ) : (
-          <Fragment>
-            {parseInt(this.props.match.params.access_token) ===
-            this.props.user.user_id ? (
+            ) : (
               <Fragment>
-                <button onClick={this.handleBioChange}>
-                  <span role="img" aria-label="edit bio">
-                    ✏️
+                <div className="user-bio-container">
+                  <p>{user.bio}</p>
+                </div>
+                <div className="user-stats">
+                  {user.usertype === "Researcher" ? (
+                    <span className="user-stat-count paper-count">
+                      {this.state.paperCount} papers
+                    </span>
+                  ) : null}
+                  <span className={`user-stat-count ${user.usertype.toLocaleLowerCase()}-review-count`}>
+                    {this.state.reviewCount} reviews
                   </span>
-                </button>
-                <p>{user.bio}</p>
+                </div>
               </Fragment>
-            ) : null}
-          </Fragment>
-        )}
-        {papersView}
-      </div>
+            )}
+          </div>
+          {papersView}
+          {/* <UserReviewsContainer userReviews={this.state.userReviews} /> */}
+        </div>
+        <Fragment>
+          <div className="papers-header">
+            <h5>Reviews</h5>
+          </div>
+          <UserReviewsContainer userReviews={this.state.userReviews} />
+        </Fragment>
+      </Fragment>
     );
   }
 }

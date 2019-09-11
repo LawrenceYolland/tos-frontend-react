@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import API from "../adapters/API";
 import { Link, withRouter } from "react-router-dom";
 import ReviewContainer from "../containers/ReviewsContainer";
@@ -6,36 +6,33 @@ import ReviewContainer from "../containers/ReviewsContainer";
 import { Segment, Dimmer, Loader } from "semantic-ui-react";
 
 class PaperShow extends Component {
-  state = {
-    mounted: false,
-    paper: {
-      title: "",
-      abstract: "",
-      category: "",
-      // url_for_pdf: null,
-      // url: null,
-      author: [],
-      doi: null
-    },
-    paperData: {
-      url: "",
-      pdf_url: ""
-    },
-    review: {
-      content: "",
-      paper_id: "",
-      user_id: ""
-    },
-    paperReviews: []
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      mounted: false,
+      paper: {
+        title: "",
+        abstract: "",
+        category: "",
+        author: [],
+        doi: null
+      },
+      paperData: {
+        url: "",
+        pdf_url: ""
+      },
+      review: {
+        content: "",
+        paper_id: "",
+        user_id: props.user.user_id
+      },
+      paperReviews: []
+    };
+  }
   componentDidMount() {
+    window.scrollTo(0, 0);
     const { history } = this.props;
     const { access_token } = this.props.match.params;
-
-    // console.log("access_token", access_token);
-    // console.log("allPaperIDs", allPaperIDs.includes(`${access_token}`));
-    // RENDER 404/ NOT FOUND ON FAILED FETCH
 
     API.fetchPaper(access_token)
       .then(response => {
@@ -60,7 +57,6 @@ class PaperShow extends Component {
           },
           review: {
             ...this.state.review,
-            user_id: paper.data.attributes.user.id,
             paper_id: paper.data.attributes.id
           },
           paperReviews: paper.data.attributes.reviews.map(p => p)
@@ -75,7 +71,7 @@ class PaperShow extends Component {
   }
 
   fetchDOI = doi => {
-    console.log("the doi........", doi)
+    console.log("the doi........", doi);
     fetch(`https://api.unpaywall.org/v2/${doi}?email=@`)
       .then(resp => resp.json())
       .then(paper => {
@@ -122,12 +118,17 @@ class PaperShow extends Component {
       </Segment>
     ) : (
       <div className="paper-show-container">
+        <div className="s"></div>
         <div>
           <h1>{title}</h1>
           <div className={`paper-category-${category.toLowerCase()}`}>
-          <h5><span>{category}</span></h5>
+            <h5>
+              <span>{category}</span>
+            </h5>
           </div>
-         <span>submitted by: <Link to={path}>{author}</Link></span> 
+          <span>
+            submitted by: <Link to={path}>{author}</Link>
+          </span>
           <h5>{doi}</h5>
           <p>{abstract}</p>
         </div>
@@ -136,11 +137,11 @@ class PaperShow extends Component {
           <h5>Open Access Links</h5>
           <ul className="doi-oa-links">
             <li>
-          <a href={this.state.paperData.url}>URL</a>
-          </li>
-          <li>
-          <a href={this.state.paperData.pdf_url}>PDF</a>
-          </li>
+              <a href={this.state.paperData.url}>URL</a>
+            </li>
+            <li>
+              <a href={this.state.paperData.pdf_url}>PDF</a>
+            </li>
           </ul>
         </div>
 
@@ -154,7 +155,10 @@ class PaperShow extends Component {
           ></input>
           <button type="submit"> submit review</button>
         </form>
-        <ReviewContainer paperReviews={this.state.paperReviews} allUsers={this.props.allUsers} />
+        <ReviewContainer
+          paperReviews={this.state.paperReviews}
+          allUsers={this.props.allUsers}
+        />
       </div>
     );
     return view;

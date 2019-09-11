@@ -2,10 +2,14 @@ import React, { Component } from "react";
 import NoContentAvailable from "../containers/NoContentAvailble";
 
 class NotFound extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className="not-found">
-        <h1> NOT FOUND <span role="img" aria-label="page not found">🕵️‍</span></h1>
+        <div className="s"> </div>
         <NoContentAvailable />
       </div>
     );
