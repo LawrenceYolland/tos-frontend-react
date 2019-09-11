@@ -512,7 +512,7 @@ span.created-at {
 }
 
 .user-body {
-  margin-top: 1.5em;
+  margin-top: 2em;
 }
 
 .user-info-container {
@@ -807,7 +807,6 @@ div.paper-sort-btn-collection.sort-papers {
 div.paper-sort-btn-collection.filter-papers {
   left: 50%;
   bottom: 0;
-
   position: absolute;
 }
 
@@ -822,25 +821,39 @@ div.paper-sort-btn-collection.filter-papers {
 .filter-sort-buttons select {
   background-color: white;
   color: #222;
-  border: 1px solid #222;
+  border: 1px solid #e5e5e5;
   width: fit-content;
   border-radius: 0;
   padding: 1px;
+  height: 2em;
+  border-radius: 5px;
 }
 
 a.paper-filter-btn {
   background-color: white;
   color: #222;
-  border: 1px solid #222;
-  height: fit-content;
+  border: 1px solid #e5e5e5;
+  height: 2em;
   width: 4em;
+  border-radius: 5px;
+  padding:2px;
+  margin-right: 0.5em;
+
+
+}
+
+a.paper-filter-btn.on {
+  background-color: #a333c8;
+  color: white;
+  border: 1px solid #e5e5e5;
+  padding:2px;
 }
 
 a.paper-filter-btn:active {
   background-color: #222;
   color: white;
   border: 1px solid white;
-  height: fit-content;
+  height: 2em;
 }
 
 .papers-list,
