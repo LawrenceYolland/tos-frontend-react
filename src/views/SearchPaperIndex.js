@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Paper from "../components/Paper";
 import { withRouter } from "react-router-dom";
 import SortPapers from "../components/SortPapers";
@@ -31,17 +31,18 @@ class SearchPaperIndex extends Component {
       />
     ));
     return (
-      <div className="all-papers">
-        <SortPapers sortPapers={sortPapers} />
-
-        {papers.length > 0 ? (
-          <papers>
-            <ul className="papers-list">{papers}</ul>
-          </papers>
-        ) : (
-          <NoContentAvailable />
-        )}
-      </div>
+      <Fragment>
+        <div className="s"> </div>
+        <div className="all-papers">
+          {papers.length > 0 ? (
+            <papers>
+              <ul className="papers-list">{papers}</ul>
+            </papers>
+          ) : (
+            <NoContentAvailable />
+          )}
+        </div>
+      </Fragment>
     );
   }
 }

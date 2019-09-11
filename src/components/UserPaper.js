@@ -26,7 +26,7 @@ class UserPaper extends Component {
 
   render() {
     const path = `/papers/${this.props.id}`;
-    const { title, category, indexType, created_at, abstract } = this.props;
+    const { title, category, created_at, abstract } = this.props;
     return (
       <li className={`user-list-item`}>
         <div className={`user-title-container`}>

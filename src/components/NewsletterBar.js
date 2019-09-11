@@ -1,12 +1,10 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
 
 const NewsletterBar = () => {
   return (
     <div className="newsletter-bar">
       <div className="newsletter-form-container">
         <span>sign up to our newsletter</span>
-
         <form>
           <input placeholder="enter your email..."></input>
           <button color="purple">submit</button>

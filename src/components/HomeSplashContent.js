@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import TitleBlock from "./TitleBlock";
 import BlockOne from "./BlockOne";
+import BlockTwo from "./BlockTwo";
+import BlockThree from "./BlockThree";
 
 class HomeSplashContent extends Component {
   render() {
@@ -15,17 +17,8 @@ class HomeSplashContent extends Component {
       <Slider {...settings}>
         <TitleBlock />
         <BlockOne />
-
-        <div className="hpc-h1-container">
-          <h1 className="hpc-h1">
-            <span className="hpc-span">heres some 2nd page content</span>
-          </h1>
-        </div>
-        <div className="hpc-h1-container">
-          <h1 className="hpc-h1">
-            <span className="hpc-span">heres some 3rd page content</span>
-          </h1>
-        </div>
+        <BlockTwo />
+        <BlockThree />
       </Slider>
     );
   }

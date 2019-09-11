@@ -150,6 +150,38 @@ input {
   box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+/*  */
+.hpc-block-container {
+  width: 100%;
+  padding-left: 1px;
+}
+
+.hpc-span {
+  background-color: #e5e5e5;
+  padding: 5px 10px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hpc-h1 {
+  font-weight: 800;
+  font-size: 2.2em;
+  line-height: 1.8em;
+  color: #222;
+  text-transform: uppercase;
+  width: 90%;
+  text-align: left;
+}
+
+.hpc-h4 {
+  font-weight: 800;
+  font-size: 1.5em;
+  line-height: 2em;
+  color: #222;
+  text-transform: capitalize;
+  width: 90%;
+  text-align: left;
+}
 /* block one */
 
 /* used as an anchor for the scroll prompt */
@@ -377,14 +409,6 @@ span.created-at {
   margin: 0 auto 0 auto;
 }
 
-/* .drop-menu-overlay {
-  position: fixed;
-  z-index: 100;
-  min-width: 100vw;
-  height: 100vh;
-  background-color: #e5e5e5;
-} */
-
 .drop-menu {
   overflow-x: hidden;
   position: fixed;
@@ -506,9 +530,10 @@ span.created-at {
 }
 
 .s {
-  height: 10vh;
+  height: 15vh;
   width: 100vw;
   position: relative;
+  /* margin-bottom: 2em; */
 }
 
 .user-body {
@@ -620,7 +645,7 @@ span.created-at {
 }
 
 .user-stats span {
-  color: #999;
+  color: #222;
 }
 
 span.paper-count {
@@ -805,13 +830,13 @@ div.paper-sort-btn-collection.sort-papers {
 }
 
 div.paper-sort-btn-collection.filter-papers {
-  left: 50%;
+  left: 40%;
   bottom: 0;
   position: absolute;
 }
 
 .filter-sort-buttons {
-  width: 80vw;
+  width: 90%;
   position: relative;
   margin: auto;
   height: 3em;
@@ -836,17 +861,15 @@ a.paper-filter-btn {
   height: 2em;
   width: 4em;
   border-radius: 5px;
-  padding:2px;
+  padding: 2px;
   margin-right: 0.5em;
-
-
 }
 
 a.paper-filter-btn.on {
   background-color: #a333c8;
   color: white;
   border: 1px solid #e5e5e5;
-  padding:2px;
+  padding: 2px;
 }
 
 a.paper-filter-btn:active {
@@ -1225,4 +1248,15 @@ footer h1 {
 
 .menu-social-icon > a {
   color: #222;
+}
+
+.about-body {
+  margin-top: 2em;
+  min-height: 800px;
+}
+
+.about-text-body {
+  width: 80%;
+  margin: auto;
+  text-align: justify;
 }

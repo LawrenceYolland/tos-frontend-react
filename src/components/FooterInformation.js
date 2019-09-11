@@ -1,22 +1,22 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 const FooterInformation = () => {
   return (
     <div className="column-bar">
       <div className="column-container">
         <div className="c1">
-          <a>
+          <NavLink to="/">
             <span>Home</span>
-          </a>
-          <a>
+          </NavLink>
+          <NavLink to="/about">
             <span>About</span>
-          </a>
+          </NavLink>
         </div>
         <div className="c2">
-          <a>
+          <a href="#">
             <span>Contact</span>
           </a>
-          <a>
+          <a href="#">
             <span>Submissions</span>
           </a>
         </div>
