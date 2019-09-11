@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
-
+import { Link } from "react-router-dom";
 const TitleBlock = () => {
   return (
     <div className="hpc-h1-container">
@@ -10,9 +10,11 @@ const TitleBlock = () => {
         </span>
       </h1>
       <div className="title-btn-container">
-      <Button color="purple" fluid>
-        Find out more
-      </Button>
+        <Link to="/about">
+          <Button color="purple" fluid>
+            Find out more
+          </Button>
+        </Link>
       </div>
     </div>
   );

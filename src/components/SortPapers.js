@@ -7,9 +7,9 @@ const SortPapers = ({ sortPapers }) => {
         <option value="" disabled selected>
           &#8597; Sort by
         </option>
-        <option value="Rating">🔥Rating</option>
-        <option value="Debated">🧨Debated</option>
-        <option value="Latest">⏱Latest</option>
+        <option value="Rating">🔥 Rating </option>
+        <option value="Debated">🧨 Debated </option>
+        <option value="Latest">⏱ Latest </option>
       </select>
     </div>
   );

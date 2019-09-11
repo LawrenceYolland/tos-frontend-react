@@ -13,10 +13,10 @@ const FooterInformation = () => {
           </NavLink>
         </div>
         <div className="c2">
-          <a>
+          <a href="#">
             <span>Contact</span>
           </a>
-          <a>
+          <a href="#">
             <span>Submissions</span>
           </a>
         </div>
