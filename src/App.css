@@ -150,6 +150,38 @@ input {
   box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+/*  */
+.hpc-block-container {
+  width: 100%;
+  padding-left: 1px;
+}
+
+.hpc-span {
+  background-color: #e5e5e5;
+  padding: 5px 10px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hpc-h1 {
+  font-weight: 800;
+  font-size: 2.2em;
+  line-height: 1.8em;
+  color: #222;
+  text-transform: uppercase;
+  width: 90%;
+  text-align: left;
+}
+
+.hpc-h4 {
+  font-weight: 800;
+  font-size: 1.5em;
+  line-height: 2em;
+  color: #222;
+  text-transform: capitalize;
+  width: 90%;
+  text-align: left;
+}
 /* block one */
 
 /* used as an anchor for the scroll prompt */
@@ -829,17 +861,15 @@ a.paper-filter-btn {
   height: 2em;
   width: 4em;
   border-radius: 5px;
-  padding:2px;
+  padding: 2px;
   margin-right: 0.5em;
-
-
 }
 
 a.paper-filter-btn.on {
   background-color: #a333c8;
   color: white;
   border: 1px solid #e5e5e5;
-  padding:2px;
+  padding: 2px;
 }
 
 a.paper-filter-btn:active {
