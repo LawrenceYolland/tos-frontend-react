@@ -13,7 +13,7 @@ class About extends Component {
               Our approach to peer review is simple. We want everyone to take
               part in the scientific process, this means that researchers are
               front of house, sharing their research openly (we take advantage
-              of Unpaywall’s great API to link up your open research.). This
+              of Unpaywall’s great API to link up your open research). This
               also means that anyone can comment and review scientific works,
               and build a dialogue between members of the academic community.
               There will be no dreaded reviewer #3 on TOS, accountability and
