@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "semantic-ui-react";
 
 const NewsletterBar = () => {
   return (
@@ -8,7 +9,7 @@ const NewsletterBar = () => {
 
         <form>
           <input placeholder="enter your email..."></input>
-          <button>submit</button>
+          <button color="purple">submit</button>
         </form>
       </div>
     </div>
