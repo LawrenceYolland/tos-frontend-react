@@ -1,11 +1,16 @@
 /* html {
   overflow: auto;
 } */
-html { height: 100%; overflow:auto; }
-body { height: 100%; }
+html {
+  height: 100%;
+  overflow: auto;
+}
+body {
+  height: 100%;
+}
 
 ::selection {
-  background: #5f00f9;
+  background: #a333c8;
   color: #fff;
 }
 
@@ -108,12 +113,32 @@ input {
   width: 90vw;
   margin: auto;
   padding: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .slick-track {
   overflow: hidden;
 }
+
+.slick-arrow {
+  width: 50px;
+}
+
+.slick-next:before {
+  position: absolute;
+  right: 0;
+}
+
+.slick-dots li button:before {
+  color: #e5e5e5;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #a333c8;
+  opacity: 1;
+}
+
 
 .hpc-container {
   position: absolute;
