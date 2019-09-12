@@ -96,7 +96,11 @@ class PaperShow extends Component {
     e.preventDefault();
     this.props.usersPostsReview(this.state.review);
     this.setState({
-      paperReviews: [...this.state.paperReviews, this.state.review]
+      paperReviews: [...this.state.paperReviews, this.state.review],
+      review: {
+        ...this.state.review,
+        content: ""
+      }
     });
   };
 
@@ -144,7 +148,6 @@ class PaperShow extends Component {
             {/* <li>
               <a href={this.state.paperData.pdf_url}>PDF</a>
             </li> removed for demo*/}{" "}
-            /
           </ul>
         </div>
 
