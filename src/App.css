@@ -1,6 +1,8 @@
-html {
-  overflow-x: hidden;
-}
+/* html {
+  overflow: auto;
+} */
+html { height: 100%; overflow:auto; }
+body { height: 100%; }
 
 ::selection {
   background: #5f00f9;
