@@ -17,8 +17,7 @@ class PostPaper extends Component {
         category: "",
         doi: "10.1016/j.cell.2015.02.015",
         user_id: props.user_id
-      },
-      failedValidate: false
+      }
     };
   }
 
@@ -54,7 +53,6 @@ class PostPaper extends Component {
       <div className="post-input-container">
         <button onClick={this.props.addPaperToggle}>close</button>
         <form onSubmit={this.handleSubmit} className="add-paper-form">
-        
           <input
             fluid
             placeholder="enter paper title min 5 chars..."
