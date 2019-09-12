@@ -124,10 +124,10 @@ input {
   width: 50px;
 }
 
-.slick-next:before {
+/* .slick-next:before {
   position: absolute;
   right: 0;
-}
+} */
 
 .slick-dots li button:before {
   color: #e5e5e5;
@@ -138,7 +138,6 @@ input {
   color: #a333c8;
   opacity: 1;
 }
-
 
 .hpc-container {
   position: absolute;
@@ -208,6 +207,11 @@ input {
   text-transform: capitalize;
   width: 90%;
   text-align: left;
+}
+
+.hpc-h1,
+.hpc-h4 {
+  padding-left: 5px;
 }
 /* block one */
 
