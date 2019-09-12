@@ -18,8 +18,8 @@ class PaperShow extends Component {
         doi: null
       },
       paperData: {
-        url: "",
-        pdf_url: ""
+        url: ""
+        // pdf_url: "" removed for demo
       },
       review: {
         content: "",
@@ -72,13 +72,15 @@ class PaperShow extends Component {
 
   fetchDOI = doi => {
     console.log("the doi........", doi);
-    fetch(`https://api.unpaywall.org/v2/${doi}?email=@`)
+    fetch(
+      `https://api.unpaywall.org/v2/${doi}?email=lawrence@sciencedisrupt.com`
+    )
       .then(resp => resp.json())
       .then(paper => {
         this.setState({
           paperData: {
-            url: paper.best_oa_location.url,
-            pdf_url: paper.best_oa_location.url_for_pdf
+            url: paper.best_oa_location.url
+            // pdf_url: paper.best_oa_location.url_for_pdf removed for demo
           }
         });
       });
@@ -129,19 +131,20 @@ class PaperShow extends Component {
           <span>
             submitted by: <Link to={path}>{author}</Link>
           </span>
-          <h5>{doi}</h5>
+          <h5>DOI: {doi}</h5>
           <p>{abstract}</p>
         </div>
 
-        <div>
-          <h5>Open Access Links</h5>
+        <div className="access-links">
+          <h5>Access this Paper Here:</h5>
           <ul className="doi-oa-links">
             <li>
               <a href={this.state.paperData.url}>URL</a>
             </li>
-            <li>
+            {/* <li>
               <a href={this.state.paperData.pdf_url}>PDF</a>
-            </li>
+            </li> removed for demo*/}{" "}
+            /
           </ul>
         </div>
 

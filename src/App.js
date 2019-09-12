@@ -232,11 +232,11 @@ class App extends Component {
 
   updateRating = (value, id) => {
     API.updatePaperRating(value, id);
-    // return this.state.allPapers.map(paper => {
-    //   if (paper.id === id) {
-    //    return paper.rating = value;
-    //   }
-    // });
+    return this.state.allPapers.map(paper => {
+      if (paper.id === id) {
+       return paper.rating = value;
+      }
+    });
   };
 
   showMenu = () => {
