@@ -17,7 +17,8 @@ class PostPaper extends Component {
         category: "",
         doi: "",
         user_id: props.user_id
-      }
+      },
+      failedValidate: false
     };
   }
 
@@ -31,10 +32,13 @@ class PostPaper extends Component {
   };
 
   handleSubmit = () => {
-    if (!this.validate()) return;
-    this.props.userPostsPaper(this.state.paper);
-    this.props.updatePaperCount();
-    this.props.addPaperToggle();
+    if (!this.validate()) {
+      this.setState({ failedValidate: true });
+    } else {
+      this.props.userPostsPaper(this.state.paper);
+      this.props.updatePaperCount();
+      this.props.addPaperToggle();
+    }
   };
 
   validate = () => {
@@ -53,18 +57,33 @@ class PostPaper extends Component {
       <div className="post-input-container">
         <button onClick={this.props.addPaperToggle}>close</button>
         <form onSubmit={this.handleSubmit} className="add-paper-form">
+          {this.state.failedValidate ? (
+            <small style={{ color: red }}>title: minimum 5 characters</small>
+          ) : null}
           <input
             fluid
             placeholder="enter paper title ..."
             name="title"
             onChange={this.handleInputChange}
           />
+          {this.state.failedValidate ? (
+            <small style={{ color: red }}>
+              doi: try 10.1016/j.cell.2015.02.015
+            </small>
+          ) : null}
+
           <input
             fluid
             placeholder="enter the DOI ..."
             name="doi"
             onChange={this.handleInputChange}
           />
+          {this.state.failedValidate ? (
+            <small style={{ color: red }}>
+              description: minimum 20 characters
+            </small>
+          ) : null}
+
           <textarea
             placeholder="enter a brief description"
             className="paper-description-input"
@@ -72,6 +91,9 @@ class PostPaper extends Component {
             name="abstract"
             onChange={this.handleInputChange}
           />
+          {this.state.failedValidate ? (
+            <small style={{ color: red }}>pick a category</small>
+          ) : null}
           <select
             fluid
             name="category"
@@ -80,7 +102,7 @@ class PostPaper extends Component {
             className="papers-category-select"
           >
             <option value="" disabled selected>
-            &#8597; pick a category
+              &#8597; pick a category
             </option>
             <option name="Chemistry" value="Chemistry">
               Chemistry
