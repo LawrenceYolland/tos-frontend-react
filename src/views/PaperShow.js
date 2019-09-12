@@ -94,6 +94,7 @@ class PaperShow extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    if (!this.state.review.content.length > 5) return
     this.props.usersPostsReview(this.state.review);
     this.setState({
       paperReviews: [...this.state.paperReviews, this.state.review],
