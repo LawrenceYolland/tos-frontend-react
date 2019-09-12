@@ -45,7 +45,7 @@ class PostPaper extends Component {
     const { doi, title, abstract, category } = this.state.paper;
     return (
       (doiRegex({ exact: true }).test(doi) ||
-        doiRegex.declared({ exact: true }).test(doi)) &&
+        doiRegex.decla"red"({ exact: true }).test(doi)) &&
       title.length > 5 &&
       abstract.length > 20 &&
       category.length !== 0
@@ -58,7 +58,7 @@ class PostPaper extends Component {
         <button onClick={this.props.addPaperToggle}>close</button>
         <form onSubmit={this.handleSubmit} className="add-paper-form">
           {this.state.failedValidate ? (
-            <small style={{ color: red }}>title: minimum 5 characters</small>
+            <small style={{ "color": "red" }}>title: minimum 5 characters</small>
           ) : null}
           <input
             fluid
@@ -67,7 +67,7 @@ class PostPaper extends Component {
             onChange={this.handleInputChange}
           />
           {this.state.failedValidate ? (
-            <small style={{ color: red }}>
+            <small style={{ "color": "red" }}>
               doi: try 10.1016/j.cell.2015.02.015
             </small>
           ) : null}
@@ -79,7 +79,7 @@ class PostPaper extends Component {
             onChange={this.handleInputChange}
           />
           {this.state.failedValidate ? (
-            <small style={{ color: red }}>
+            <small style={{ "color": "red" }}>
               description: minimum 20 characters
             </small>
           ) : null}
@@ -92,7 +92,7 @@ class PostPaper extends Component {
             onChange={this.handleInputChange}
           />
           {this.state.failedValidate ? (
-            <small style={{ color: red }}>pick a category</small>
+            <small style={{ "color": "red" }}>pick a category</small>
           ) : null}
           <select
             fluid
