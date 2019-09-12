@@ -45,7 +45,7 @@ class PostPaper extends Component {
     const { doi, title, abstract, category } = this.state.paper;
     return (
       (doiRegex({ exact: true }).test(doi) ||
-        doiRegex.decla"red"({ exact: true }).test(doi)) &&
+        doiRegex.declared({ exact: true }).test(doi)) &&
       title.length > 5 &&
       abstract.length > 20 &&
       category.length !== 0
