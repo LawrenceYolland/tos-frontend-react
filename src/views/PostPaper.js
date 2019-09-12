@@ -15,7 +15,7 @@ class PostPaper extends Component {
         title: "",
         abstract: "",
         category: "",
-        doi: "",
+        doi: "10.1016/j.cell.2015.02.015",
         user_id: props.user_id
       },
       failedValidate: false
@@ -32,13 +32,10 @@ class PostPaper extends Component {
   };
 
   handleSubmit = () => {
-    if (!this.validate()) {
-      this.setState({ failedValidate: true });
-    } else {
-      this.props.userPostsPaper(this.state.paper);
-      this.props.updatePaperCount();
-      this.props.addPaperToggle();
-    }
+    if (!this.validate()) return;
+    this.props.userPostsPaper(this.state.paper);
+    this.props.updatePaperCount();
+    this.props.addPaperToggle();
   };
 
   validate = () => {
@@ -57,43 +54,28 @@ class PostPaper extends Component {
       <div className="post-input-container">
         <button onClick={this.props.addPaperToggle}>close</button>
         <form onSubmit={this.handleSubmit} className="add-paper-form">
-          {this.state.failedValidate ? (
-            <small style={{ "color": "red" }}>title: minimum 5 characters</small>
-          ) : null}
+        
           <input
             fluid
-            placeholder="enter paper title ..."
+            placeholder="enter paper title min 5 chars..."
             name="title"
             onChange={this.handleInputChange}
           />
-          {this.state.failedValidate ? (
-            <small style={{ "color": "red" }}>
-              doi: try 10.1016/j.cell.2015.02.015
-            </small>
-          ) : null}
-
           <input
             fluid
-            placeholder="enter the DOI ..."
+            placeholder="enter the DOI (disabled for demo)"
             name="doi"
-            onChange={this.handleInputChange}
+            disabled
+            // onChange={this.handleInputChange}
           />
-          {this.state.failedValidate ? (
-            <small style={{ "color": "red" }}>
-              description: minimum 20 characters
-            </small>
-          ) : null}
-
           <textarea
-            placeholder="enter a brief description"
+            placeholder="enter a brief description min 20 chars"
             className="paper-description-input"
             type="text"
             name="abstract"
             onChange={this.handleInputChange}
           />
-          {this.state.failedValidate ? (
-            <small style={{ "color": "red" }}>pick a category</small>
-          ) : null}
+
           <select
             fluid
             name="category"
