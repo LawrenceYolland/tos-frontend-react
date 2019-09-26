@@ -158,9 +158,10 @@ class PaperShow extends Component {
             type="text-area"
             onChange={this.handleChange}
             name="content"
-            placeholder="enter your review ..."
+            disabled
+            placeholder="enter your review ... (disabled for demo)"
           ></input>
-          <button type="submit"> submit review</button>
+          <button type="submit">submit review</button>
         </form>
         <ReviewContainer
           paperReviews={this.state.paperReviews}

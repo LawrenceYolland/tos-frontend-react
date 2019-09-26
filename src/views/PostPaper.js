@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 var doiRegex = require("doi-regex");
 
-const options = [
-  { key: "c", text: "Chemistry", value: "Chemistry" },
-  { key: "b", text: "Biology", value: "Biology" },
-  { key: "p", text: "Physics", value: "Physics" }
-];
+// const options = [
+//   { key: "c", text: "Chemistry", value: "Chemistry" },
+//   { key: "b", text: "Biology", value: "Biology" },
+//   { key: "p", text: "Physics", value: "Physics" }
+// ];
 
 class PostPaper extends Component {
   constructor(props) {
@@ -55,8 +55,9 @@ class PostPaper extends Component {
         <form onSubmit={this.handleSubmit} className="add-paper-form">
           <input
             fluid
-            placeholder="enter paper title min 5 chars..."
+            placeholder="enter paper title min 5 chars... (disabled for demo)"
             name="title"
+            disabled
             onChange={this.handleInputChange}
           />
           <input
@@ -67,10 +68,11 @@ class PostPaper extends Component {
             // onChange={this.handleInputChange}
           />
           <textarea
-            placeholder="enter a brief description min 20 chars"
+            placeholder="enter a brief description min 20 chars (disabled for demo)"
             className="paper-description-input"
             type="text"
             name="abstract"
+            disabled
             onChange={this.handleInputChange}
           />
 
@@ -94,7 +96,7 @@ class PostPaper extends Component {
               Physics
             </option>
           </select>
-          <button type="submit">add paper</button>
+          <button type="submit" disabled>add paper</button>
         </form>
       </div>
     );
